@@ -8,6 +8,11 @@ namespace SistemaGeradorOrcamento.Models
 {
     class Projeto
     {
-        
+     
+        public static void Commit()
+        {
+            //CLASSE APENAS PARA TESTE DE COMMIT
+        }
+
     }
 }
