@@ -8,9 +8,6 @@ namespace SistemaGeradorOrcamento.Models
 {
     class Projeto
     {
-        public static void TestedeTexto()
-        {
-            Console.WriteLine("Teste do gitHub");
-        }
+       //Exclui a classe que estava aqui
     }
 }
