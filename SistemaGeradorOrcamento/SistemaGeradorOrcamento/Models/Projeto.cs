@@ -8,6 +8,6 @@ namespace SistemaGeradorOrcamento.Models
 {
     class Projeto
     {
-       //Exclui a classe que estava aqui
+       
     }
 }
