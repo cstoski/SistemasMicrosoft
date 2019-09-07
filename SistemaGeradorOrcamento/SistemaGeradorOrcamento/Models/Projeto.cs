@@ -8,8 +8,6 @@ namespace SistemaGeradorOrcamento.Models
 {
     class Projeto
     {
-        //-----
-        //Coloquei o comentario novamente
-        //------
+        
     }
 }
