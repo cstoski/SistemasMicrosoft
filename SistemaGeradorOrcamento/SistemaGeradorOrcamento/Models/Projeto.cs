@@ -8,5 +8,9 @@ namespace SistemaGeradorOrcamento.Models
 {
     class Projeto
     {
+        public static void TestedeTexto()
+        {
+            Console.WriteLine("Teste do gitHub");
+        }
     }
 }
