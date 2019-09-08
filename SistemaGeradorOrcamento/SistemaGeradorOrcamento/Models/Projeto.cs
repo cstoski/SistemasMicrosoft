@@ -12,6 +12,7 @@ namespace SistemaGeradorOrcamento.Models
         public static void Commit()
         {
             //CLASSE APENAS PARA TESTE DE COMMIT
+            //Teste OK
         }
 
     }
