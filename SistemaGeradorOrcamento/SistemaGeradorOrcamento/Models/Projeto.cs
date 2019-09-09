@@ -1,5 +1,6 @@
 ﻿using System;
 using System.Collections.Generic;
+using System.ComponentModel;
 using System.ComponentModel.DataAnnotations;
 using System.ComponentModel.DataAnnotations.Schema;
 using System.Linq;
@@ -25,7 +26,12 @@ namespace SistemaGeradorOrcamento.Models
         public String cliente { get; set; }
         public enum status
         {
-            
+          [Description("Em Execução")] emExecucao,
+          [Description("Aguardando Documentação")] aguardadoDocumentacao,
+          [Description("Enviado ao Cliente")] enviadoAoCliente,
+          [Description("Fechado")] fechado,
+          [Description("Suspenso")] suspenso,
+          [Description("Cancelado")] cancelado
         }
         //public List<Orcamento> listaOrcamento { get; set; }
 
