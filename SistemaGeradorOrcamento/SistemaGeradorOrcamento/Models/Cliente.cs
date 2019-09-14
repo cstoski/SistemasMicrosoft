@@ -8,21 +8,23 @@ using System.Threading.Tasks;
 
 namespace SistemaGeradorOrcamento.Models
 {
-    //teste
-    /// <summary>
-    /// 
-    /// </summary>
+    
     [Table("Clientes")]
     class Cliente
     {
-        [Key] //Define chave primária 
-        public int clienteId { get; set; }
-        public DateTime CriadoEm { get; set; }
-        public String nomeCliente { get; set; }
-        public String contato { get; set; }
-        public String telefone { get; set; }
+        public Cliente()
+        {
+            CriadoEm = DateTime.Now;
+        }
 
-        //Comentários
+        [Key] //Define chave primária 
+        public int ClienteId { get; set; }
+        public DateTime CriadoEm { get; set; }
+        public String NomeCliente { get; set; }
+        public String Contato { get; set; }
+        public String Telefone { get; set; }
+
+        
        
     }
 }

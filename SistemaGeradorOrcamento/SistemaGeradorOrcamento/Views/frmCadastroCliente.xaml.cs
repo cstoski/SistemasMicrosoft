@@ -39,9 +39,9 @@ namespace SistemaGeradorOrcamento.Views
         {
             Cliente c = new Cliente
             {
-                nomeCliente = txtNome.Text,
-                contato = txtNome.Text,
-                telefone = txtTelefone.Text
+                NomeCliente = txtNome.Text,
+                Contato = txtNome.Text,
+                Telefone = txtTelefone.Text
             };
 
             if (ClienteDao.CadastrarCliente(c))

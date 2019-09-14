@@ -67,9 +67,14 @@
       <SubType>Code</SubType>
     </Compile>
     <Compile Include="DAL\ClienteDao.cs" />
+    <Compile Include="DAL\SingletonContext.cs" />
     <Compile Include="Migrations\201909141401185_Inicial.cs" />
     <Compile Include="Migrations\201909141401185_Inicial.Designer.cs">
       <DependentUpon>201909141401185_Inicial.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Migrations\201909141503123_Update Classe Cliente-Projeto.cs" />
+    <Compile Include="Migrations\201909141503123_Update Classe Cliente-Projeto.Designer.cs">
+      <DependentUpon>201909141503123_Update Classe Cliente-Projeto.cs</DependentUpon>
     </Compile>
     <Compile Include="Migrations\Configuration.cs" />
     <Compile Include="Models\Cliente.cs" />
@@ -98,6 +103,9 @@
     </Compile>
     <EmbeddedResource Include="Migrations\201909141401185_Inicial.resx">
       <DependentUpon>201909141401185_Inicial.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Migrations\201909141503123_Update Classe Cliente-Projeto.resx">
+      <DependentUpon>201909141503123_Update Classe Cliente-Projeto.cs</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="Properties\Resources.resx">
       <Generator>ResXFileCodeGenerator</Generator>

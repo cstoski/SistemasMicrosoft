@@ -18,12 +18,12 @@ namespace SistemaGeradorOrcamento.Models
             CriadoEm = DateTime.Now;
         }
         [Key] //Define chave primária 
-        public int projetoId { get; set; }
+        public int ProjetoId { get; set; }
         public DateTime CriadoEm { get; set; }
 
-        public String numeroProjeto { get; set; }
-        public String nomeProjeto { get; set; }
-        public String cliente { get; set; }
+        public String NumeroProjeto { get; set; }
+        public String NomeProjeto { get; set; }
+        public String Cliente { get; set; }
         public enum status
         {
           [Description("Em Execução")] emExecucao,

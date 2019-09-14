@@ -31,7 +31,7 @@ namespace SistemaGeradorOrcamento.DAL
         public static Cliente BuscarClientePorNome(Cliente c)
         {
             return ctx.Clientes.FirstOrDefault
-                (x => x.nomeCliente.Equals(c.nomeCliente));
+                (x => x.NomeCliente.Equals(c.NomeCliente));
         }
 
     }
