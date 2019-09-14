@@ -83,6 +83,9 @@
     <Compile Include="Views\frmCadastroCliente.xaml.cs">
       <DependentUpon>frmCadastroCliente.xaml</DependentUpon>
     </Compile>
+    <Compile Include="Views\frmCadastroProjeto.xaml.cs">
+      <DependentUpon>frmCadastroProjeto.xaml</DependentUpon>
+    </Compile>
     <Compile Include="Views\TelaPrincipal.xaml.cs">
       <DependentUpon>TelaPrincipal.xaml</DependentUpon>
     </Compile>
@@ -126,6 +129,10 @@
   </ItemGroup>
   <ItemGroup>
     <Page Include="Views\frmCadastroCliente.xaml">
+      <SubType>Designer</SubType>
+      <Generator>MSBuild:Compile</Generator>
+    </Page>
+    <Page Include="Views\frmCadastroProjeto.xaml">
       <SubType>Designer</SubType>
       <Generator>MSBuild:Compile</Generator>
     </Page>

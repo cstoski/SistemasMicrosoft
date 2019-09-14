@@ -15,25 +15,13 @@ using System.Windows.Shapes;
 namespace SistemaGeradorOrcamento.Views
 {
     /// <summary>
-    /// Interaction logic for TelaPrincipal.xaml
+    /// Interaction logic for frmCadastroProjeto.xaml
     /// </summary>
-    public partial class TelaPrincipal : Window
+    public partial class frmCadastroProjeto : Window
     {
-        public TelaPrincipal()
+        public frmCadastroProjeto()
         {
             InitializeComponent();
-        }
-
-        private void MenuItem_Click(object sender, RoutedEventArgs e)
-        {
-            frmCadastroCliente c = new frmCadastroCliente();
-            c.ShowDialog();
-        }
-
-        private void MenuItem_Click_Projetos(object sender, RoutedEventArgs e)
-        {
-            frmCadastroProjeto p = new frmCadastroProjeto();
-            p.ShowDialog();
         }
     }
 }
