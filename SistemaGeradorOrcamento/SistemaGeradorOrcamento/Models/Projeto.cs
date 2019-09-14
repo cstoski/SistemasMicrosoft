@@ -24,15 +24,17 @@ namespace SistemaGeradorOrcamento.Models
         public String NumeroProjeto { get; set; }
         public String NomeProjeto { get; set; }
         public String Cliente { get; set; }
-        public enum status
-        {
-          [Description("Em Execução")] emExecucao,
-          [Description("Aguardando Documentação")] aguardadoDocumentacao,
-          [Description("Enviado ao Cliente")] enviadoAoCliente,
-          [Description("Fechado")] fechado,
-          [Description("Suspenso")] suspenso,
-          [Description("Cancelado")] cancelado
-        }
+        public String Status { get; set; }
+        
+        //public enum status
+        //{
+        //    [Description("Em Execução")] emExecucao,
+        //    [Description("Aguardando Documentação")] aguardadoDocumentacao,
+        //    [Description("Enviado ao Cliente")] enviadoAoCliente,
+        //    [Description("Fechado")] fechado,
+        //    [Description("Suspenso")] suspenso,
+        //    [Description("Cancelado")] cancelado
+        //}
         //public List<Orcamento> listaOrcamento { get; set; }
 
     }

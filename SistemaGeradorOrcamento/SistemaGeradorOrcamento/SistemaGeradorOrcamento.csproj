@@ -77,6 +77,10 @@
     <Compile Include="Migrations\201909141503123_Update Classe Cliente-Projeto.Designer.cs">
       <DependentUpon>201909141503123_Update Classe Cliente-Projeto.cs</DependentUpon>
     </Compile>
+    <Compile Include="Migrations\201909141939578_Alteracao Classe projeto.cs" />
+    <Compile Include="Migrations\201909141939578_Alteracao Classe projeto.Designer.cs">
+      <DependentUpon>201909141939578_Alteracao Classe projeto.cs</DependentUpon>
+    </Compile>
     <Compile Include="Migrations\Configuration.cs" />
     <Compile Include="Models\Cliente.cs" />
     <Compile Include="Models\Context.cs" />
@@ -110,6 +114,9 @@
     </EmbeddedResource>
     <EmbeddedResource Include="Migrations\201909141503123_Update Classe Cliente-Projeto.resx">
       <DependentUpon>201909141503123_Update Classe Cliente-Projeto.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Migrations\201909141939578_Alteracao Classe projeto.resx">
+      <DependentUpon>201909141939578_Alteracao Classe projeto.cs</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="Properties\Resources.resx">
       <Generator>ResXFileCodeGenerator</Generator>

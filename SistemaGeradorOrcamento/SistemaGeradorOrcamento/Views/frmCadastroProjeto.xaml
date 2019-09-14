@@ -12,20 +12,21 @@
         <Label Content="Nome do Projeto:" HorizontalAlignment="Left" Margin="26,52,0,0" VerticalAlignment="Top"/>
         <Label Content="Cliente:" HorizontalAlignment="Left" Margin="26,84,0,0" VerticalAlignment="Top" RenderTransformOrigin="0.366,0.236"/>
         <Label Content="Status:" HorizontalAlignment="Left" Margin="248,22,0,0" VerticalAlignment="Top" RenderTransformOrigin="0.161,0.692"/>
-        <TextBox x:Name="t" HorizontalAlignment="Left" Height="24" Margin="87,24,0,0" TextWrapping="Wrap" Text="" VerticalAlignment="Top" Width="120"/>
-        <TextBox HorizontalAlignment="Left" Height="24" Margin="135,56,0,0" TextWrapping="Wrap" Text="" VerticalAlignment="Top" Width="390"/>
-        <ComboBox HorizontalAlignment="Left" Margin="298,26,0,0" VerticalAlignment="Top" Width="227">
+        <TextBox x:Name="txtNumero" HorizontalAlignment="Left" Height="24" Margin="87,24,0,0" TextWrapping="Wrap" Text="" VerticalAlignment="Top" Width="120" TabIndex="0"/>
+        <TextBox x:Name="txtProjeto" HorizontalAlignment="Left" Height="24" Margin="135,56,0,0" TextWrapping="Wrap" Text="" VerticalAlignment="Top" Width="390" TabIndex="2"/>
+        <ComboBox x:Name="cmbStatus" HorizontalAlignment="Left" Margin="298,26,0,0" VerticalAlignment="Top" Width="227" TabIndex="1">
             <ComboBoxItem Content="Emissão Inicial" HorizontalAlignment="Left" Width="225"/>
             <ComboBoxItem Content="Aguardando Aprovação Cliente" HorizontalAlignment="Left" Width="225"/>
             <ComboBoxItem Content="Cancelado" HorizontalAlignment="Left" Width="225"/>
             <ComboBoxItem Content="Fechado" HorizontalAlignment="Left" Width="225"/>
             
         </ComboBox>
-        <ComboBox HorizontalAlignment="Left" Margin="87,88,0,0" VerticalAlignment="Top" Width="438"/>
-        <Button Content="Adicionar" HorizontalAlignment="Left" Margin="450,127,0,0" VerticalAlignment="Top" Width="75"/>
-        <Button Content="Editar" HorizontalAlignment="Left" Margin="361,127,0,0" VerticalAlignment="Top" Width="75"/>
-        <DataGrid HorizontalAlignment="Left" Height="146" Margin="42,184,0,0" VerticalAlignment="Top" Width="467"/>
-        <Button Content="Adicionar" HorizontalAlignment="Left" Margin="434,335,0,0" VerticalAlignment="Top" Width="75"/>
+        <ComboBox x:Name="cmbCliente" HorizontalAlignment="Left" Margin="87,88,0,0" VerticalAlignment="Top" Width="438" TabIndex="3"/>
+        <Button x:Name="btnAdicionarProjeto" Content="Adicionar" HorizontalAlignment="Left" Margin="450,127,0,0" VerticalAlignment="Top" Width="75" Click="BtnAdicionarProjeto_Click" TabIndex="4"/>
+        <Button x:Name="btnEditarProjeto" Content="Editar" HorizontalAlignment="Left" Margin="268,127,0,0" VerticalAlignment="Top" Width="75" TabIndex="6"/>
+        <DataGrid x:Name="dgListaOrcamento" HorizontalAlignment="Left" Height="146" Margin="42,184,0,0" VerticalAlignment="Top" Width="467" TabIndex="7"/>
+        <Button x:Name="btnAdicionarOrcamento" Content="Adicionar" HorizontalAlignment="Left" Margin="434,335,0,0" VerticalAlignment="Top" Width="75" TabIndex="8"/>
+        <Button x:Name="btnBuscarOrcamento" Content="Buscar" HorizontalAlignment="Left" Margin="359,127,0,0" VerticalAlignment="Top" Width="75" TabIndex="5"/>
 
     </Grid>
 </Window>
