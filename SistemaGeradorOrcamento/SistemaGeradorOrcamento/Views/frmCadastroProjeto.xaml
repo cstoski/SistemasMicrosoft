@@ -5,7 +5,7 @@
         xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
         xmlns:local="clr-namespace:SistemaGeradorOrcamento.Views"
         mc:Ignorable="d"
-        Title="Cadastro de Projetos" Height="412" Width="644">
+        Title="Cadastro de Projetos" Height="412" Width="644" WindowStartupLocation="CenterScreen">
     <Grid>
         <GroupBox Header="Orçamentos" HorizontalAlignment="Left" Height="218" Margin="22,146,0,0" VerticalAlignment="Top" Width="600"/>
         <Label Content="Número:" HorizontalAlignment="Left" Margin="26,22,0,0" VerticalAlignment="Top"/>

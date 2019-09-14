@@ -67,8 +67,11 @@
       <SubType>Code</SubType>
     </Compile>
     <Compile Include="DAL\ClienteDao.cs" />
+    <Compile Include="DAL\MaterialDao.cs" />
     <Compile Include="DAL\ProjetoDao.cs" />
+    <Compile Include="DAL\ServicoDao.cs" />
     <Compile Include="DAL\SingletonContext.cs" />
+    <Compile Include="DAL\UsuarioDao.cs" />
     <Compile Include="Migrations\201909141401185_Inicial.cs" />
     <Compile Include="Migrations\201909141401185_Inicial.Designer.cs">
       <DependentUpon>201909141401185_Inicial.cs</DependentUpon>
@@ -96,6 +99,9 @@
     </Compile>
     <Compile Include="Views\frmCadastroProjeto.xaml.cs">
       <DependentUpon>frmCadastroProjeto.xaml</DependentUpon>
+    </Compile>
+    <Compile Include="Views\frmCadastroUsuario.xaml.cs">
+      <DependentUpon>frmCadastroUsuario.xaml</DependentUpon>
     </Compile>
     <Compile Include="Views\TelaPrincipal.xaml.cs">
       <DependentUpon>TelaPrincipal.xaml</DependentUpon>
@@ -150,6 +156,10 @@
       <Generator>MSBuild:Compile</Generator>
     </Page>
     <Page Include="Views\frmCadastroProjeto.xaml">
+      <SubType>Designer</SubType>
+      <Generator>MSBuild:Compile</Generator>
+    </Page>
+    <Page Include="Views\frmCadastroUsuario.xaml">
       <SubType>Designer</SubType>
       <Generator>MSBuild:Compile</Generator>
     </Page>

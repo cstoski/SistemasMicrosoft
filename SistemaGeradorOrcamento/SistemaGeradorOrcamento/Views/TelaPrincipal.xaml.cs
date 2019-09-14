@@ -26,14 +26,20 @@ namespace SistemaGeradorOrcamento.Views
 
         private void MenuItem_Click(object sender, RoutedEventArgs e)
         {
-            frmCadastroCliente c = new frmCadastroCliente();
-            c.ShowDialog();
+            frmCadastroCliente frmCliente = new frmCadastroCliente();
+            frmCliente.ShowDialog();
         }
 
         private void MenuItem_Click_Projetos(object sender, RoutedEventArgs e)
         {
-            frmCadastroProjeto p = new frmCadastroProjeto();
-            p.ShowDialog();
+            frmCadastroProjeto frmProjeto = new frmCadastroProjeto();
+            frmProjeto.ShowDialog();
+        }
+
+        private void MenuItem_Click_Usuarios(object sender, RoutedEventArgs e)
+        {
+            frmCadastroUsuario frmUsuario = new frmCadastroUsuario();
+            frmUsuario.ShowDialog();
         }
     }
 }

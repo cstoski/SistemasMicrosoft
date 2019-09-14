@@ -1,0 +1,28 @@
+﻿<Window x:Name="frmCadastroUsuario1" x:Class="SistemaGeradorOrcamento.Views.frmCadastroUsuario"
+        xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+        xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+        xmlns:d="http://schemas.microsoft.com/expression/blend/2008"
+        xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
+        xmlns:local="clr-namespace:SistemaGeradorOrcamento.Views"
+        mc:Ignorable="d"
+        Title="Cadastro de Usuários" Height="232.809" Width="740.957" WindowStartupLocation="CenterScreen">
+    <Grid>
+        <Label Content="Nome: " HorizontalAlignment="Left" Margin="10,19,0,0" VerticalAlignment="Top" Width="89"/>
+        <Label Content="Matrícula: " HorizontalAlignment="Left" Margin="405,19,0,0" VerticalAlignment="Top"/>
+        <Label Content="Departamento:" HorizontalAlignment="Left" Margin="10,49,0,0" VerticalAlignment="Top"/>
+        <Label Content="E-Mail:" HorizontalAlignment="Left" Margin="10,80,0,0" VerticalAlignment="Top" Width="89"/>
+        <Label Content="Senha:" HorizontalAlignment="Left" Margin="10,113,0,0" VerticalAlignment="Top" Width="89" RenderTransformOrigin="0.472,0.077"/>
+        <Label Content="Repetir Senha: " HorizontalAlignment="Left" Margin="10,144,0,0" VerticalAlignment="Top" RenderTransformOrigin="0.483,0.423"/>
+        <TextBox x:Name="txtNome" HorizontalAlignment="Left" Height="23" Margin="104,21,0,0" TextWrapping="Wrap" Text="" VerticalAlignment="Top" Width="296" TabIndex="0"/>
+        <TextBox x:Name="txtDepartamento" HorizontalAlignment="Left" Height="23" Margin="104,52,0,0" TextWrapping="Wrap" Text="" VerticalAlignment="Top" Width="296" TabIndex="2"/>
+        <TextBox x:Name="txtMatricula" HorizontalAlignment="Left" Height="23" Margin="475,21,0,0" TextWrapping="Wrap" Text="" VerticalAlignment="Top" Width="248" TabIndex="1"/>
+        <TextBox x:Name="txtEmail" HorizontalAlignment="Left" Height="23" Margin="104,83,0,0" TextWrapping="Wrap" Text="" VerticalAlignment="Top" Width="296" TabIndex="4"/>
+        <PasswordBox x:Name="psbSenha1" HorizontalAlignment="Left" Height="23" Margin="104,114,0,0" VerticalAlignment="Top" Width="296" TabIndex="5"/>
+        <PasswordBox x:Name="psbSenha2" HorizontalAlignment="Left" Height="23" Margin="104,146,0,0" VerticalAlignment="Top" Width="296" TabIndex="6"/>
+        <Button x:Name="btnCadastrar" Content="Novo" HorizontalAlignment="Left" Margin="594,68,0,0" VerticalAlignment="Top" Width="129" TabIndex="7" Click="BtnCadastrar_Click"/>
+        <Button x:Name="btnEditar" Content="Editar" HorizontalAlignment="Left" Margin="594,93,0,0" VerticalAlignment="Top" Width="129" TabIndex="8"/>
+        <Button x:Name="btnBuscar" Content="Buscar" HorizontalAlignment="Left" Margin="594,118,0,0" VerticalAlignment="Top" Width="129" TabIndex="9"/>
+        <Button x:Name="btnExcluir" Content="Excluir" HorizontalAlignment="Left" Margin="594,143,0,0" VerticalAlignment="Top" Width="129" TabIndex="10"/>
+
+    </Grid>
+</Window>
