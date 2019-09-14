@@ -81,9 +81,16 @@
     <Compile Include="Migrations\201909141939578_Alteracao Classe projeto.Designer.cs">
       <DependentUpon>201909141939578_Alteracao Classe projeto.cs</DependentUpon>
     </Compile>
+    <Compile Include="Migrations\201909142048078_Inlusao Classesc.cs" />
+    <Compile Include="Migrations\201909142048078_Inlusao Classesc.Designer.cs">
+      <DependentUpon>201909142048078_Inlusao Classesc.cs</DependentUpon>
+    </Compile>
     <Compile Include="Migrations\Configuration.cs" />
     <Compile Include="Models\Cliente.cs" />
     <Compile Include="Models\Context.cs" />
+    <Compile Include="Models\Material.cs" />
+    <Compile Include="Models\Servico.cs" />
+    <Compile Include="Models\Usuario.cs" />
     <Compile Include="Views\frmCadastroCliente.xaml.cs">
       <DependentUpon>frmCadastroCliente.xaml</DependentUpon>
     </Compile>
@@ -117,6 +124,9 @@
     </EmbeddedResource>
     <EmbeddedResource Include="Migrations\201909141939578_Alteracao Classe projeto.resx">
       <DependentUpon>201909141939578_Alteracao Classe projeto.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Migrations\201909142048078_Inlusao Classesc.resx">
+      <DependentUpon>201909142048078_Inlusao Classesc.cs</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="Properties\Resources.resx">
       <Generator>ResXFileCodeGenerator</Generator>

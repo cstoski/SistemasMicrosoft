@@ -8,21 +8,21 @@ using System.Threading.Tasks;
 
 namespace SistemaGeradorOrcamento.Models
 {
-    
-    [Table("Clientes")]
-    class Cliente
+
+    [Table("Servicos")]
+    class Servico
     {
-        public Cliente()
+        public Servico()
         {
             CriadoEm = DateTime.Now;
         }
 
         [Key] //Define chave primária 
-        public int ClienteId { get; set; }
+        public int ServicolId { get; set; }
         public DateTime CriadoEm { get; set; }
-        public String NomeCliente { get; set; }
-        public String Contato { get; set; }
-        public String Telefone { get; set; }
-
+        public String Nome { get; set; }
+        public String Descricao { get; set; }
+        public double Valor { get; set; }
+        public String Tipo { get; set; }
     }
 }
