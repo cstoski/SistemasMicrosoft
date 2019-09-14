@@ -67,6 +67,7 @@
       <SubType>Code</SubType>
     </Compile>
     <Compile Include="DAL\ClienteDao.cs" />
+    <Compile Include="DAL\ProjetoDao.cs" />
     <Compile Include="DAL\SingletonContext.cs" />
     <Compile Include="Migrations\201909141401185_Inicial.cs" />
     <Compile Include="Migrations\201909141401185_Inicial.Designer.cs">
