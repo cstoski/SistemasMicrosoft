@@ -1,0 +1,39 @@
+﻿-- Anotações sobre o entiti framework Code First --
+
+1- Instalar o EF no projeto
+	-- Install-Package EntityFramework
+
+2- Criar as Classes Modelo
+
+3- Criar a Classe "context"
+	- representa o EF;
+	- Representa o BD;
+	- Define as classes que vão virar tabelas no banco
+	-Definir as Classes que serão tabelas no banco
+
+4- Habilitar as Migrações
+	-Enable-Migrations
+
+5- Adicionar uma Migração
+	-Add-Migration
+
+6- Atualizar o Banco de dados
+	-update-Database -verbose
+
+7- Desinstalar o EntityFramework
+	-- Unistall-Package EntityFramework
+
+
+--VISUALIZAR O BANCO DE DADOS--
+	1- View/Sql Server Object Explorer
+
+--LOcalização do Banco de Dados--
+	c://Users
+
+--.any() retorna um bool que indica se há produtos na tabela
+
+--.count() retorna a quantidade de registros no Banco
+
+
+
+

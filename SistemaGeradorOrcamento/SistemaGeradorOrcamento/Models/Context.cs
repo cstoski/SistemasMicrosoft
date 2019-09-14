@@ -1,12 +1,6 @@
-﻿using SistemaGeradorOrcamento.Models;
-using System;
-using System.Collections.Generic;
-using System.Data.Entity;
-using System.Linq;
-using System.Text;
-using System.Threading.Tasks;
+﻿using System.Data.Entity;
 
-namespace WPFVendas.Model
+namespace SistemaGeradorOrcamento.Models
 {
     class Context : DbContext
     {

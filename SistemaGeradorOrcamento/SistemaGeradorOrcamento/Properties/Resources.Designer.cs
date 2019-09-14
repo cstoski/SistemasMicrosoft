@@ -8,7 +8,7 @@
 // </auto-generated>
 //------------------------------------------------------------------------------
 
-namespace SistemaGeradorOrcamento.Properties
+namespace WPFVendas.Properties
 {
 
 
