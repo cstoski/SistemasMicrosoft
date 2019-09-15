@@ -31,6 +31,7 @@ namespace SistemaGeradorOrcamento.Views
             txtNome.Clear();
             txtDescricao.Clear();
             txtValor.Clear();
+            cmbTipoServico.Items.Clear();
 
             txtNome.Focus();
         }
