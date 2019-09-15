@@ -95,7 +95,10 @@
     <Compile Include="Migrations\Configuration.cs" />
     <Compile Include="Models\Cliente.cs" />
     <Compile Include="Models\Context.cs" />
+    <Compile Include="Models\ItensMaterial.cs" />
+    <Compile Include="Models\ItensServico.cs" />
     <Compile Include="Models\Material.cs" />
+    <Compile Include="Models\Orcamento.cs" />
     <Compile Include="Models\Servico.cs" />
     <Compile Include="Models\Usuario.cs" />
     <Compile Include="Views\frmCadastroCliente.xaml.cs">

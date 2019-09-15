@@ -13,7 +13,7 @@
         <TextBox x:Name="txtNome" HorizontalAlignment="Left" Height="23" Margin="127,14,0,0" TextWrapping="Wrap" VerticalAlignment="Top" Width="376" TabIndex="0"/>
         <TextBox x:Name="txtContato" HorizontalAlignment="Left" Height="23" Margin="127,40,0,0" TextWrapping="Wrap" VerticalAlignment="Top" Width="376" TabIndex="1"/>
         <TextBox x:Name="txtTelefone" HorizontalAlignment="Left" Height="23" Margin="127,66,0,0" TextWrapping="Wrap" VerticalAlignment="Top" Width="376" TabIndex="2"/>
-        <Button x:Name="btnCadastrar" Content="Cadastrar" HorizontalAlignment="Left" Margin="428,108,0,0" VerticalAlignment="Top" Width="75" Click="BtnCadastrar_Click"/>
+        <Button x:Name="btnCadastrar" Content="Cadastrar" HorizontalAlignment="Left" Margin="428,108,0,0" VerticalAlignment="Top" Width="75" Height="24" Click="BtnCadastrar_Click"/>
         <DataGrid HorizontalAlignment="Left" Height="103" Margin="10,145,0,0" VerticalAlignment="Top" Width="493"/>
 
     </Grid>

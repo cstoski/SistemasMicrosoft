@@ -5,7 +5,7 @@
         xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
         xmlns:local="clr-namespace:SistemaGeradorOrcamento.Views"
         mc:Ignorable="d"
-        Title="Cadastro de Usuários" Height="232.809" Width="740.957" WindowStartupLocation="CenterScreen">
+        Title="Cadastro de Usuários" Height="251.809" Width="740.957" WindowStartupLocation="CenterScreen">
     <Grid>
         <Label Content="Nome: " HorizontalAlignment="Left" Margin="10,19,0,0" VerticalAlignment="Top" Width="89"/>
         <Label Content="Matrícula: " HorizontalAlignment="Left" Margin="405,19,0,0" VerticalAlignment="Top"/>
@@ -19,10 +19,10 @@
         <TextBox x:Name="txtEmail" HorizontalAlignment="Left" Height="23" Margin="104,83,0,0" TextWrapping="Wrap" Text="" VerticalAlignment="Top" Width="296" TabIndex="4"/>
         <PasswordBox x:Name="psbSenha1" HorizontalAlignment="Left" Height="23" Margin="104,114,0,0" VerticalAlignment="Top" Width="296" TabIndex="5"/>
         <PasswordBox x:Name="psbSenha2" HorizontalAlignment="Left" Height="23" Margin="104,146,0,0" VerticalAlignment="Top" Width="296" TabIndex="6"/>
-        <Button x:Name="btnCadastrar" Content="Novo" HorizontalAlignment="Left" Margin="594,68,0,0" VerticalAlignment="Top" Width="129" TabIndex="7" Click="BtnCadastrar_Click"/>
-        <Button x:Name="btnEditar" Content="Editar" HorizontalAlignment="Left" Margin="594,93,0,0" VerticalAlignment="Top" Width="129" TabIndex="8"/>
-        <Button x:Name="btnBuscar" Content="Buscar" HorizontalAlignment="Left" Margin="594,118,0,0" VerticalAlignment="Top" Width="129" TabIndex="9"/>
-        <Button x:Name="btnExcluir" Content="Excluir" HorizontalAlignment="Left" Margin="594,143,0,0" VerticalAlignment="Top" Width="129" TabIndex="10"/>
+        <Button x:Name="btnCadastrar" Content="Novo" HorizontalAlignment="Left" Margin="594,81,0,0" VerticalAlignment="Top" Width="129" Height="24" TabIndex="7" Click="BtnCadastrar_Click"/>
+        <Button x:Name="btnEditar" Content="Editar" HorizontalAlignment="Left" Margin="594,110,0,0" VerticalAlignment="Top" Width="129" Height="24" TabIndex="8"/>
+        <Button x:Name="btnBuscar" Content="Buscar" HorizontalAlignment="Left" Margin="594,139,0,0" VerticalAlignment="Top" Width="129" Height="24" TabIndex="9"/>
+        <Button x:Name="btnExcluir" Content="Excluir" HorizontalAlignment="Left" Margin="594,168,0,0" VerticalAlignment="Top" Width="129" Height="24" TabIndex="10"/>
 
     </Grid>
 </Window>

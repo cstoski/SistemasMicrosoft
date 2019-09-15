@@ -8,25 +8,25 @@
         Title="Cadastro de Projetos" Height="412" Width="644" WindowStartupLocation="CenterScreen">
     <Grid>
         <GroupBox Header="Orçamentos" HorizontalAlignment="Left" Height="218" Margin="22,146,0,0" VerticalAlignment="Top" Width="600"/>
-        <Label Content="Número:" HorizontalAlignment="Left" Margin="26,22,0,0" VerticalAlignment="Top"/>
-        <Label Content="Nome do Projeto:" HorizontalAlignment="Left" Margin="26,52,0,0" VerticalAlignment="Top"/>
-        <Label Content="Cliente:" HorizontalAlignment="Left" Margin="26,84,0,0" VerticalAlignment="Top" RenderTransformOrigin="0.366,0.236"/>
-        <Label Content="Status:" HorizontalAlignment="Left" Margin="342,26,0,0" VerticalAlignment="Top" RenderTransformOrigin="0.161,0.692"/>
-        <TextBox x:Name="txtNumero" HorizontalAlignment="Left" Height="24" Margin="87,24,0,0" TextWrapping="Wrap" Text="" VerticalAlignment="Top" Width="120" TabIndex="0"/>
+        <Label Content="Número:" HorizontalAlignment="Left" Margin="26,22,0,0" VerticalAlignment="Top" Width="104"/>
+        <Label Content="Nome do Projeto:" HorizontalAlignment="Left" Margin="26,56,0,0" VerticalAlignment="Top"/>
+        <Label Content="Cliente:" HorizontalAlignment="Left" Margin="26,84,0,0" VerticalAlignment="Top" RenderTransformOrigin="0.366,0.236" Width="104"/>
+        <Label Content="Status:" HorizontalAlignment="Left" Margin="341,22,0,0" VerticalAlignment="Top" RenderTransformOrigin="0.161,0.692"/>
+        <TextBox x:Name="txtNumero" HorizontalAlignment="Left" Height="24" Margin="135,22,0,0" TextWrapping="Wrap" Text="" VerticalAlignment="Top" Width="120" TabIndex="0"/>
         <TextBox x:Name="txtProjeto" HorizontalAlignment="Left" Height="24" Margin="135,56,0,0" TextWrapping="Wrap" Text="" VerticalAlignment="Top" Width="483" TabIndex="2"/>
-        <ComboBox x:Name="cmbStatus" HorizontalAlignment="Left" Margin="392,26,0,0" VerticalAlignment="Top" Width="227" TabIndex="1">
+        <ComboBox x:Name="cmbStatus" HorizontalAlignment="Left" Margin="391,22,0,0" VerticalAlignment="Top" Width="227" Height="24" TabIndex="1">
             <ComboBoxItem Content="Emissão Inicial" HorizontalAlignment="Left" Width="225"/>
             <ComboBoxItem Content="Aguardando Aprovação Cliente" HorizontalAlignment="Left" Width="225"/>
             <ComboBoxItem Content="Cancelado" HorizontalAlignment="Left" Width="225"/>
             <ComboBoxItem Content="Fechado" HorizontalAlignment="Left" Width="225"/>
 
         </ComboBox>
-        <ComboBox x:Name="cmbCliente" HorizontalAlignment="Left" Margin="87,88,0,0" VerticalAlignment="Top" Width="531" TabIndex="3"/>
-        <Button x:Name="btnAdicionarProjeto" Content="Adicionar" HorizontalAlignment="Left" Margin="543,115,0,0" VerticalAlignment="Top" Width="75" Click="BtnAdicionarProjeto_Click" TabIndex="4"/>
-        <Button x:Name="btnEditarProjeto" Content="Editar" HorizontalAlignment="Left" Margin="361,115,0,0" VerticalAlignment="Top" Width="75" TabIndex="6"/>
+        <ComboBox x:Name="cmbCliente" HorizontalAlignment="Left" Height="24" Margin="136,85,0,0" VerticalAlignment="Top" Width="483" TabIndex="3"/>
+        <Button x:Name="btnAdicionarProjeto" Content="Adicionar" HorizontalAlignment="Left" Margin="543,115,0,0" VerticalAlignment="Top" Width="75" Height="24" Click="BtnAdicionarProjeto_Click" TabIndex="4"/>
+        <Button x:Name="btnEditarProjeto" Content="Editar" HorizontalAlignment="Left" Margin="361,115,0,0" VerticalAlignment="Top" Width="75" Height="24" TabIndex="6"/>
         <DataGrid x:Name="dgListaOrcamento" HorizontalAlignment="Left" Height="146" Margin="38,173,0,0" VerticalAlignment="Top" Width="568" TabIndex="7"/>
-        <Button x:Name="btnAdicionarOrcamento" Content="Adicionar" HorizontalAlignment="Left" Margin="531,324,0,0" VerticalAlignment="Top" Width="75" TabIndex="8"/>
-        <Button x:Name="btnBuscarOrcamento" Content="Buscar" HorizontalAlignment="Left" Margin="452,115,0,0" VerticalAlignment="Top" Width="75" TabIndex="5"/>
+        <Button x:Name="btnAdicionarOrcamento" Content="Adicionar" HorizontalAlignment="Left" Margin="531,324,0,0" VerticalAlignment="Top" Width="75" Height="24" TabIndex="8"/>
+        <Button x:Name="btnBuscarOrcamento" Content="Buscar" HorizontalAlignment="Left" Margin="452,115,0,0" VerticalAlignment="Top" Width="75" Height="24" TabIndex="5"/>
 
     </Grid>
 </Window>

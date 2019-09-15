@@ -13,10 +13,10 @@
         <TextBox x:Name="txtNome" HorizontalAlignment="Left" Height="23" Margin="118,18,0,0" TextWrapping="Wrap" Text="" VerticalAlignment="Top" Width="392" TabIndex="1"/>
         <TextBox x:Name="txtDescricao" HorizontalAlignment="Left" Height="23" Margin="118,49,0,0" TextWrapping="Wrap" Text="" VerticalAlignment="Top" Width="392" TabIndex="2"/>
         <TextBox x:Name="txtValor" HorizontalAlignment="Left" Height="23" Margin="118,106,0,0" TextWrapping="Wrap" Text="" VerticalAlignment="Top" Width="392" TabIndex="4"/>
-        <Button x:Name="btnCadastrar" Content="Novo" HorizontalAlignment="Left" Margin="530,13,0,0" VerticalAlignment="Top" Width="129" TabIndex="5" Click="BtnCadastrar_Click"/>
-        <Button x:Name="btnEditar" Content="Editar" HorizontalAlignment="Left" Margin="530,38,0,0" VerticalAlignment="Top" Width="129" TabIndex="6"/>
-        <Button x:Name="btnBuscar" Content="Buscar" HorizontalAlignment="Left" Margin="530,63,0,0" VerticalAlignment="Top" Width="129" TabIndex="7"/>
-        <Button x:Name="btnExcluir" Content="Excluir" HorizontalAlignment="Left" Margin="530,88,0,0" VerticalAlignment="Top" Width="129" TabIndex="8"/>
+        <Button x:Name="btnCadastrar" Content="Novo" HorizontalAlignment="Left" Margin="530,18,0,0" VerticalAlignment="Top" Width="129" Height="24" TabIndex="5" Click="BtnCadastrar_Click"/>
+        <Button x:Name="btnEditar" Content="Editar" HorizontalAlignment="Left" Margin="530,47,0,0" VerticalAlignment="Top" Width="129" Height="24" TabIndex="6"/>
+        <Button x:Name="btnBuscar" Content="Buscar" HorizontalAlignment="Left" Margin="530,76,0,0" VerticalAlignment="Top" Width="129" Height="24" TabIndex="7"/>
+        <Button x:Name="btnExcluir" Content="Excluir" HorizontalAlignment="Left" Margin="530,105,0,0" VerticalAlignment="Top" Width="129" Height="24" TabIndex="8"/>
         <Label Content="Tipo do Serviço: " HorizontalAlignment="Left" Margin="10,77,0,0" VerticalAlignment="Top" Width="103"/>
         <ComboBox x:Name="cmbTipoServico" HorizontalAlignment="Left" Margin="118,77,0,0" VerticalAlignment="Top" Width="392" TabIndex="3">
             <ComboBoxItem Content="Documentação" HorizontalAlignment="Left" Width="390"/>
