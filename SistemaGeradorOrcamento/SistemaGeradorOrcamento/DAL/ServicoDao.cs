@@ -7,7 +7,7 @@ using System.Threading.Tasks;
 
 namespace SistemaGeradorOrcamento.DAL
 {
-    class ServicoDA
+    class ServicoDao
     {
         private static Context ctx = new Context();
 

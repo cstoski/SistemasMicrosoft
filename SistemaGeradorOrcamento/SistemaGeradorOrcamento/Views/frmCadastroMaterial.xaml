@@ -1,0 +1,26 @@
+﻿<Window x:Name="frmCadastroMaterial1" x:Class="SistemaGeradorOrcamento.Views.frmCadastroMaterial"
+        xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+        xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+        xmlns:d="http://schemas.microsoft.com/expression/blend/2008"
+        xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
+        xmlns:local="clr-namespace:SistemaGeradorOrcamento.Views"
+        mc:Ignorable="d"
+        Title="Cadastro de Materiais" Height="214.557" Width="681.494" WindowStartupLocation="CenterScreen">
+    <Grid>
+        <Label Content="Código: " HorizontalAlignment="Left" Margin="27,10,0,0" VerticalAlignment="Top" Width="67"/>
+        <Label Content="Nome:" HorizontalAlignment="Left" Margin="27,41,0,0" VerticalAlignment="Top" RenderTransformOrigin="0.499,0.513" Width="67"/>
+        <Label Content="Descrição:" HorizontalAlignment="Left" Margin="27,72,0,0" VerticalAlignment="Top" Width="67"/>
+        <Label Content="Fabricante:" HorizontalAlignment="Left" Margin="27,103,0,0" VerticalAlignment="Top" RenderTransformOrigin="0.311,0.55"/>
+        <Label Content="Valor: " HorizontalAlignment="Left" Margin="27,134,0,0" VerticalAlignment="Top" Width="67"/>
+        <TextBox x:Name="txtCodigo" HorizontalAlignment="Left" Height="23" Margin="99,14,0,0" TextWrapping="Wrap" Text="" VerticalAlignment="Top" Width="392" TabIndex="0"/>
+        <TextBox x:Name="txtNome" HorizontalAlignment="Left" Height="23" Margin="99,44,0,0" TextWrapping="Wrap" Text="" VerticalAlignment="Top" Width="392" TabIndex="1"/>
+        <TextBox x:Name="txtDescricao" HorizontalAlignment="Left" Height="23" Margin="99,75,0,0" TextWrapping="Wrap" Text="" VerticalAlignment="Top" Width="392" TabIndex="2"/>
+        <TextBox x:Name="txtFabricante" HorizontalAlignment="Left" Height="23" Margin="99,106,0,0" TextWrapping="Wrap" Text="" VerticalAlignment="Top" Width="392" TabIndex="3"/>
+        <TextBox x:Name="txtValor" HorizontalAlignment="Left" Height="23" Margin="99,134,0,0" TextWrapping="Wrap" Text="" VerticalAlignment="Top" Width="392" TabIndex="4"/>
+        <Button x:Name="btnCadastrar" Content="Novo" HorizontalAlignment="Left" Margin="521,16,0,0" VerticalAlignment="Top" Width="129" TabIndex="5" Click="BtnCadastrar_Click"/>
+        <Button x:Name="btnEditar" Content="Editar" HorizontalAlignment="Left" Margin="521,41,0,0" VerticalAlignment="Top" Width="129" TabIndex="6"/>
+        <Button x:Name="btnBuscar" Content="Buscar" HorizontalAlignment="Left" Margin="521,66,0,0" VerticalAlignment="Top" Width="129" TabIndex="7"/>
+        <Button x:Name="btnExcluir" Content="Excluir" HorizontalAlignment="Left" Margin="521,91,0,0" VerticalAlignment="Top" Width="129" TabIndex="8"/>
+
+    </Grid>
+</Window>

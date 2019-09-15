@@ -24,6 +24,6 @@ namespace SistemaGeradorOrcamento.Models
         public String Descricao { get; set; }
         public String Fabricante { get; set; }
         public double Valor { get; set; }
-        public Int32 Quantidade{ get; set; }
+        
     }
 }

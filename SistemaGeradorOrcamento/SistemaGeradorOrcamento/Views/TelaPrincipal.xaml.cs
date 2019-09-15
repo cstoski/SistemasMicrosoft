@@ -41,5 +41,17 @@ namespace SistemaGeradorOrcamento.Views
             frmCadastroUsuario frmUsuario = new frmCadastroUsuario();
             frmUsuario.ShowDialog();
         }
+
+        private void MenuItem_Click_Materiais(object sender, RoutedEventArgs e)
+        {
+            frmCadastroMaterial frmMaterial = new frmCadastroMaterial();
+            frmMaterial.ShowDialog();
+        }
+
+        private void MenuItem_Click_Servicos(object sender, RoutedEventArgs e)
+        {
+            frmCadastroServico frmServico = new frmCadastroServico();
+            frmServico.ShowDialog();
+        }
     }
 }
