@@ -20,9 +20,9 @@
         <PasswordBox x:Name="psbSenha1" HorizontalAlignment="Left" Height="23" Margin="104,114,0,0" VerticalAlignment="Top" Width="296" TabIndex="5"/>
         <PasswordBox x:Name="psbSenha2" HorizontalAlignment="Left" Height="23" Margin="104,146,0,0" VerticalAlignment="Top" Width="296" TabIndex="6"/>
         <Button x:Name="btnCadastrar" Content="Novo" HorizontalAlignment="Left" Margin="594,81,0,0" VerticalAlignment="Top" Width="129" Height="24" TabIndex="7" Click="BtnCadastrar_Click"/>
-        <Button x:Name="btnEditar" Content="Editar" HorizontalAlignment="Left" Margin="594,110,0,0" VerticalAlignment="Top" Width="129" Height="24" TabIndex="8"/>
-        <Button x:Name="btnBuscar" Content="Buscar" HorizontalAlignment="Left" Margin="594,139,0,0" VerticalAlignment="Top" Width="129" Height="24" TabIndex="9"/>
-        <Button x:Name="btnExcluir" Content="Excluir" HorizontalAlignment="Left" Margin="594,168,0,0" VerticalAlignment="Top" Width="129" Height="24" TabIndex="10"/>
+        <Button x:Name="btnEditar" Content="Editar" HorizontalAlignment="Left" Margin="594,110,0,0" VerticalAlignment="Top" Width="129" Height="24" TabIndex="8" Click="BtnEditar_Click" IsEnabled="False"/>
+        <Button x:Name="btnBuscar" Content="Buscar" HorizontalAlignment="Left" Margin="594,139,0,0" VerticalAlignment="Top" Width="129" Height="24" TabIndex="9" Click="BtnBuscar_Click"/>
+        <Button x:Name="btnExcluir" Content="Excluir" HorizontalAlignment="Left" Margin="594,168,0,0" VerticalAlignment="Top" Width="129" Height="24" TabIndex="10" Click="BtnExcluir_Click"/>
 
     </Grid>
 </Window>
