@@ -96,5 +96,10 @@ namespace SistemaGeradorOrcamento.Views
                         MessageBoxImage.Error);
             }
         }
+
+        private void BtnBuscar_Click(object sender, RoutedEventArgs e)
+        {
+
+        }
     }
 }

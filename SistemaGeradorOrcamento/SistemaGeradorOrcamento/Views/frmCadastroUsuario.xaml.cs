@@ -63,7 +63,7 @@ namespace SistemaGeradorOrcamento.Views
 
                     if (UsuarioDao.BuscarUsuarioPorMatricula(u) != null)
                     {
-                        MessageBox.Show("Usuario ja existe na base", "ERROR", MessageBoxButton.OK, MessageBoxImage.Error);
+                        MessageBox.Show("Usuário ja existe na base", "ERROR", MessageBoxButton.OK, MessageBoxImage.Error);
                         LimparFormulario();
                     }
                     else
@@ -125,7 +125,7 @@ namespace SistemaGeradorOrcamento.Views
             }
             else
             {
-                MessageBox.Show("Para realizar a busca, digite a matricula!",
+                MessageBox.Show("Para buscar o usuário, digite a matricula!",
                       "SistemaOrçamento", MessageBoxButton.OK, MessageBoxImage.Error);
             }
         }
