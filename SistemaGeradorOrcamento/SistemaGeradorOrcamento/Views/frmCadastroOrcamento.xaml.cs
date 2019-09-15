@@ -17,6 +17,9 @@ namespace SistemaGeradorOrcamento.Views
         }
 
         private List<dynamic> servicosGrid = new List<dynamic>();
+        double total = 0;
+        double totalGeral = 0;
+        double totalImposto = 0;
 
         private void LimparFormulario()
         {
@@ -81,15 +84,37 @@ namespace SistemaGeradorOrcamento.Views
                 servicosGrid.Add(d);
                 dtaListaServicos.ItemsSource = servicosGrid;
                 dtaListaServicos.Items.Refresh();
-                LimparFormulario();
+                
 
-                   
+                //Calculo Valor Total
+                total += servico.Valor * Convert.ToInt32(txtQuantidadeServico.Text);
+                txtTotalServico.Text = total.ToString("C2");
+
+                //Calculo do Imposto
+                totalImposto += (servico.Valor * Convert.ToInt32(txtQuantidadeServico.Text))*0.10;
+                txtTotalImpostoServico.Text = totalImposto.ToString("C2");
+
+                //Calculo Valor Total
+                totalGeral = total + totalImposto;
+                txtTotalGeralServico.Text = totalGeral.ToString("C2");
+
+                LimparFormulario();
             }
             else
             {
                 MessageBox.Show("Por Favor Preencha todos os campos!",
                         "Cadastro de Serviço");
             }
+        }
+
+        private void BtnBuscarMaterial_Click(object sender, RoutedEventArgs e)
+        {
+
+        }
+
+        private void BtnAdicionarMaterial_Click(object sender, RoutedEventArgs e)
+        {
+
         }
     }
 }
