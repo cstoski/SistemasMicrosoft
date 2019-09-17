@@ -13,7 +13,7 @@ namespace SistemaGeradorOrcamento.DAL
 
         public static bool CadastrarMaterial(Material mat)
         {
-            if (BuscarMaterialPorNome(mat) == null)
+            if (BuscarMaterialPorCodigo(mat) == null)
             {
                 ctx.Materiais.Add(mat);
                 ctx.SaveChanges();
@@ -26,6 +26,12 @@ namespace SistemaGeradorOrcamento.DAL
         {
             return ctx.Materiais.FirstOrDefault
                 (x => x.Nome.Equals(mat.Nome));
+        }
+
+        public static Material BuscarMaterialPorCodigo(Material mat)
+        {
+            return ctx.Materiais.FirstOrDefault
+                (x => x.Codigo.Equals(mat.Codigo));
         }
     }
 }

@@ -4,6 +4,6 @@
              xmlns:local="clr-namespace:SistemaGeradorOrcamento"
              StartupUri="Views/TelaPrincipal.xaml">
     <Application.Resources>
-         
+        
     </Application.Resources>
 </Application>

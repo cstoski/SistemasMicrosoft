@@ -34,20 +34,39 @@ namespace SistemaGeradorOrcamento.Views
             txtFabricante.Clear();
             txtValor.Clear();
 
-            txtNome.Focus();
+            
+            txtCodigo.Focus();
         }
 
         private void BtnCadastrar_Click(object sender, RoutedEventArgs e)
         {
-            Material material = new Material
+            txtCodigo.IsEnabled = true;
+            txtNome.IsEnabled = true;
+            txtDescricao.IsEnabled = true;
+            txtFabricante.IsEnabled = true;
+            txtValor.IsEnabled = true;
+            btnSalvar.Visibility = Visibility.Visible;
+            btnCadastrar.IsEnabled = false;
+            btnEditar.IsEnabled = false;
+            btnExcluir.IsEnabled = false;
+            btnBuscar.IsEnabled = false;
+
+
+        }
+
+        private void BtnSalvar_Click(object sender, RoutedEventArgs e)
+        {
+            if ((!txtCodigo.Text.Equals("")) && (!txtNome.Text.Equals("")) && (!txtFabricante.Text.Equals("")) && (!txtValor.Text.Equals("")))
             {
-                Codigo = txtCodigo.Text,
-                Nome = txtNome.Text,
-                Descricao = txtDescricao.Text,
-                Fabricante = txtFabricante.Text,
-                Valor = Convert.ToDouble(txtValor.Text)
-            };
-             
+                Material material = new Material
+                {
+                    Codigo = txtCodigo.Text,
+                    Nome = txtNome.Text,
+                    Descricao = txtDescricao.Text,
+                    Fabricante = txtFabricante.Text,
+                    Valor = Convert.ToDouble(txtValor.Text)
+                };
+
                 if (MaterialDao.CadastrarMaterial(material))
                 {
                     MessageBox.Show("Material cadastrado com sucesso!",
@@ -58,10 +77,24 @@ namespace SistemaGeradorOrcamento.Views
                 else
                 {
                     MessageBox.Show("Esse Material já existe!",
-                        "SistemaOrcamento", MessageBoxButton.OK,
+                        "Sistema Orcamento", MessageBoxButton.OK,
                         MessageBoxImage.Error);
                 }
-            
+                txtCodigo.IsEnabled = false;
+                txtNome.IsEnabled = false;
+                txtDescricao.IsEnabled = false;
+                txtFabricante.IsEnabled = false;
+                txtValor.IsEnabled = false;
+                btnSalvar.Visibility = Visibility.Collapsed;
+                btnCadastrar.IsEnabled = true;
+                btnBuscar.IsEnabled = true;
+            }
+            else
+            {
+                MessageBox.Show("Por favor preencher todos os campos!",
+                        "Sistema de Orçamento", MessageBoxButton.OK,
+                        MessageBoxImage.Error);
+            }
         }
     }
 }

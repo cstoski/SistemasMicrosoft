@@ -12,15 +12,16 @@
         <Label Content="Descrição:" HorizontalAlignment="Left" Margin="27,72,0,0" VerticalAlignment="Top" Width="67"/>
         <Label Content="Fabricante:" HorizontalAlignment="Left" Margin="27,103,0,0" VerticalAlignment="Top" RenderTransformOrigin="0.311,0.55"/>
         <Label Content="Valor: " HorizontalAlignment="Left" Margin="27,134,0,0" VerticalAlignment="Top" Width="67"/>
-        <TextBox x:Name="txtCodigo" HorizontalAlignment="Left" Height="23" Margin="99,14,0,0" TextWrapping="Wrap" Text="" VerticalAlignment="Top" Width="392" TabIndex="0"/>
-        <TextBox x:Name="txtNome" HorizontalAlignment="Left" Height="23" Margin="99,44,0,0" TextWrapping="Wrap" Text="" VerticalAlignment="Top" Width="392" TabIndex="1"/>
-        <TextBox x:Name="txtDescricao" HorizontalAlignment="Left" Height="23" Margin="99,75,0,0" TextWrapping="Wrap" Text="" VerticalAlignment="Top" Width="392" TabIndex="2"/>
-        <TextBox x:Name="txtFabricante" HorizontalAlignment="Left" Height="23" Margin="99,106,0,0" TextWrapping="Wrap" Text="" VerticalAlignment="Top" Width="392" TabIndex="3"/>
-        <TextBox x:Name="txtValor" HorizontalAlignment="Left" Height="23" Margin="99,134,0,0" TextWrapping="Wrap" Text="" VerticalAlignment="Top" Width="392" TabIndex="4"/>
+        <TextBox x:Name="txtCodigo" HorizontalAlignment="Left" Height="23" Margin="99,14,0,0" TextWrapping="Wrap" Text="" VerticalAlignment="Top" Width="392" TabIndex="0" IsEnabled="False"/>
+        <TextBox x:Name="txtNome" HorizontalAlignment="Left" Height="23" Margin="99,44,0,0" TextWrapping="Wrap" Text="" VerticalAlignment="Top" Width="392" TabIndex="1" IsEnabled="False"/>
+        <TextBox x:Name="txtDescricao" HorizontalAlignment="Left" Height="23" Margin="99,75,0,0" TextWrapping="Wrap" Text="" VerticalAlignment="Top" Width="392" TabIndex="2" IsEnabled="False"/>
+        <TextBox x:Name="txtFabricante" HorizontalAlignment="Left" Height="23" Margin="99,106,0,0" TextWrapping="Wrap" Text="" VerticalAlignment="Top" Width="392" TabIndex="3" IsEnabled="False"/>
+        <TextBox x:Name="txtValor" HorizontalAlignment="Left" Height="23" Margin="99,134,0,0" TextWrapping="Wrap" Text="" VerticalAlignment="Top" Width="392" TabIndex="4" IsEnabled="False"/>
         <Button x:Name="btnCadastrar" Content="Novo" HorizontalAlignment="Left" Margin="521,14,0,0" VerticalAlignment="Top" Width="129" Height="24" TabIndex="5" Click="BtnCadastrar_Click"/>
-        <Button x:Name="btnEditar" Content="Editar" HorizontalAlignment="Left" Margin="521,43,0,0" VerticalAlignment="Top" Width="129" Height="24" TabIndex="6"/>
-        <Button x:Name="btnBuscar" Content="Buscar" HorizontalAlignment="Left" Margin="521,72,0,0" VerticalAlignment="Top" Width="129" Height="24" TabIndex="7"/>
-        <Button x:Name="btnExcluir" Content="Excluir" HorizontalAlignment="Left" Margin="521,101,0,0" VerticalAlignment="Top" Width="129" Height="24" TabIndex="8"/>
+        <Button x:Name="btnEditar" Content="Editar" HorizontalAlignment="Left" Margin="521,72,0,0" VerticalAlignment="Top" Width="129" Height="24" TabIndex="6" IsEnabled="False"/>
+        <Button x:Name="btnBuscar" Content="Buscar" HorizontalAlignment="Left" Margin="521,43,0,0" VerticalAlignment="Top" Width="129" Height="24" TabIndex="7"/>
+        <Button x:Name="btnExcluir" Content="Excluir" HorizontalAlignment="Left" Margin="521,101,0,0" VerticalAlignment="Top" Width="129" Height="24" TabIndex="8" IsEnabled="False"/>
+        <Button x:Name="btnSalvar" Content="Cadastrar" HorizontalAlignment="Left" Margin="521,130,0,0" VerticalAlignment="Top" Width="129" Height="24" TabIndex="5" Click="BtnSalvar_Click" Visibility="Collapsed"/>
 
     </Grid>
 </Window>
