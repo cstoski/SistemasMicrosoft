@@ -3,16 +3,15 @@
 namespace SistemaGeradorOrcamento.Views
 {
     /// <summary>
-    /// Interaction logic for frmCadastroProjeto.xaml
+    /// Interaction logic for frmCadastroOrcamento.xaml
     /// </summary>
-    public partial class frmCadastroProjeto : Window
+    public partial class frmCadastroOrcamento : Window
     {
-        public frmCadastroProjeto()
+        public frmCadastroOrcamento()
         {
             InitializeComponent();
         }
 
        
-
     }
 }

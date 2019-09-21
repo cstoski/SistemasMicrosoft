@@ -107,6 +107,9 @@
     <Compile Include="Views\frmCadastroMaterial.xaml.cs">
       <DependentUpon>frmCadastroMaterial.xaml</DependentUpon>
     </Compile>
+    <Compile Include="Views\frmCadastroOrcamento.xaml.cs">
+      <DependentUpon>frmCadastroOrcamento.xaml</DependentUpon>
+    </Compile>
     <Compile Include="Views\frmCadastroProjeto.xaml.cs">
       <DependentUpon>frmCadastroProjeto.xaml</DependentUpon>
     </Compile>
@@ -174,6 +177,10 @@
     <Page Include="Views\frmCadastroMaterial.xaml">
       <SubType>Designer</SubType>
       <Generator>MSBuild:Compile</Generator>
+    </Page>
+    <Page Include="Views\frmCadastroOrcamento.xaml">
+      <Generator>MSBuild:Compile</Generator>
+      <SubType>Designer</SubType>
     </Page>
     <Page Include="Views\frmCadastroProjeto.xaml">
       <SubType>Designer</SubType>
