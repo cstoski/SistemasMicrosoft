@@ -106,5 +106,15 @@ namespace SistemaGeradorOrcamento.Views
                         "Cadastro de Serviço");
             }
         }
+
+        private void BtnBuscarMaterial_Click(object sender, RoutedEventArgs e)
+        {
+
+        }
+
+        private void BtnAdicionarMaterial_Click(object sender, RoutedEventArgs e)
+        {
+
+        }
     }
 }
