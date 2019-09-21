@@ -118,7 +118,7 @@ namespace SistemaGeradorOrcamento.Views
                         "Cadastro de Serviço");
             }
         }
-
+        //Lógicas para os campos de Serviço
         private void BtnBuscarMaterial_Click(object sender, RoutedEventArgs e)
         {
             if (!txtCodigoMaterial.Text.Equals(""))
