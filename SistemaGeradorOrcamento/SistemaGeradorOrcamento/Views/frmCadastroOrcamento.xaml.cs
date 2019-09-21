@@ -189,7 +189,7 @@ namespace SistemaGeradorOrcamento.Views
                 totalGeralMaterial = totalMaterial + totalImpostoMaterial;
                 txtTotalGeralMaterial.Text = totalGeralMaterial.ToString("C2");
 
-                LimparFormularioServico();
+                LimparFormularioMaterial();
             }
             else
             {

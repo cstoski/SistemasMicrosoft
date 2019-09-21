@@ -15,7 +15,7 @@ namespace SistemaGeradorOrcamento.DAL
 
         public static bool CadastrarUsuario(Usuario user)
         {
-            if (BuscarUsuarioPorNome(user) == null)
+            if (BuscarUsuarioPorMatricula(user) == null)
             {
                 ctx.Usuarios.Add(user);
                 ctx.SaveChanges();
