@@ -92,6 +92,10 @@
     <Compile Include="Migrations\201909150041568_ExclusaQuantidadeMaterialDao.Designer.cs">
       <DependentUpon>201909150041568_ExclusaQuantidadeMaterialDao.cs</DependentUpon>
     </Compile>
+    <Compile Include="Migrations\201909152008293_DeletarUsuario.cs" />
+    <Compile Include="Migrations\201909152008293_DeletarUsuario.Designer.cs">
+      <DependentUpon>201909152008293_DeletarUsuario.cs</DependentUpon>
+    </Compile>
     <Compile Include="Migrations\Configuration.cs" />
     <Compile Include="Models\Cliente.cs" />
     <Compile Include="Models\Context.cs" />
@@ -152,6 +156,9 @@
     </EmbeddedResource>
     <EmbeddedResource Include="Migrations\201909150041568_ExclusaQuantidadeMaterialDao.resx">
       <DependentUpon>201909150041568_ExclusaQuantidadeMaterialDao.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Migrations\201909152008293_DeletarUsuario.resx">
+      <DependentUpon>201909152008293_DeletarUsuario.cs</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="Properties\Resources.resx">
       <Generator>ResXFileCodeGenerator</Generator>

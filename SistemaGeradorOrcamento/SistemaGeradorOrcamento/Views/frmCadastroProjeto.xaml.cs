@@ -12,7 +12,9 @@ namespace SistemaGeradorOrcamento.Views
             InitializeComponent();
         }
 
-       
+        private void BtnEditarProjeto_Click(object sender, RoutedEventArgs e)
+        {
 
+        }
     }
 }
