@@ -27,5 +27,10 @@ namespace SistemaGeradorOrcamento.DAL
             return ctx.Materiais.FirstOrDefault
                 (x => x.Nome.Equals(s.Nome));
         }
+
+        public static List<Servico> ListarServicos()
+        {
+            return ctx.Servicos.ToList();
+        }
     }
 }

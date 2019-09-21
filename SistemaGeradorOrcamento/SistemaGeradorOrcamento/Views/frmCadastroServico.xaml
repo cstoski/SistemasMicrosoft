@@ -5,20 +5,20 @@
         xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
         xmlns:local="clr-namespace:SistemaGeradorOrcamento.Views"
         mc:Ignorable="d"
-        Title="Cadastro de Serviços" Height="186.658" Width="692.481">
+        Title="Cadastro de Serviços" Height="437.658" Width="692.481" Loaded="FrmCadastroServico1_Loaded" ResizeMode="NoResize" WindowStartupLocation="CenterScreen">
     <Grid>
         <Label Content="Nome:" HorizontalAlignment="Left" Margin="10,15,0,0" VerticalAlignment="Top" RenderTransformOrigin="0.499,0.513" Width="103"/>
         <Label Content="Descrição:" HorizontalAlignment="Left" Margin="10,46,0,0" VerticalAlignment="Top" Width="103"/>
         <Label Content="Valor: " HorizontalAlignment="Left" Margin="10,103,0,0" VerticalAlignment="Top" Width="103"/>
-        <TextBox x:Name="txtNome" HorizontalAlignment="Left" Height="23" Margin="118,18,0,0" TextWrapping="Wrap" Text="" VerticalAlignment="Top" Width="392" TabIndex="1"/>
-        <TextBox x:Name="txtDescricao" HorizontalAlignment="Left" Height="23" Margin="118,49,0,0" TextWrapping="Wrap" Text="" VerticalAlignment="Top" Width="392" TabIndex="2"/>
-        <TextBox x:Name="txtValor" HorizontalAlignment="Left" Height="23" Margin="118,106,0,0" TextWrapping="Wrap" Text="" VerticalAlignment="Top" Width="392" TabIndex="4"/>
-        <Button x:Name="btnCadastrar" Content="Novo" HorizontalAlignment="Left" Margin="530,18,0,0" VerticalAlignment="Top" Width="129" Height="24" TabIndex="5" Click="BtnCadastrar_Click"/>
-        <Button x:Name="btnEditar" Content="Editar" HorizontalAlignment="Left" Margin="530,47,0,0" VerticalAlignment="Top" Width="129" Height="24" TabIndex="6"/>
-        <Button x:Name="btnBuscar" Content="Buscar" HorizontalAlignment="Left" Margin="530,76,0,0" VerticalAlignment="Top" Width="129" Height="24" TabIndex="7"/>
-        <Button x:Name="btnExcluir" Content="Excluir" HorizontalAlignment="Left" Margin="530,105,0,0" VerticalAlignment="Top" Width="129" Height="24" TabIndex="8"/>
+        <TextBox x:Name="txtNome" HorizontalAlignment="Left" Height="23" Margin="118,18,0,0" TextWrapping="Wrap" Text="" VerticalAlignment="Top" Width="392" TabIndex="1" IsEnabled="False"/>
+        <TextBox x:Name="txtDescricao" HorizontalAlignment="Left" Height="23" Margin="118,49,0,0" TextWrapping="Wrap" Text="" VerticalAlignment="Top" Width="392" TabIndex="2" IsEnabled="False"/>
+        <TextBox x:Name="txtValor" HorizontalAlignment="Left" Height="23" Margin="118,106,0,0" TextWrapping="Wrap" Text="" VerticalAlignment="Top" Width="392" TabIndex="4" IsEnabled="False"/>
+        <Button x:Name="btnCadastrar" Content="Novo" HorizontalAlignment="Left" Margin="530,19,0,0" VerticalAlignment="Top" Width="129" Height="24" TabIndex="5" Click="BtnCadastrar_Click"/>
+        <Button x:Name="btnEditar" Content="Editar" HorizontalAlignment="Left" Margin="530,48,0,0" VerticalAlignment="Top" Width="129" Height="24" TabIndex="6" IsEnabled="False"/>
+        <Button x:Name="btnBuscar" Content="Listar Todos" HorizontalAlignment="Left" Margin="530,77,0,0" VerticalAlignment="Top" Width="129" Height="24" TabIndex="7" Click="BtnBuscar_Click"/>
+        <Button x:Name="btnExcluir" Content="Excluir" HorizontalAlignment="Left" Margin="530,106,0,0" VerticalAlignment="Top" Width="129" Height="24" TabIndex="8" IsEnabled="False"/>
         <Label Content="Tipo do Serviço: " HorizontalAlignment="Left" Margin="10,77,0,0" VerticalAlignment="Top" Width="103"/>
-        <ComboBox x:Name="cmbTipoServico" HorizontalAlignment="Left" Margin="118,77,0,0" VerticalAlignment="Top" Width="392" TabIndex="3">
+        <ComboBox x:Name="cmbTipoServico" HorizontalAlignment="Left" Margin="118,77,0,0" VerticalAlignment="Top" Width="392" TabIndex="3" IsEnabled="False">
             <ComboBoxItem Content="Documentação" HorizontalAlignment="Left" Width="390"/>
             <ComboBoxItem Content="Eletrecista" HorizontalAlignment="Left" Width="390"/>
             <ComboBoxItem Content="Mecânico" HorizontalAlignment="Left" Width="390"/>
@@ -27,6 +27,16 @@
             <ComboBoxItem Content="Software IHM" HorizontalAlignment="Left" Width="390"/>
             <ComboBoxItem Content="Software Supervisorio" HorizontalAlignment="Left" Width="390"/>
         </ComboBox>
+        <DataGrid x:Name="dtaServicos" AutoGenerateColumns="False" HorizontalAlignment="Left" Height="225" Margin="13,163,0,0" VerticalAlignment="Top" Width="646" HorizontalScrollBarVisibility="Disabled" CanUserResizeColumns="False">
+            <DataGrid.Columns>
+                <DataGridTextColumn Binding="{Binding Nome}" Header="Nome" Width="200"/>
+                <DataGridTextColumn Binding="{Binding Descricao}" Header="Descrição" Width="200"/>                
+                <DataGridTextColumn Binding="{Binding Valor, StringFormat=C2}" Header="Preço" Width="90"/>
+                <DataGridTextColumn Binding="{Binding Tipo}" Header="Tipo" Width="150"/>
+            </DataGrid.Columns>
+        </DataGrid>
+        <Button x:Name="btnSalvar" Content="Salvar" HorizontalAlignment="Left" Margin="530,134,0,0" VerticalAlignment="Top" Width="129" Height="24" TabIndex="5" Click="BtnSalvar_Click" Visibility="Hidden"/>
+        <Button x:Name="btnCancelar" Content="Cancelar" HorizontalAlignment="Left" Margin="396,134,0,0" VerticalAlignment="Top" Width="129" Height="24" TabIndex="5" Click="BtnCancelar_Click" Visibility="Hidden"/>
 
     </Grid>
 </Window>
