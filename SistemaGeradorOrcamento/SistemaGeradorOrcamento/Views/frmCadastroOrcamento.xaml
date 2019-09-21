@@ -5,28 +5,45 @@
         xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
         xmlns:local="clr-namespace:SistemaGeradorOrcamento.Views"
         mc:Ignorable="d"
-        Title="Cadastro de Orçamentos" Height="793.645" Width="644" WindowStartupLocation="CenterScreen">
-    <Grid Margin="0,0,0,-2">
-        <GroupBox Header="Lista de Materiais" HorizontalAlignment="Left" Height="278" Margin="22,146,0,0" VerticalAlignment="Top" Width="600"/>
-        <Label Content="Número:" HorizontalAlignment="Left" Margin="26,22,0,0" VerticalAlignment="Top" Width="104"/>
+        Title="Cadastro de Orçamentos" Height="476.645" Width="644" WindowStartupLocation="CenterScreen">
+    <Grid Margin="0,0,0,2">
+
+        <Label Content="Número:" HorizontalAlignment="Left" Margin="26,27,0,0" VerticalAlignment="Top" Width="104" Height="24"/>
         <Label Content="Nome do Projeto:" HorizontalAlignment="Left" Margin="26,56,0,0" VerticalAlignment="Top"/>
         <Label Content="Cliente:" HorizontalAlignment="Left" Margin="26,84,0,0" VerticalAlignment="Top" RenderTransformOrigin="0.366,0.236" Width="104"/>
-        <Label Content="Status:" HorizontalAlignment="Left" Margin="341,22,0,0" VerticalAlignment="Top" RenderTransformOrigin="0.161,0.692"/>
-        <TextBox x:Name="txtNumero" HorizontalAlignment="Left" Height="24" Margin="135,22,0,0" TextWrapping="Wrap" Text="" VerticalAlignment="Top" Width="120" TabIndex="0"/>
-        <TextBox x:Name="txtProjeto" HorizontalAlignment="Left" Height="24" Margin="135,56,0,0" TextWrapping="Wrap" Text="" VerticalAlignment="Top" Width="483" TabIndex="2"/>
-        <ComboBox x:Name="cmbStatus" HorizontalAlignment="Left" Margin="391,22,0,0" VerticalAlignment="Top" Width="227" Height="24" TabIndex="1">
-            <ComboBoxItem Content="Emissão Inicial" HorizontalAlignment="Left" Width="225"/>
-            <ComboBoxItem Content="Aguardando Aprovação Cliente" HorizontalAlignment="Left" Width="225"/>
-            <ComboBoxItem Content="Cancelado" HorizontalAlignment="Left" Width="225"/>
-            <ComboBoxItem Content="Fechado" HorizontalAlignment="Left" Width="225"/>
+        <TextBox x:Name="txtNomeCliente" HorizontalAlignment="Left" Height="24" Margin="135,85,0,0" TextWrapping="Wrap" Text="" VerticalAlignment="Top" Width="483" TabIndex="3" IsEnabled="False"/>
+        <Label Content="Revisão:" HorizontalAlignment="Left" Margin="505,27,0,0" VerticalAlignment="Top" RenderTransformOrigin="0.161,0.692" Height="24" Width="53"/>
+        <TextBox x:Name="txtNumero" HorizontalAlignment="Left" Height="24" Margin="135,27,0,0" TextWrapping="Wrap" Text="" VerticalAlignment="Top" Width="120" TabIndex="0" IsEnabled="False"/>
+        <TextBox x:Name="txtProjeto" HorizontalAlignment="Left" Height="24" Margin="135,56,0,0" TextWrapping="Wrap" Text="" VerticalAlignment="Top" Width="483" TabIndex="2" IsEnabled="False"/>
+        <TextBox x:Name="txtRevisaoOrcamento" HorizontalAlignment="Left" Height="24" Margin="563,27,0,0" TextWrapping="Wrap" Text="" VerticalAlignment="Top" Width="55" TabIndex="1" IsEnabled="False"/>
+        
+        <!--Itens da Lista de Materiais -->
+        <GroupBox Header="Lista de Materiais" HorizontalAlignment="Left" Height="278" Margin="22,146,0,0" VerticalAlignment="Top" Width="600">
 
-        </ComboBox>
-        <DataGrid x:Name="datListaMateriais" HorizontalAlignment="Left" Height="146" Margin="38,173,0,0" VerticalAlignment="Top" Width="568" TabIndex="7"/>
-        <Button x:Name="btnAdicionarMaterial" Content="Adicionar" HorizontalAlignment="Left" Margin="531,324,0,0" VerticalAlignment="Top" Width="75" Height="24" TabIndex="8"/>
-        <TextBox x:Name="txtNomeCliente" HorizontalAlignment="Left" Height="24" Margin="135,85,0,0" TextWrapping="Wrap" Text="" VerticalAlignment="Top" Width="483" TabIndex="2"/>
-        <GroupBox Header="Lista de Serviços" HorizontalAlignment="Left" Height="278" Margin="22,448,0,0" VerticalAlignment="Top" Width="600"/>
-        <DataGrid x:Name="datListaServicos" HorizontalAlignment="Left" Height="146" Margin="38,475,0,0" VerticalAlignment="Top" Width="568" TabIndex="7"/>
-        <Button x:Name="btnAdicionarServico" Content="Adicionar" HorizontalAlignment="Left" Margin="531,626,0,0" VerticalAlignment="Top" Width="75" Height="24" TabIndex="8"/>
+        </GroupBox>
+        <Label Content="Código:" HorizontalAlignment="Left" Margin="39,168,0,0" VerticalAlignment="Top" Width="118"/>
+        <Label Content="Nome do Produto:" HorizontalAlignment="Left" Margin="162,168,0,0" VerticalAlignment="Top" Width="254"/>
+        <Label Content="Preço:" HorizontalAlignment="Left" Margin="421,168,0,0" VerticalAlignment="Top" Width="105"/>
+        <Label Content="Quantidade:" HorizontalAlignment="Left" Margin="341,222,0,0" VerticalAlignment="Top" Width="76" Height="23"/>
+        <DataGrid x:Name="datListaMateriais" AutoGenerateColumns="False" HorizontalAlignment="Left" Height="146" Margin="38,254,0,0" VerticalAlignment="Top" Width="568" TabIndex="7">
+            <DataGrid.Columns>
+                <DataGridTextColumn Binding="{Binding Codigo}" Header="Código" Width="120"/>
+                <DataGridTextColumn Binding="{Binding Nome}"  Header="Nome" Width="180"/>
+                <DataGridTextColumn Binding="{Binding Preco}"  Header="Preço" Width="90"/>
+                <DataGridTextColumn Binding="{Binding Quantidade}"  Header="Quantidade" Width="90"/>
+                <DataGridTextColumn Binding="{Binding Subtotal}"  Header="Subtotal" Width="90"/>
+            </DataGrid.Columns>
+        </DataGrid>
+        <Button x:Name="btnBuscarMaterial" Content="Buscar Item" HorizontalAlignment="Left" Margin="531,194,0,0" VerticalAlignment="Top" Width="75" Height="24" TabIndex="8"/>
+        <Button x:Name="btnAdicionarMaterial" Content="Adicionar" HorizontalAlignment="Left" Margin="531,222,0,0" VerticalAlignment="Top" Width="75" Height="24" TabIndex="9"/>
+        <TextBox x:Name="txtCodigoMaterial" HorizontalAlignment="Left" Height="23" Margin="38,194,0,0" TextWrapping="Wrap" Text="" VerticalAlignment="Top" Width="120" TabIndex="4"/>
+        <TextBox x:Name="txtNomeMaterial" HorizontalAlignment="Left" Height="23" Margin="162,194,0,0" TextWrapping="Wrap" Text="" VerticalAlignment="Top" Width="254" TabIndex="5"/>
+        <TextBox x:Name="txtPrecoMaterial" HorizontalAlignment="Left" Height="23" Margin="421,194,0,0" TextWrapping="Wrap" Text="" VerticalAlignment="Top" Width="105" TabIndex="6"/>
+        <TextBox x:Name="txtQuantidadeMaterial" HorizontalAlignment="Left" Height="23" Margin="421,222,0,0" TextWrapping="Wrap" Text="" VerticalAlignment="Top" Width="105" TabIndex="7"/>
+
+        <!--Itens da Lista de Serviços -->
+
+
 
     </Grid>
 </Window>
