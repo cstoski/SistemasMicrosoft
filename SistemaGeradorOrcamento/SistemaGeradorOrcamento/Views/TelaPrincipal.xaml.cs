@@ -32,8 +32,10 @@ namespace SistemaGeradorOrcamento.Views
 
         private void MenuItem_Click_Projetos(object sender, RoutedEventArgs e)
         {
-            frmCadastroProjeto frmProjeto = new frmCadastroProjeto();
-            frmProjeto.ShowDialog();
+            //frmCadastroProjeto frmProjeto = new frmCadastroProjeto();
+            //frmProjeto.ShowDialog();
+            frmCadastroOrcamento frmOrcamento = new frmCadastroOrcamento();
+            frmOrcamento.ShowDialog();
         }
 
         private void MenuItem_Click_Usuarios(object sender, RoutedEventArgs e)

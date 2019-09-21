@@ -22,9 +22,9 @@ namespace SistemaGeradorOrcamento.DAL
             return false;
         }
 
-        public static Material BuscarServicoPorNome(Servico s)
+        public static Servico BuscarServicoPorNome(Servico s)
         {
-            return ctx.Materiais.FirstOrDefault
+            return ctx.Servicos.FirstOrDefault
                 (x => x.Nome.Equals(s.Nome));
         }
 

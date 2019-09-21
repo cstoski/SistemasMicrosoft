@@ -25,7 +25,7 @@
         <Label Content="Tipo de Serviço:" HorizontalAlignment="Left" Margin="162,168,0,0" VerticalAlignment="Top" Width="254"/>
         <Label Content="Preço:" HorizontalAlignment="Left" Margin="421,168,0,0" VerticalAlignment="Top" Width="105"/>
         <Label Content="Quantidade:" HorizontalAlignment="Left" Margin="341,222,0,0" VerticalAlignment="Top" Width="76" Height="27"/>
-        <DataGrid x:Name="datListaServicos" AutoGenerateColumns="False" HorizontalAlignment="Left" Height="146" Margin="38,254,0,0" VerticalAlignment="Top" Width="568" TabIndex="7">
+        <DataGrid x:Name="dtaListaServicos" AutoGenerateColumns="False" HorizontalAlignment="Left" Height="146" Margin="38,254,0,0" VerticalAlignment="Top" Width="568" TabIndex="7">
             <DataGrid.Columns>
                 <DataGridTextColumn Binding="{Binding Nome}" Header="Nome" Width="150"/>
                 <DataGridTextColumn Binding="{Binding Tipo}"  Header="Tipo" Width="150"/>
@@ -34,11 +34,11 @@
                 <DataGridTextColumn Binding="{Binding Subtotal}"  Header="Subtotal" Width="90"/>
             </DataGrid.Columns>
         </DataGrid>
-        <Button x:Name="btnBuscarServico" Content="Buscar Item" HorizontalAlignment="Left" Margin="531,194,0,0" VerticalAlignment="Top" Width="75" Height="24" TabIndex="8"/>
-        <Button x:Name="btnAdicionarServico" Content="Adicionar" HorizontalAlignment="Left" Margin="531,222,0,0" VerticalAlignment="Top" Width="75" Height="24" TabIndex="9"/>
+        <Button x:Name="btnBuscarServico" Content="Buscar Item" HorizontalAlignment="Left" Margin="531,194,0,0" VerticalAlignment="Top" Width="75" Height="24" TabIndex="8" Click="BtnBuscarServico_Click"/>
+        <Button x:Name="btnAdicionarServico" Content="Adicionar" HorizontalAlignment="Left" Margin="531,222,0,0" VerticalAlignment="Top" Width="75" Height="24" TabIndex="9" Click="BtnAdicionarServico_Click"/>
         <TextBox x:Name="txtNomeServico" HorizontalAlignment="Left" Height="23" Margin="38,194,0,0" TextWrapping="Wrap" Text="" VerticalAlignment="Top" Width="120" TabIndex="4"/>
-        <TextBox x:Name="txtTipoServico" HorizontalAlignment="Left" Height="23" Margin="162,194,0,0" TextWrapping="Wrap" Text="" VerticalAlignment="Top" Width="254" TabIndex="5"/>
-        <TextBox x:Name="txtPrecoServico" HorizontalAlignment="Left" Height="23" Margin="421,194,0,0" TextWrapping="Wrap" Text="" VerticalAlignment="Top" Width="105" TabIndex="6"/>
+        <TextBox x:Name="txtTipoServico" HorizontalAlignment="Left" Height="23" Margin="162,194,0,0" TextWrapping="Wrap" Text="" VerticalAlignment="Top" Width="254" TabIndex="5" IsEnabled="False"/>
+        <TextBox x:Name="txtPrecoServico" HorizontalAlignment="Left" Height="23" Margin="421,194,0,0" TextWrapping="Wrap" Text="" VerticalAlignment="Top" Width="105" TabIndex="6" IsEnabled="False"/>
         <TextBox x:Name="txtQuantidadeServico" HorizontalAlignment="Left" Height="23" Margin="421,222,0,0" TextWrapping="Wrap" Text="" VerticalAlignment="Top" Width="105" TabIndex="7"/>
 
         
