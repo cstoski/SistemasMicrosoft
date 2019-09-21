@@ -47,7 +47,7 @@
         <TextBox x:Name="txtTotalImpostoServico" HorizontalAlignment="Left" Height="23" Margin="394,323,0,0" TextWrapping="Wrap" Text="" VerticalAlignment="Top" Width="134" IsEnabled="False" FontWeight="Bold" FontSize="14" Foreground="Blue"/>
         <TextBox x:Name="txtTotalGeralServico" HorizontalAlignment="Left" Height="23" Margin="758,323,0,0" TextWrapping="Wrap" Text="" VerticalAlignment="Top" Width="134" IsEnabled="False" FontWeight="Bold" FontSize="14" Foreground="Blue"/>
 
-        <!--Itens da Lista de Serviços -->
+        <!--Itens da Lista de Materiais -->
         <GroupBox Header="Lista de Materiais" HorizontalAlignment="Left" Height="270" Margin="24,380,0,0" VerticalAlignment="Top" Width="894"/>
         <Label Content="Código:" HorizontalAlignment="Left" Margin="42,402,0,0" VerticalAlignment="Top" Width="118"/>
         <Label Content="Nome do Produto:" HorizontalAlignment="Left" Margin="164,402,0,0" VerticalAlignment="Top" Width="254"/>
@@ -55,17 +55,18 @@
         <Label Content="Quantidade:" HorizontalAlignment="Left" Margin="628,427,0,0" VerticalAlignment="Top" Width="76" Height="27"/>
         <DataGrid x:Name="dtaListaMateriais" AutoGenerateColumns="False" HorizontalAlignment="Left" Height="146" Margin="38,457,0,0" VerticalAlignment="Top" Width="854" TabIndex="7">
             <DataGrid.Columns>
-                <DataGridTextColumn Binding="{Binding Nome}" Header="Nome" Width="150"/>
-                <DataGridTextColumn Binding="{Binding Tipo}"  Header="Tipo" Width="150"/>
-                <DataGridTextColumn Binding="{Binding Preco}"  Header="Preço" Width="90"/>
-                <DataGridTextColumn Binding="{Binding Quantidade}"  Header="Quantidade" Width="90"/>
-                <DataGridTextColumn Binding="{Binding Subtotal}"  Header="Subtotal" Width="90"/>
+                <DataGridTextColumn Binding="{Binding Codigo}" Header="Código" Width="140"/>
+                <DataGridTextColumn Binding="{Binding Nome}"  Header="Nome" Width="220"/>
+                <DataGridTextColumn Binding="{Binding Fabricante}"  Header="Fabricante" Width="180"/>
+                <DataGridTextColumn Binding="{Binding Preco}"  Header="Preço" Width="100"/>
+                <DataGridTextColumn Binding="{Binding Quantidade}"  Header="Quantidade" Width="100"/>
+                <DataGridTextColumn Binding="{Binding Subtotal}"  Header="Subtotal" Width="100"/>
             </DataGrid.Columns>
         </DataGrid>
         <Button x:Name="btnBuscarMaterial" Content="Buscar Item" HorizontalAlignment="Left" Margin="534,428,0,0" VerticalAlignment="Top" Width="74" Height="24" TabIndex="8" Click="BtnBuscarMaterial_Click"/>
         <Button x:Name="btnAdicionarMaterial" Content="Adicionar" HorizontalAlignment="Left" Margin="818,427,0,0" VerticalAlignment="Top" Width="74" Height="24" TabIndex="9" Click="BtnAdicionarMaterial_Click"/>
-        <TextBox x:Name="txtNomeMaterial" HorizontalAlignment="Left" Height="23" Margin="40,428,0,0" TextWrapping="Wrap" Text="" VerticalAlignment="Top" Width="120" TabIndex="4"/>
-        <TextBox x:Name="txtTipoServico_Copy" HorizontalAlignment="Left" Height="23" Margin="164,428,0,0" TextWrapping="Wrap" Text="" VerticalAlignment="Top" Width="254" TabIndex="5" IsEnabled="False"/>
+        <TextBox x:Name="txtCodigoMaterial" HorizontalAlignment="Left" Height="23" Margin="40,428,0,0" TextWrapping="Wrap" Text="" VerticalAlignment="Top" Width="120" TabIndex="4"/>
+        <TextBox x:Name="txtNomeMaterial" HorizontalAlignment="Left" Height="23" Margin="164,428,0,0" TextWrapping="Wrap" Text="" VerticalAlignment="Top" Width="254" TabIndex="5" IsEnabled="False"/>
         <TextBox x:Name="txtPrecoMaterial" HorizontalAlignment="Left" Height="23" Margin="424,428,0,0" TextWrapping="Wrap" Text="" VerticalAlignment="Top" Width="104" TabIndex="6" IsEnabled="False"/>
         <TextBox x:Name="txtQuantidadeMaterial" HorizontalAlignment="Left" Height="23" Margin="708,427,0,0" TextWrapping="Wrap" Text="" VerticalAlignment="Top" Width="104" TabIndex="7"/>
         <Label Content="Total Material:" HorizontalAlignment="Left" Margin="36,605,0,0" VerticalAlignment="Top" FontWeight="Bold"/>
