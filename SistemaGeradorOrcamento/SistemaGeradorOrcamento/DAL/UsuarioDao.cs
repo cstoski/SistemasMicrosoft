@@ -11,6 +11,7 @@ namespace SistemaGeradorOrcamento.DAL
     class UsuarioDao
     {
         private static Context ctx = SingletonContext.GetInstance();
+
         private static List<Usuario> usuarios = new List<Usuario>();
 
         public static bool CadastrarUsuario(Usuario user)

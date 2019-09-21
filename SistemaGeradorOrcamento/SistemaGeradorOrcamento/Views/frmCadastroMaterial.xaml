@@ -5,8 +5,11 @@
         xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
         xmlns:local="clr-namespace:SistemaGeradorOrcamento.Views"
         mc:Ignorable="d"
-        Title="Cadastro de Materiais" Height="214.557" Width="681.494" WindowStartupLocation="CenterScreen">
-    <Grid>
+        Title="Cadastro de Materiais" Height="397.266" Width="681.494" WindowStartupLocation="CenterScreen">
+    <Window.Resources>
+        <JournalEntryListConverter x:Key="JournalEntryListConverter"/>
+    </Window.Resources>
+    <Grid Loaded="Grid_Loaded">
         <Label Content="Código: " HorizontalAlignment="Left" Margin="27,10,0,0" VerticalAlignment="Top" Width="67"/>
         <Label Content="Nome:" HorizontalAlignment="Left" Margin="27,41,0,0" VerticalAlignment="Top" RenderTransformOrigin="0.499,0.513" Width="67"/>
         <Label Content="Descrição:" HorizontalAlignment="Left" Margin="27,72,0,0" VerticalAlignment="Top" Width="67"/>
@@ -20,8 +23,9 @@
         <Button x:Name="btnCadastrar" Content="Novo" HorizontalAlignment="Left" Margin="521,14,0,0" VerticalAlignment="Top" Width="129" Height="24" TabIndex="5" Click="BtnCadastrar_Click"/>
         <Button x:Name="btnEditar" Content="Editar" HorizontalAlignment="Left" Margin="521,72,0,0" VerticalAlignment="Top" Width="129" Height="24" TabIndex="6" IsEnabled="False"/>
         <Button x:Name="btnBuscar" Content="Buscar" HorizontalAlignment="Left" Margin="521,43,0,0" VerticalAlignment="Top" Width="129" Height="24" TabIndex="7" Click="BtnBuscar_Click"/>
-        <Button x:Name="btnExcluir" Content="Excluir" HorizontalAlignment="Left" Margin="521,101,0,0" VerticalAlignment="Top" Width="129" Height="24" TabIndex="8" IsEnabled="False"/>
+        <Button x:Name="btnExcluir" Content="Excluir" HorizontalAlignment="Left" Margin="521,101,0,0" VerticalAlignment="Top" Width="129" Height="24" TabIndex="8" IsEnabled="False" Click="BtnExcluir_Click"/>
         <Button x:Name="btnSalvar" Content="Cadastrar" HorizontalAlignment="Left" Margin="521,130,0,0" VerticalAlignment="Top" Width="129" Height="24" TabIndex="5" Click="BtnSalvar_Click" Visibility="Collapsed"/>
-
+        <DataGrid x:Name="dtaMateriais" HorizontalAlignment="Left" Height="120" Margin="99,190,0,0" VerticalAlignment="Top" Width="392">
+        </DataGrid>
     </Grid>
 </Window>
