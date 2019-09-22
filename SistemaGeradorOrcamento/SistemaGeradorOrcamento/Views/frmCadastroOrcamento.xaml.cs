@@ -2,7 +2,9 @@
 using SistemaGeradorOrcamento.Models;
 using System;
 using System.Collections.Generic;
+using System.Data;
 using System.Windows;
+using System.Windows.Controls;
 
 namespace SistemaGeradorOrcamento.Views
 {
@@ -17,11 +19,15 @@ namespace SistemaGeradorOrcamento.Views
         }
 
         private List<dynamic> servicosGrid = new List<dynamic>();
-        double total = 0;
-        double totalGeral = 0;
-        double totalImposto = 0;
+        double totalServico = 0;
+        double totalGeralServico = 0;
+        double totalImpostoServico = 0;
+        private List<dynamic> materialGrid = new List<dynamic>();
+        double totalMaterial = 0;
+        double totalGeralMaterial = 0;
+        double totalImpostoMaterial = 0;
 
-        private void LimparFormulario()
+        private void LimparFormularioServico()
         {
             txtNomeServico.Clear();
             txtQuantidadeServico.Clear();
@@ -29,7 +35,15 @@ namespace SistemaGeradorOrcamento.Views
             txtPrecoServico.Clear();
         }
 
-        
+        private void LimparFormularioMaterial()
+        {
+            txtCodigoMaterial.Clear();
+            txtNomeMaterial.Clear();
+            txtPrecoMaterial.Clear();
+            txtQuantidadeMaterial.Clear();
+        }
+
+
         private void BtnBuscarServico_Click(object sender, RoutedEventArgs e)
         {
             if (!txtNomeServico.Text.Equals(""))
@@ -87,18 +101,18 @@ namespace SistemaGeradorOrcamento.Views
                 
 
                 //Calculo Valor Total
-                total += servico.Valor * Convert.ToInt32(txtQuantidadeServico.Text);
-                txtTotalServico.Text = total.ToString("C2");
+                totalServico += servico.Valor * Convert.ToInt32(txtQuantidadeServico.Text);
+                txtTotalServico.Text = totalServico.ToString("C2");
 
                 //Calculo do Imposto
-                totalImposto += (servico.Valor * Convert.ToInt32(txtQuantidadeServico.Text))*0.10;
-                txtTotalImpostoServico.Text = totalImposto.ToString("C2");
+                totalImpostoServico += (servico.Valor * Convert.ToInt32(txtQuantidadeServico.Text))*0.10;
+                txtTotalImpostoServico.Text = totalImpostoServico.ToString("C2");
 
                 //Calculo Valor Total
-                totalGeral = total + totalImposto;
-                txtTotalGeralServico.Text = totalGeral.ToString("C2");
+                totalGeralServico = totalServico + totalImpostoServico;
+                txtTotalGeralServico.Text = totalGeralServico.ToString("C2");
 
-                LimparFormulario();
+                LimparFormularioServico();
             }
             else
             {
@@ -106,15 +120,97 @@ namespace SistemaGeradorOrcamento.Views
                         "Cadastro de Serviço");
             }
         }
-
+        //Lógicas para os campos de Serviço
         private void BtnBuscarMaterial_Click(object sender, RoutedEventArgs e)
         {
+            if (!txtCodigoMaterial.Text.Equals(""))
+            {
+                Material material = new Material
+                {
+                    Codigo = txtCodigoMaterial.Text
+                };
+
+                material = MaterialDao.BuscarMaterialPorCodigo(material);
+
+                if (material != null)
+                {
+                    txtNomeMaterial.Text = material.Nome;
+                    txtPrecoMaterial.Text = material.Valor.ToString("C2");
+                    
+                }
+                else
+                {
+                    MessageBox.Show("Esse Material não está cadastrado!",
+                        "Busca de Material");
+                }
+
+            }
+            else
+            {
+                MessageBox.Show("Por Favor Preencha o Código do Material!",
+                        "Busca de Material");
+            }
 
         }
 
         private void BtnAdicionarMaterial_Click(object sender, RoutedEventArgs e)
         {
+            if (!txtCodigoMaterial.Text.Equals("") && !txtNomeMaterial.Text.Equals("")
+                && !txtPrecoMaterial.Text.Equals("") && !txtQuantidadeMaterial.Text.Equals(""))
+            {
+                Material material = new Material
+                {
+                    Codigo = txtCodigoMaterial.Text
+                };
+
+                material = MaterialDao.BuscarMaterialPorCodigo(material);
+
+                dynamic d = new
+                {
+                    Codigo = material.Codigo,
+                    Nome = material.Nome,
+                    Fabricante = material.Fabricante,
+                    Quantidade = txtQuantidadeMaterial.Text,
+                    Preco = material.Valor.ToString("C2"),
+                    Subtotal = (material.Valor * Convert.ToInt32(txtQuantidadeMaterial.Text)).ToString("C2")
+                };
+                materialGrid.Add(d);
+                dtaListaMateriais.ItemsSource = materialGrid;
+                dtaListaMateriais.Items.Refresh();
+
+
+                //Calculo Valor Total
+                totalMaterial += material.Valor * Convert.ToInt32(txtQuantidadeMaterial.Text);
+                txtTotalMaterial.Text = totalMaterial.ToString("C2");
+
+                //Calculo do Imposto
+                totalImpostoMaterial += (material.Valor * Convert.ToInt32(txtQuantidadeMaterial.Text)) * 0.10;
+                txtTotalImpostoMaterial.Text = totalImpostoMaterial.ToString("C2");
+
+                //Calculo Valor Total
+                totalGeralMaterial = totalMaterial + totalImpostoMaterial;
+                txtTotalGeralMaterial.Text = totalGeralMaterial.ToString("C2");
+
+                LimparFormularioMaterial();
+            }
+            else
+            {
+                MessageBox.Show("Por Favor Preencha todos os campos!",
+                        "Cadastro de Material");
+            }
+        }
+
+        private void BtnExcluirServico_Click(object sender, RoutedEventArgs e)
+        {
 
         }
+
+        private void DtaListaServicos_SelectedCellsChanged(object sender, System.Windows.Controls.SelectedCellsChangedEventArgs e)
+        {
+            txtTeste.Text = dtaListaServicos.SelectedValue.ToString();
+           
+        }
+
+       
     }
 }
