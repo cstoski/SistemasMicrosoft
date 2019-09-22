@@ -2,7 +2,9 @@
 using SistemaGeradorOrcamento.Models;
 using System;
 using System.Collections.Generic;
+using System.Data;
 using System.Windows;
+using System.Windows.Controls;
 
 namespace SistemaGeradorOrcamento.Views
 {
@@ -197,5 +199,18 @@ namespace SistemaGeradorOrcamento.Views
                         "Cadastro de Material");
             }
         }
+
+        private void BtnExcluirServico_Click(object sender, RoutedEventArgs e)
+        {
+
+        }
+
+        private void DtaListaServicos_SelectedCellsChanged(object sender, System.Windows.Controls.SelectedCellsChangedEventArgs e)
+        {
+            txtTeste.Text = dtaListaServicos.SelectedValue.ToString();
+           
+        }
+
+       
     }
 }
