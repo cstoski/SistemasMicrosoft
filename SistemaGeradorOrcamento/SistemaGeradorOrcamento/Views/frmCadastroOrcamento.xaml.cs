@@ -26,6 +26,7 @@ namespace SistemaGeradorOrcamento.Views
         double totalMaterial = 0;
         double totalGeralMaterial = 0;
         double totalImpostoMaterial = 0;
+        dynamic objetoSelecaoServico;
 
         private void LimparFormularioServico()
         {
@@ -202,15 +203,108 @@ namespace SistemaGeradorOrcamento.Views
 
         private void BtnExcluirServico_Click(object sender, RoutedEventArgs e)
         {
+            Servico servico = new Servico
+            {
+                Nome = objetoSelecaoServico.Nome
+            };
+            
+            int quantidade = Convert.ToInt32(objetoSelecaoServico.Quantidade);
+            servico = ServicoDao.BuscarServicoPorNome(servico);
 
+            //Calculo Valor Total
+            totalServico -= servico.Valor * quantidade;
+            txtTotalServico.Text = totalServico.ToString("C2");
+
+            //Calculo do Imposto
+            totalImpostoServico -= (servico.Valor * quantidade) * 0.10;
+            txtTotalImpostoServico.Text = totalImpostoServico.ToString("C2");
+
+            //Calculo Valor Total
+            totalGeralServico = totalServico + totalImpostoServico;
+            txtTotalGeralServico.Text = totalGeralServico.ToString("C2");
+
+            servicosGrid.Remove(objetoSelecaoServico);
+            dtaListaServicos.Items.Refresh();
+            btnExcluirServico.IsEnabled = false;
+            btnEditarServico.IsEnabled = false;
         }
 
         private void DtaListaServicos_SelectedCellsChanged(object sender, System.Windows.Controls.SelectedCellsChangedEventArgs e)
         {
-            txtTeste.Text = dtaListaServicos.SelectedValue.ToString();
-           
+            objetoSelecaoServico = dtaListaServicos.SelectedValue;
+             
+
+            btnExcluirServico.IsEnabled = true;
+            btnEditarServico.IsEnabled = true;
+         
         }
 
-       
+        bool teste = false;
+        private void BtnEditarServico_Click(object sender, RoutedEventArgs e)
+        {
+            Servico servico = new Servico
+            {
+                Nome = objetoSelecaoServico.Nome
+            };
+
+            int quantidade = Convert.ToInt32(objetoSelecaoServico.Quantidade);
+            servico = ServicoDao.BuscarServicoPorNome(servico);
+
+            if (teste == false)
+            {
+                teste = true;
+                btnEditarServico.Content = "Salvar";
+                txtNomeServico.Text = servico.Nome;
+                txtTipoServico.Text = servico.Tipo;
+                txtPrecoServico.Text = servico.Valor.ToString("C2");
+                txtQuantidadeServico.Text = quantidade.ToString();
+                btnBuscarServico.IsEnabled = false;
+                btnAdicionarServico.IsEnabled = false;
+                txtNomeServico.IsEnabled = false;
+                btnExcluirServico.IsEnabled = false;
+            }
+            else
+            {
+                teste = false;
+                if(txtQuantidadeServico != null)
+                {
+                    servicosGrid.Remove(objetoSelecaoServico);
+                    dynamic d = new
+                    {
+                        Nome = servico.Nome,
+                        Tipo = servico.Tipo,
+                        Quantidade = txtQuantidadeServico.Text,
+                        Preco = servico.Valor.ToString("C2"),
+                        Subtotal = (servico.Valor * Convert.ToInt32(txtQuantidadeServico.Text)).ToString("C2")
+                    };
+                    servicosGrid.Add(d);
+                    dtaListaServicos.ItemsSource = servicosGrid;
+                    dtaListaServicos.Items.Refresh();
+
+
+                    //Calculo Valor Total
+                    totalServico += servico.Valor * Convert.ToInt32(txtQuantidadeServico.Text);
+                    txtTotalServico.Text = totalServico.ToString("C2");
+
+                    //Calculo do Imposto
+                    totalImpostoServico += (servico.Valor * Convert.ToInt32(txtQuantidadeServico.Text)) * 0.10;
+                    txtTotalImpostoServico.Text = totalImpostoServico.ToString("C2");
+
+                    //Calculo Valor Total
+                    totalGeralServico = totalServico + totalImpostoServico;
+                    txtTotalGeralServico.Text = totalGeralServico.ToString("C2");
+
+                    LimparFormularioServico();
+
+                }
+
+
+
+                btnEditarServico.Content = "Editar";
+            }
+            
+           
+              
+        }
     }
 }

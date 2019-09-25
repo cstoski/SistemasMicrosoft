@@ -16,7 +16,7 @@
         <TextBox x:Name="txtRevisaoOrcamento" HorizontalAlignment="Left" Height="24" Margin="871,27,0,0" TextWrapping="Wrap" Text="" VerticalAlignment="Top" Width="55" TabIndex="1" IsEnabled="False"/>
 
         <!--Itens da Lista de Serviços -->
-        <GroupBox Header="Lista de Serviços" HorizontalAlignment="Left" Height="270" Margin="32,61,0,0" VerticalAlignment="Top" Width="1072">
+        <GroupBox Header="Lista de Serviços" HorizontalAlignment="Left" Height="270" Margin="32,61,0,0" VerticalAlignment="Top" Width="966">
             
 
         </GroupBox>
@@ -47,10 +47,10 @@
         <TextBox x:Name="txtTotalServico" HorizontalAlignment="Left" Height="23" Margin="146,289,0,0" TextWrapping="Wrap" Text="" VerticalAlignment="Top" Width="134" IsEnabled="False" FontWeight="Bold" FontSize="14" Foreground="Blue"/>
         <TextBox x:Name="txtTotalImpostoServico" HorizontalAlignment="Left" Height="23" Margin="402,289,0,0" TextWrapping="Wrap" Text="" VerticalAlignment="Top" Width="134" IsEnabled="False" FontWeight="Bold" FontSize="14" Foreground="Blue"/>
         <TextBox x:Name="txtTotalGeralServico" HorizontalAlignment="Left" Height="23" Margin="766,289,0,0" TextWrapping="Wrap" Text="" VerticalAlignment="Top" Width="134" IsEnabled="False" FontWeight="Bold" FontSize="14" Foreground="Blue"/>
-        <Button x:Name="btnExcluirServico" Content="Excluir" HorizontalAlignment="Left" Margin="905,138,0,0" VerticalAlignment="Top" Width="75" Click="BtnExcluirServico_Click"/>
-        <TextBox x:Name="txtTeste" HorizontalAlignment="Left" Height="110" Margin="905,163,0,0" TextWrapping="Wrap" Text="" VerticalAlignment="Top" Width="181"/>
+        <Button x:Name="btnExcluirServico" Content="Excluir" HorizontalAlignment="Left" Margin="905,138,0,0" VerticalAlignment="Top" Width="75" Click="BtnExcluirServico_Click" IsEnabled="False"/>
+        <Button x:Name="btnEditarServico" Content="Editar" HorizontalAlignment="Left" Margin="905,163,0,0" VerticalAlignment="Top" Width="75" Click="BtnEditarServico_Click" IsEnabled="False"/>
         <!--Itens da Lista de Materiais -->
-        <GroupBox Header="Lista de Materiais" HorizontalAlignment="Left" Height="270" Margin="32,346,0,0" VerticalAlignment="Top" Width="894"/>
+        <GroupBox Header="Lista de Materiais" HorizontalAlignment="Left" Height="270" Margin="32,346,0,0" VerticalAlignment="Top" Width="966"/>
         <Label Content="Código:" HorizontalAlignment="Left" Margin="50,368,0,0" VerticalAlignment="Top" Width="118"/>
         <Label Content="Nome do Produto:" HorizontalAlignment="Left" Margin="172,368,0,0" VerticalAlignment="Top" Width="254"/>
         <Label Content="Preço:" HorizontalAlignment="Left" Margin="432,368,0,0" VerticalAlignment="Top" Width="104"/>
@@ -79,6 +79,7 @@
         <TextBox x:Name="txtTotalGeralMaterial" HorizontalAlignment="Left" Height="23" Margin="766,574,0,0" TextWrapping="Wrap" Text="" VerticalAlignment="Top" Width="134" IsEnabled="False" FontWeight="Bold" FontSize="14" Foreground="Blue"/>
         <Button x:Name="btnSalvarOrcamento" Content="Salvar" HorizontalAlignment="Left" Margin="851,621,0,0" VerticalAlignment="Top" Width="75"/>
         
+
 
     </Grid>
 </Window>
