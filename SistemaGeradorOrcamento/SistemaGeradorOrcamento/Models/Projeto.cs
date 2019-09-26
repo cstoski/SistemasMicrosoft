@@ -35,7 +35,7 @@ namespace SistemaGeradorOrcamento.Models
         //    [Description("Suspenso")] suspenso,
         //    [Description("Cancelado")] cancelado
         //}
-        //public List<Orcamento> listaOrcamento { get; set; }
+        public List<Orcamento> listaOrcamento { get; set; }
 
     }
 }

@@ -5,7 +5,7 @@
         xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
         xmlns:local="clr-namespace:SistemaGeradorOrcamento.Views"
         mc:Ignorable="d"
-        Title="Cadastro de Orçamentos" Height="700.145" Width="1178" WindowStartupLocation="CenterScreen">
+        Title="Cadastro de Orçamentos" Height="468.145" Width="1056" WindowStartupLocation="CenterScreen">
     <Grid Margin="0,0,0,2">
 
         <Label Content="Número:" HorizontalAlignment="Left" Margin="26,27,0,0" VerticalAlignment="Top" Width="104" Height="24"/>
@@ -50,35 +50,7 @@
         <Button x:Name="btnExcluirServico" Content="Excluir" HorizontalAlignment="Left" Margin="905,138,0,0" VerticalAlignment="Top" Width="75" Click="BtnExcluirServico_Click" IsEnabled="False"/>
         <Button x:Name="btnEditarServico" Content="Editar" HorizontalAlignment="Left" Margin="905,163,0,0" VerticalAlignment="Top" Width="75" Click="BtnEditarServico_Click" IsEnabled="False"/>
         <!--Itens da Lista de Materiais -->
-        <GroupBox Header="Lista de Materiais" HorizontalAlignment="Left" Height="270" Margin="32,346,0,0" VerticalAlignment="Top" Width="966"/>
-        <Label Content="Código:" HorizontalAlignment="Left" Margin="50,368,0,0" VerticalAlignment="Top" Width="118"/>
-        <Label Content="Nome do Produto:" HorizontalAlignment="Left" Margin="172,368,0,0" VerticalAlignment="Top" Width="254"/>
-        <Label Content="Preço:" HorizontalAlignment="Left" Margin="432,368,0,0" VerticalAlignment="Top" Width="104"/>
-        <Label Content="Quantidade:" HorizontalAlignment="Left" Margin="636,393,0,0" VerticalAlignment="Top" Width="76" Height="27"/>
-        <DataGrid x:Name="dtaListaMateriais" AutoGenerateColumns="False" HorizontalAlignment="Left" Height="146" Margin="46,423,0,0" VerticalAlignment="Top" Width="854" TabIndex="7">
-            <DataGrid.Columns>
-                <DataGridTextColumn Binding="{Binding Codigo}" Header="Código" Width="140"/>
-                <DataGridTextColumn Binding="{Binding Nome}"  Header="Nome" Width="220"/>
-                <DataGridTextColumn Binding="{Binding Fabricante}"  Header="Fabricante" Width="180"/>
-                <DataGridTextColumn Binding="{Binding Preco}"  Header="Preço" Width="100"/>
-                <DataGridTextColumn Binding="{Binding Quantidade}"  Header="Quantidade" Width="100"/>
-                <DataGridTextColumn Binding="{Binding Subtotal}"  Header="Subtotal" Width="100"/>
-            </DataGrid.Columns>
-        </DataGrid>
-        <Button x:Name="btnBuscarMaterial" Content="Buscar Item" HorizontalAlignment="Left" Margin="542,394,0,0" VerticalAlignment="Top" Width="74" Height="24" TabIndex="8" Click="BtnBuscarMaterial_Click"/>
-        <Button x:Name="btnAdicionarMaterial" Content="Adicionar" HorizontalAlignment="Left" Margin="826,393,0,0" VerticalAlignment="Top" Width="74" Height="24" TabIndex="9" Click="BtnAdicionarMaterial_Click"/>
-        <TextBox x:Name="txtCodigoMaterial" HorizontalAlignment="Left" Height="23" Margin="48,394,0,0" TextWrapping="Wrap" Text="" VerticalAlignment="Top" Width="120" TabIndex="4"/>
-        <TextBox x:Name="txtNomeMaterial" HorizontalAlignment="Left" Height="23" Margin="172,394,0,0" TextWrapping="Wrap" Text="" VerticalAlignment="Top" Width="254" TabIndex="5" IsEnabled="False"/>
-        <TextBox x:Name="txtPrecoMaterial" HorizontalAlignment="Left" Height="23" Margin="432,394,0,0" TextWrapping="Wrap" Text="" VerticalAlignment="Top" Width="104" TabIndex="6" IsEnabled="False"/>
-        <TextBox x:Name="txtQuantidadeMaterial" HorizontalAlignment="Left" Height="23" Margin="716,393,0,0" TextWrapping="Wrap" Text="" VerticalAlignment="Top" Width="104" TabIndex="7"/>
-        <Label Content="Total Material:" HorizontalAlignment="Left" Margin="44,571,0,0" VerticalAlignment="Top" FontWeight="Bold"/>
-        <Label Content="Total Impostos:" HorizontalAlignment="Left" Margin="300,570,0,0" VerticalAlignment="Top" FontWeight="Bold"/>
-        <Label Content="Total Materiais com Impostos:" HorizontalAlignment="Left" Margin="586,571,0,0" VerticalAlignment="Top" RenderTransformOrigin="0.546,0.654" FontWeight="Bold"/>
-        <TextBox x:Name="txtTotalMaterial" HorizontalAlignment="Left" Height="23" Margin="146,574,0,0" TextWrapping="Wrap" Text="" VerticalAlignment="Top" Width="134" IsEnabled="False" FontWeight="Bold" FontSize="14" Foreground="Blue"/>
-        <TextBox x:Name="txtTotalImpostoMaterial" HorizontalAlignment="Left" Height="23" Margin="402,574,0,0" TextWrapping="Wrap" Text="" VerticalAlignment="Top" Width="134" IsEnabled="False" FontWeight="Bold" FontSize="14" Foreground="Blue"/>
-        <TextBox x:Name="txtTotalGeralMaterial" HorizontalAlignment="Left" Height="23" Margin="766,574,0,0" TextWrapping="Wrap" Text="" VerticalAlignment="Top" Width="134" IsEnabled="False" FontWeight="Bold" FontSize="14" Foreground="Blue"/>
-        <Button x:Name="btnSalvarOrcamento" Content="Salvar" HorizontalAlignment="Left" Margin="851,621,0,0" VerticalAlignment="Top" Width="75"/>
-        
+
 
 
     </Grid>

@@ -215,6 +215,7 @@
     </Compile>
     <Compile Include="DAL\ClienteDao.cs" />
     <Compile Include="DAL\MaterialDao.cs" />
+    <Compile Include="DAL\OrcamentoDao.cs" />
     <Compile Include="DAL\ProjetoDao.cs" />
     <Compile Include="DAL\ServicoDao.cs" />
     <Compile Include="DAL\SingletonContext.cs" />
@@ -239,9 +240,13 @@
     <Compile Include="Migrations\201909150041568_ExclusaQuantidadeMaterialDao.Designer.cs">
       <DependentUpon>201909150041568_ExclusaQuantidadeMaterialDao.cs</DependentUpon>
     </Compile>
-    <Compile Include="Migrations\201909152008293_DeletarUsuario.cs" />
-    <Compile Include="Migrations\201909152008293_DeletarUsuario.Designer.cs">
-      <DependentUpon>201909152008293_DeletarUsuario.cs</DependentUpon>
+    <Compile Include="Migrations\201909260249538_alteracao.cs" />
+    <Compile Include="Migrations\201909260249538_alteracao.designer.cs">
+      <DependentUpon>201909260249538_alteracao.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Migrations\201909260256491_AlteracaoMaterial.cs" />
+    <Compile Include="Migrations\201909260256491_AlteracaoMaterial.designer.cs">
+      <DependentUpon>201909260256491_AlteracaoMaterial.cs</DependentUpon>
     </Compile>
     <Compile Include="Migrations\Configuration.cs" />
     <Compile Include="Models\Cliente.cs" />
@@ -304,8 +309,11 @@
     <EmbeddedResource Include="Migrations\201909150041568_ExclusaQuantidadeMaterialDao.resx">
       <DependentUpon>201909150041568_ExclusaQuantidadeMaterialDao.cs</DependentUpon>
     </EmbeddedResource>
-    <EmbeddedResource Include="Migrations\201909152008293_DeletarUsuario.resx">
-      <DependentUpon>201909152008293_DeletarUsuario.cs</DependentUpon>
+    <EmbeddedResource Include="Migrations\201909260249538_alteracao.resx">
+      <DependentUpon>201909260249538_alteracao.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Migrations\201909260256491_AlteracaoMaterial.resx">
+      <DependentUpon>201909260256491_AlteracaoMaterial.cs</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="Properties\Resources.resx">
       <Generator>ResXFileCodeGenerator</Generator>

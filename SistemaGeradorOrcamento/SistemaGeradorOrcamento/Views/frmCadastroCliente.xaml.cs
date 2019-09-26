@@ -58,5 +58,12 @@ namespace SistemaGeradorOrcamento.Views
                     MessageBoxImage.Error);
             }
         }
+
+        private void FrmCadatroCliente_Loaded(object sender, RoutedEventArgs e)
+        {
+            
+
+            
+        }
     }
 }

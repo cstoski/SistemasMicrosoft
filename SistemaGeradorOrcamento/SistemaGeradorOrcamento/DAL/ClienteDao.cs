@@ -1,4 +1,5 @@
 ﻿using SistemaGeradorOrcamento.Models;
+using System.Collections.Generic;
 using System.Linq;
 
 namespace SistemaGeradorOrcamento.DAL
@@ -7,11 +8,7 @@ namespace SistemaGeradorOrcamento.DAL
     {
         private static Context ctx = new Context();
 
-        /// <summary>
-        /// Cadastro de Cliente
-        /// </summary>
-        /// <param name="c"></param>
-        /// <returns></returns>
+       
         public static bool CadastrarCliente(Cliente c)
         {
             if (BuscarClientePorNome(c) == null)
@@ -23,15 +20,16 @@ namespace SistemaGeradorOrcamento.DAL
             return false;
         }
 
-        /// <summary>
-        /// Busca de Cliente Por Nome
-        /// </summary>
-        /// <param name="c"></param>
-        /// <returns></returns>
+        
         public static Cliente BuscarClientePorNome(Cliente c)
         {
             return ctx.Clientes.FirstOrDefault
                 (x => x.NomeCliente.Equals(c.NomeCliente));
+        }
+
+        public static List<Cliente> ListarClientes()
+        {
+            return ctx.Clientes.ToList();
         }
 
     }
