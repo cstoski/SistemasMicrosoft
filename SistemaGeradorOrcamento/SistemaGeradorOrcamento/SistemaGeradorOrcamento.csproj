@@ -220,37 +220,9 @@
     <Compile Include="DAL\ServicoDao.cs" />
     <Compile Include="DAL\SingletonContext.cs" />
     <Compile Include="DAL\UsuarioDao.cs" />
-    <Compile Include="Migrations\201909141401185_Inicial.cs" />
-    <Compile Include="Migrations\201909141401185_Inicial.Designer.cs">
-      <DependentUpon>201909141401185_Inicial.cs</DependentUpon>
-    </Compile>
-    <Compile Include="Migrations\201909141503123_Update Classe Cliente-Projeto.cs" />
-    <Compile Include="Migrations\201909141503123_Update Classe Cliente-Projeto.Designer.cs">
-      <DependentUpon>201909141503123_Update Classe Cliente-Projeto.cs</DependentUpon>
-    </Compile>
-    <Compile Include="Migrations\201909141939578_Alteracao Classe projeto.cs" />
-    <Compile Include="Migrations\201909141939578_Alteracao Classe projeto.Designer.cs">
-      <DependentUpon>201909141939578_Alteracao Classe projeto.cs</DependentUpon>
-    </Compile>
-    <Compile Include="Migrations\201909142048078_Inlusao Classesc.cs" />
-    <Compile Include="Migrations\201909142048078_Inlusao Classesc.Designer.cs">
-      <DependentUpon>201909142048078_Inlusao Classesc.cs</DependentUpon>
-    </Compile>
-    <Compile Include="Migrations\201909150041568_ExclusaQuantidadeMaterialDao.cs" />
-    <Compile Include="Migrations\201909150041568_ExclusaQuantidadeMaterialDao.Designer.cs">
-      <DependentUpon>201909150041568_ExclusaQuantidadeMaterialDao.cs</DependentUpon>
-    </Compile>
-    <Compile Include="Migrations\201909260249538_alteracao.cs" />
-    <Compile Include="Migrations\201909260249538_alteracao.designer.cs">
-      <DependentUpon>201909260249538_alteracao.cs</DependentUpon>
-    </Compile>
-    <Compile Include="Migrations\201909260256491_AlteracaoMaterial.cs" />
-    <Compile Include="Migrations\201909260256491_AlteracaoMaterial.designer.cs">
-      <DependentUpon>201909260256491_AlteracaoMaterial.cs</DependentUpon>
-    </Compile>
-    <Compile Include="Migrations\201909280053062_atualizacaoOrcamento.cs" />
-    <Compile Include="Migrations\201909280053062_atualizacaoOrcamento.designer.cs">
-      <DependentUpon>201909280053062_atualizacaoOrcamento.cs</DependentUpon>
+    <Compile Include="Migrations\201909281913574_inicial.cs" />
+    <Compile Include="Migrations\201909281913574_inicial.designer.cs">
+      <DependentUpon>201909281913574_inicial.cs</DependentUpon>
     </Compile>
     <Compile Include="Migrations\Configuration.cs" />
     <Compile Include="Models\Cliente.cs" />
@@ -298,29 +270,8 @@
       <DependentUpon>Settings.settings</DependentUpon>
       <DesignTimeSharedInput>True</DesignTimeSharedInput>
     </Compile>
-    <EmbeddedResource Include="Migrations\201909141401185_Inicial.resx">
-      <DependentUpon>201909141401185_Inicial.cs</DependentUpon>
-    </EmbeddedResource>
-    <EmbeddedResource Include="Migrations\201909141503123_Update Classe Cliente-Projeto.resx">
-      <DependentUpon>201909141503123_Update Classe Cliente-Projeto.cs</DependentUpon>
-    </EmbeddedResource>
-    <EmbeddedResource Include="Migrations\201909141939578_Alteracao Classe projeto.resx">
-      <DependentUpon>201909141939578_Alteracao Classe projeto.cs</DependentUpon>
-    </EmbeddedResource>
-    <EmbeddedResource Include="Migrations\201909142048078_Inlusao Classesc.resx">
-      <DependentUpon>201909142048078_Inlusao Classesc.cs</DependentUpon>
-    </EmbeddedResource>
-    <EmbeddedResource Include="Migrations\201909150041568_ExclusaQuantidadeMaterialDao.resx">
-      <DependentUpon>201909150041568_ExclusaQuantidadeMaterialDao.cs</DependentUpon>
-    </EmbeddedResource>
-    <EmbeddedResource Include="Migrations\201909260249538_alteracao.resx">
-      <DependentUpon>201909260249538_alteracao.cs</DependentUpon>
-    </EmbeddedResource>
-    <EmbeddedResource Include="Migrations\201909260256491_AlteracaoMaterial.resx">
-      <DependentUpon>201909260256491_AlteracaoMaterial.cs</DependentUpon>
-    </EmbeddedResource>
-    <EmbeddedResource Include="Migrations\201909280053062_atualizacaoOrcamento.resx">
-      <DependentUpon>201909280053062_atualizacaoOrcamento.cs</DependentUpon>
+    <EmbeddedResource Include="Migrations\201909281913574_inicial.resx">
+      <DependentUpon>201909281913574_inicial.cs</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="Properties\Resources.resx">
       <Generator>ResXFileCodeGenerator</Generator>

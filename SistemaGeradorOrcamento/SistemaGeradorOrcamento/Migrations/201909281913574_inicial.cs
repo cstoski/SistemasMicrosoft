@@ -3,15 +3,42 @@
     using System;
     using System.Data.Entity.Migrations;
     
-    public partial class alteracao : DbMigration
+    public partial class inicial : DbMigration
     {
         public override void Up()
         {
+            CreateTable(
+                "dbo.Clientes",
+                c => new
+                    {
+                        ClienteId = c.Int(nullable: false, identity: true),
+                        CriadoEm = c.DateTime(nullable: false),
+                        NomeCliente = c.String(),
+                        Contato = c.String(),
+                        Telefone = c.String(),
+                    })
+                .PrimaryKey(t => t.ClienteId);
+            
+            CreateTable(
+                "dbo.Materiais",
+                c => new
+                    {
+                        MaterialId = c.Int(nullable: false, identity: true),
+                        CriadoEm = c.DateTime(nullable: false),
+                        Nome = c.String(),
+                        Codigo = c.String(),
+                        Descricao = c.String(),
+                        Fabricante = c.String(),
+                        Valor = c.Double(nullable: false),
+                    })
+                .PrimaryKey(t => t.MaterialId);
+            
             CreateTable(
                 "dbo.Orcamentos",
                 c => new
                     {
                         OrcamentoId = c.Int(nullable: false, identity: true),
+                        versao = c.Int(nullable: false),
                         criadoEm = c.DateTime(nullable: false),
                         cliente_ClienteId = c.Int(),
                         usuario_UsuarioId = c.Int(),
@@ -59,6 +86,46 @@
                 .Index(t => t.servico_ServicolId)
                 .Index(t => t.Orcamento_OrcamentoId);
             
+            CreateTable(
+                "dbo.Servicos",
+                c => new
+                    {
+                        ServicolId = c.Int(nullable: false, identity: true),
+                        CriadoEm = c.DateTime(nullable: false),
+                        Nome = c.String(),
+                        Descricao = c.String(),
+                        Valor = c.Double(nullable: false),
+                        Tipo = c.String(),
+                    })
+                .PrimaryKey(t => t.ServicolId);
+            
+            CreateTable(
+                "dbo.Usuarios",
+                c => new
+                    {
+                        UsuarioId = c.Int(nullable: false, identity: true),
+                        CriadoEm = c.DateTime(nullable: false),
+                        Nome = c.String(),
+                        Email = c.String(),
+                        Matricula = c.String(),
+                        Departamento = c.String(),
+                        Senha = c.String(),
+                    })
+                .PrimaryKey(t => t.UsuarioId);
+            
+            CreateTable(
+                "dbo.Projetos",
+                c => new
+                    {
+                        ProjetoId = c.Int(nullable: false, identity: true),
+                        CriadoEm = c.DateTime(nullable: false),
+                        NumeroProjeto = c.String(),
+                        NomeProjeto = c.String(),
+                        Cliente = c.String(),
+                        Status = c.String(),
+                    })
+                .PrimaryKey(t => t.ProjetoId);
+            
         }
         
         public override void Down()
@@ -77,9 +144,14 @@
             DropIndex("dbo.Orcamentos", new[] { "Projeto_ProjetoId" });
             DropIndex("dbo.Orcamentos", new[] { "usuario_UsuarioId" });
             DropIndex("dbo.Orcamentos", new[] { "cliente_ClienteId" });
+            DropTable("dbo.Projetos");
+            DropTable("dbo.Usuarios");
+            DropTable("dbo.Servicos");
             DropTable("dbo.ListaDeServicos");
             DropTable("dbo.ListaDeMateriais");
             DropTable("dbo.Orcamentos");
+            DropTable("dbo.Materiais");
+            DropTable("dbo.Clientes");
         }
     }
 }

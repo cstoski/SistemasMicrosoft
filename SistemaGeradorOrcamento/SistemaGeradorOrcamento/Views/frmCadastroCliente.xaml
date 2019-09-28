@@ -5,16 +5,26 @@
         xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
         xmlns:local="clr-namespace:SistemaGeradorOrcamento.Views"
         mc:Ignorable="d"
-        Title="Cadastro de Clientes" Height="303.851" Width="531.745" WindowStartupLocation="CenterScreen" ResizeMode="NoResize" Loaded="FrmCadatroCliente_Loaded">
+        Title="Cadastro de Clientes" Height="375.851" Width="691.745" WindowStartupLocation="CenterScreen" ResizeMode="NoResize" Loaded="FrmCadatroCliente_Loaded">
     <Grid Margin="0,0,0,7">
-        <Label Content="Nome do Cliente:" HorizontalAlignment="Left" Margin="10,11,0,0" VerticalAlignment="Top" Width="112"/>
+        <Label Content="Nome da Empresa:" HorizontalAlignment="Left" Margin="10,11,0,0" VerticalAlignment="Top" Width="112"/>
         <Label Content="Pessoa de Contato:" HorizontalAlignment="Left" Margin="10,37,0,0" VerticalAlignment="Top"/>
         <Label Content="Telefone:" HorizontalAlignment="Left" Margin="10,63,0,0" VerticalAlignment="Top" Width="111"/>
-        <TextBox x:Name="txtNome" HorizontalAlignment="Left" Height="23" Margin="127,14,0,0" TextWrapping="Wrap" VerticalAlignment="Top" Width="376" TabIndex="0"/>
-        <TextBox x:Name="txtContato" HorizontalAlignment="Left" Height="23" Margin="127,40,0,0" TextWrapping="Wrap" VerticalAlignment="Top" Width="376" TabIndex="1"/>
-        <TextBox x:Name="txtTelefone" HorizontalAlignment="Left" Height="23" Margin="127,66,0,0" TextWrapping="Wrap" VerticalAlignment="Top" Width="376" TabIndex="2"/>
-        <Button x:Name="btnCadastrar" Content="Cadastrar" HorizontalAlignment="Left" Margin="428,108,0,0" VerticalAlignment="Top" Width="75" Height="24" Click="BtnCadastrar_Click"/>
-        <DataGrid HorizontalAlignment="Left" Height="103" Margin="10,145,0,0" VerticalAlignment="Top" Width="493"/>
+        <TextBox x:Name="txtNome" HorizontalAlignment="Left" Height="23" Margin="127,14,0,0" TextWrapping="Wrap" VerticalAlignment="Top" Width="376" TabIndex="0" IsEnabled="False"/>
+        <TextBox x:Name="txtContato" HorizontalAlignment="Left" Height="23" Margin="127,40,0,0" TextWrapping="Wrap" VerticalAlignment="Top" Width="376" TabIndex="1" IsEnabled="False"/>
+        <TextBox x:Name="txtTelefone" HorizontalAlignment="Left" Height="23" Margin="127,66,0,0" TextWrapping="Wrap" VerticalAlignment="Top" Width="376" TabIndex="2" IsEnabled="False"/>
+        <DataGrid x:Name="dtaCliente" AutoGenerateColumns="False" HorizontalAlignment="Left" Height="147" Margin="10,169,0,0" VerticalAlignment="Top" Width="649" SelectedCellsChanged="DtaCliente_SelectedCellsChanged">
+            <DataGrid.Columns>
+                <DataGridTextColumn Binding="{Binding NomeCliente}" Header="Empresa" Width="300"/>
+                <DataGridTextColumn Binding="{Binding Contato}" Header="Contato" Width="200"/>
+                <DataGridTextColumn Binding="{Binding Telefone, StringFormat=(99) 9999-9999}" Header="Telefone" Width="140"/>                
+            </DataGrid.Columns>
+        </DataGrid>
+        <Button x:Name="btnCadastrar" Content="Novo" HorizontalAlignment="Left" Margin="530,16,0,0" VerticalAlignment="Top" Width="129" Height="24" TabIndex="5" Click="BtnCadastrar_Click"/>
+        <Button x:Name="btnEditar" Content="Editar" HorizontalAlignment="Left" Margin="530,45,0,0" VerticalAlignment="Top" Width="129" Height="24" TabIndex="6" IsEnabled="False" Click="BtnEditar_Click" />
+        <Button x:Name="btnBuscar" Content="Listar Todos" HorizontalAlignment="Left" Margin="530,74,0,0" VerticalAlignment="Top" Width="129" Height="24" TabIndex="7" Click="BtnBuscar_Click"/>
+        <Button x:Name="btnSalvar" Content="Salvar" HorizontalAlignment="Left" Margin="530,131,0,0" VerticalAlignment="Top" Width="129" Height="24" TabIndex="5" Click="BtnSalvar_Click" Visibility="Hidden"/>
+        <Button x:Name="btnCancelar" Content="Cancelar" HorizontalAlignment="Left" Margin="396,131,0,0" VerticalAlignment="Top" Width="129" Height="24" TabIndex="5" Click="BtnCancelar_Click" Visibility="Hidden"/>
 
     </Grid>
 </Window>
