@@ -140,7 +140,6 @@ namespace SistemaGeradorOrcamento.Views
         {
             objetoSelecaoServico = dtaListaServicos.SelectedValue;
              
-
             btnExcluirServico.IsEnabled = true;
             btnEditarServico.IsEnabled = true;
          
@@ -218,6 +217,17 @@ namespace SistemaGeradorOrcamento.Views
         {
           
             
-        }   
+        }
+
+        private void Button_Click(object sender, RoutedEventArgs e)
+        {
+            if (OrcamentoDao.CadastrarOrcamento(orcamento))
+            {
+                MessageBox.Show("Orçamento Cadastrado!",
+                    "SistemaOrcamento", MessageBoxButton.OK,
+                    MessageBoxImage.Information);
+                
+            };
+        }
     }
 }

@@ -10,6 +10,7 @@ namespace SistemaGeradorOrcamento.Models
         public DbSet<Usuario> Usuarios { get; set; }
         public DbSet<Material> Materiais { get; set; }
         public DbSet<Servico> Servicos { get; set; }
+        public DbSet<Orcamento> Orcamentos {get; set;}
 
     }
 }

@@ -13,6 +13,7 @@
             <MenuItem Header="Material" Height="46" Width="121" HorizontalAlignment="Center" HorizontalContentAlignment="Center" UseLayoutRounding="False" VerticalContentAlignment="Center" VerticalAlignment="Center" Click="MenuItem_Click_Materiais" Background="#FF7676FF" Foreground="#FF040404" FontSize="14" FontWeight="Bold"/>
             <MenuItem Header="Serviços" Height="46" Width="121" HorizontalAlignment="Center" HorizontalContentAlignment="Center" UseLayoutRounding="False" VerticalContentAlignment="Center" VerticalAlignment="Center" Click="MenuItem_Click_Servicos" Background="#FF7676FF" Foreground="#FF040404" FontSize="14" FontWeight="Bold"/>
             <MenuItem Header="Usuários" Height="46" Width="121" HorizontalAlignment="Center" HorizontalContentAlignment="Center" UseLayoutRounding="False" VerticalContentAlignment="Center" VerticalAlignment="Center" Click="MenuItem_Click_Usuarios" Background="#FF7676FF" Foreground="#FF040404" FontSize="14" FontWeight="Bold"/>
+            <MenuItem Header="Orcamento" Height="37" Width="121" HorizontalAlignment="Center" HorizontalContentAlignment="Center" UseLayoutRounding="False" VerticalContentAlignment="Center" VerticalAlignment="Center" Click="MenuItem_Click_Orcamento" Background="#FF7676FF" Foreground="#FF040404" FontSize="14" FontWeight="Bold"/>
         </Menu>
 
     </Grid>

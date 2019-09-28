@@ -55,5 +55,11 @@ namespace SistemaGeradorOrcamento.Views
             frmCadastroServico frmServico = new frmCadastroServico();
             frmServico.ShowDialog();
         }
+
+        private void MenuItem_Click_Orcamento(object sender, RoutedEventArgs e)
+        {
+            frmCadastroOrcamento frmOrcamento = new frmCadastroOrcamento();
+            frmOrcamento.ShowDialog();
+        }
     }
 }

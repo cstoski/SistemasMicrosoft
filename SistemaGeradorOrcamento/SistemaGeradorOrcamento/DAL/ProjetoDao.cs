@@ -13,7 +13,7 @@ namespace SistemaGeradorOrcamento.DAL
 
         public static bool CadastrarProjeto(Projeto p)
         {
-            if (BuscarProjetoPorNome(p) == null)
+            if (BuscarProjetoPorNumero(p) == null)
             {
                 ctx.Projetos.Add(p);
                 ctx.SaveChanges();
@@ -27,6 +27,12 @@ namespace SistemaGeradorOrcamento.DAL
         {
             return ctx.Projetos.FirstOrDefault
                 (x => x.NomeProjeto.Equals(p.NomeProjeto));
+        }
+
+        public static Projeto BuscarProjetoPorNumero(Projeto p)
+        {
+            return ctx.Projetos.FirstOrDefault
+                (x => x.NumeroProjeto.Equals(p.NumeroProjeto));
         }
 
     }

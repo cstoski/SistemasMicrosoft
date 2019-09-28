@@ -36,9 +36,9 @@ namespace SistemaGeradorOrcamento.Views
                 {
                     NumeroProjeto = txtNumero.Text,
                     NomeProjeto = txtProjeto.Text,
-                    
+
                     Status = ComboItem.Content.ToString(),
-                    
+
                     Cliente = cboCliente.SelectedValue.ToString()
                 };
 
