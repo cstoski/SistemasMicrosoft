@@ -7,7 +7,7 @@
         mc:Ignorable="d"
         Title="Cadastro de Projetos" Height="412" Width="644" WindowStartupLocation="CenterScreen" Loaded="FrmCadatroProjeto_Loaded">
     <Grid>
-        <GroupBox Header="Orçamentos" HorizontalAlignment="Left" Height="218" Margin="22,146,0,0" VerticalAlignment="Top" Width="600"/>
+        <GroupBox Header="Projetos" HorizontalAlignment="Left" Height="218" Margin="22,146,0,0" VerticalAlignment="Top" Width="600"/>
         <Label Content="Número:" HorizontalAlignment="Left" Margin="26,22,0,0" VerticalAlignment="Top" Width="104"/>
         <Label Content="Nome do Projeto:" HorizontalAlignment="Left" Margin="26,56,0,0" VerticalAlignment="Top"/>
         <Label Content="Cliente:" HorizontalAlignment="Left" Margin="26,84,0,0" VerticalAlignment="Top" RenderTransformOrigin="0.366,0.236" Width="104"/>
@@ -22,12 +22,13 @@
 
         </ComboBox>
         <ComboBox x:Name="cboCliente" HorizontalAlignment="Left" Height="24" Margin="136,85,0,0" VerticalAlignment="Top" Width="483" TabIndex="3" IsEnabled="False"/>
-        <Button x:Name="btnNovo" Content="Novo" HorizontalAlignment="Left" Margin="543,115,0,0" VerticalAlignment="Top" Width="75" Height="24" TabIndex="4" Click="BtnNovo_Click"/>
-        <Button x:Name="btnEditarProjeto" Content="Editar" HorizontalAlignment="Left" Margin="361,115,0,0" VerticalAlignment="Top" Width="75" Height="24" TabIndex="6" IsEnabled="False"/>
-        <DataGrid x:Name="dgListaOrcamento" HorizontalAlignment="Left" Height="146" Margin="38,173,0,0" VerticalAlignment="Top" Width="568" TabIndex="7" IsEnabled="False"/>
+        <Button x:Name="btnNovo" Content="Novo" HorizontalAlignment="Left" Margin="543,114,0,0" VerticalAlignment="Top" Width="75" Height="24" TabIndex="4" Click="BtnNovo_Click"/>
+        <Button x:Name="btnEditarProjeto" Content="Editar" HorizontalAlignment="Left" Margin="383,115,0,0" VerticalAlignment="Top" Width="75" Height="24" TabIndex="6" Visibility="Hidden"/>
+        <DataGrid x:Name="dtaProjetos" HorizontalAlignment="Left" Height="146" Margin="38,173,0,0" VerticalAlignment="Top" Width="568" TabIndex="7" IsEnabled="False"/>
         <Button x:Name="btnAdicionarOrcamento" Content="Adicionar" HorizontalAlignment="Left" Margin="531,324,0,0" VerticalAlignment="Top" Width="75" Height="24" TabIndex="8" IsEnabled="False"/>
-        <Button x:Name="btnBuscarOrcamento" Content="Buscar" HorizontalAlignment="Left" Margin="452,115,0,0" VerticalAlignment="Top" Width="75" Height="24" TabIndex="5" Click="BtnBuscarOrcamento_Click"/>
-        <Button x:Name="btnSalvar" Content="Salvar" HorizontalAlignment="Left" Margin="268,119,0,0" VerticalAlignment="Top" Width="74" IsEnabled="False" Click="BtnSalvar_Click"/>
+        <Button x:Name="btnBuscarOrcamento" Content="Buscar" HorizontalAlignment="Left" Margin="463,114,0,0" VerticalAlignment="Top" Width="75" Height="24" TabIndex="5" Click="BtnBuscarOrcamento_Click"/>
+        <Button x:Name="btnSalvar" Content="Salvar" HorizontalAlignment="Left" Margin="303,114,0,0" VerticalAlignment="Top" Width="75" Height="24" Click="BtnSalvar_Click" Visibility="Hidden" IsEnabled="False"/>
+        <Button x:Name="btnCancelar" Content="Cancelar" HorizontalAlignment="Left" Margin="223,114,0,0" VerticalAlignment="Top" Width="75" Height="24" Click="BtnCancelar_Click" Visibility="Hidden" />
 
     </Grid>
 </Window>

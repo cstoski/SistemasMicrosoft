@@ -1,5 +1,6 @@
 ﻿using SistemaGeradorOrcamento.DAL;
 using SistemaGeradorOrcamento.Models;
+using System.Collections.Generic;
 using System.Windows;
 using System.Windows.Controls;
 
@@ -41,18 +42,52 @@ namespace SistemaGeradorOrcamento.Views
             txtProjeto.IsEnabled = true;
             cboCliente.IsEnabled = true;
             btnSalvar.IsEnabled = true;
+            btnSalvar.Visibility = Visibility.Visible;
+            btnCancelar.Visibility = Visibility.Visible;
+            btnBuscarOrcamento.IsEnabled = false;
+            btnNovo.IsEnabled = false;
             txtProjeto.Focus();
             txtNumero.Text = ProjetoDao.GerarNumeroProjeto(p);
         }
 
         private void BtnBuscarOrcamento_Click(object sender, RoutedEventArgs e)
         {
+            //Se o valor da caixa de text for vazia lista todos os registros
+            //Senão busca pelo Número Informado
+            
+
+            if (txtNumero.Text.Equals(""))
+            {
+                List<Projeto> projetos = ProjetoDao.ListarTodosProjetos();
+                dtaProjetos.ItemsSource = projetos;
+            }
+            else
+            {
+                Projeto p = new Projeto
+                {
+                    NumeroProjeto = txtNumero.Text
+                };
+                p = ProjetoDao.BuscarProjetoPorNumero(p);
+
+                if (p != null)
+                {
+                    txtProjeto.Text = p.NomeProjeto;
+                    cboCliente.Text = p.Status;
+                    cboCliente.Text = p.Cliente;
+                }
+                else
+                {
+                    MessageBox.Show("Projeto Não Cadastrado",
+                        "Cadastro de Orçamento");
+                }
+
+            }
 
         }
 
         private void BtnSalvar_Click(object sender, RoutedEventArgs e)
         {
-            if (txtNumero != null && cboStatus != null && txtProjeto != null && cboCliente != null)
+            if (txtNumero.Text != null && cboStatus.Text != null && txtProjeto.Text != "" && cboCliente.Text !=null)
             {
                 ComboBoxItem ComboItem = (ComboBoxItem)cboStatus.SelectedItem;
                 Projeto projeto = new Projeto
@@ -68,6 +103,20 @@ namespace SistemaGeradorOrcamento.Views
                     MessageBox.Show("Projeto Cadastrado!",
                         "Sistema Orcamento", MessageBoxButton.OK,
                         MessageBoxImage.Information);
+
+                    btnSalvar.Visibility = Visibility.Hidden;
+                    btnCancelar.Visibility = Visibility.Hidden;
+                    btnBuscarOrcamento.IsEnabled = true;
+                    btnNovo.IsEnabled = true;
+                    txtNumero.Text = "";
+                    txtNumero.IsEnabled = true;
+                    txtNumero.Focus();
+                    txtProjeto.Text = "";
+                    txtProjeto.IsEnabled = false;
+                    cboStatus.SelectedIndex = -1;
+                    cboStatus.IsEnabled = false;
+                    cboCliente.SelectedIndex = -1;
+                    cboCliente.IsEnabled = false;
                     //LimparFormulario();
                 }
                 else
@@ -82,6 +131,24 @@ namespace SistemaGeradorOrcamento.Views
             {
                 MessageBox.Show("Por favor Preencha todos os campos!");
             }
+        }
+
+        private void BtnCancelar_Click(object sender, RoutedEventArgs e)
+        {
+            txtNumero.Text = "";
+            txtNumero.IsEnabled = true;
+            txtProjeto.Text = "";
+            txtProjeto.IsEnabled = false;
+            cboStatus.SelectedIndex = -1;
+            cboStatus.IsEnabled = false;
+            cboCliente.SelectedIndex = -1;
+            cboCliente.IsEnabled = false;
+                        
+            btnSalvar.Visibility = Visibility.Hidden;
+            btnCancelar.Visibility = Visibility.Hidden;
+            btnBuscarOrcamento.IsEnabled = true;
+            btnNovo.IsEnabled = true;
+            txtNumero.Focus();
         }
     }
 }
