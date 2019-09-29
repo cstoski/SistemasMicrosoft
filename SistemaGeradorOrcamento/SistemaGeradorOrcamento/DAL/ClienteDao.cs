@@ -7,9 +7,9 @@ namespace SistemaGeradorOrcamento.DAL
 {
     class ClienteDao
     {
-        private static Context ctx = new Context();
+        private static Context ctx = SingletonContext.GetInstance();
 
-       
+
         public static bool CadastrarCliente(Cliente c)
         {
             if (BuscarClientePorNome(c) == null)
@@ -37,6 +37,11 @@ namespace SistemaGeradorOrcamento.DAL
         {
             return ctx.Clientes.FirstOrDefault
                 (x => x.NomeCliente.Equals(c.NomeCliente));
+        }
+
+        public static Cliente BuscarClientePorId(int id)
+        {
+            return ctx.Clientes.Find(id);
         }
 
         public static List<Cliente> ListarClientes()

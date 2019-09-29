@@ -23,9 +23,9 @@ namespace SistemaGeradorOrcamento.Models
 
         public String NumeroProjeto { get; set; }
         public String NomeProjeto { get; set; }
-        public String Cliente { get; set; }
+        public Cliente Cliente { get; set; }
         public String Status { get; set; }
-        
+        public List<Orcamento> listaOrcamento { get; set; }
         //public enum status
         //{
         //    [Description("Em Execução")] emExecucao,
@@ -35,7 +35,7 @@ namespace SistemaGeradorOrcamento.Models
         //    [Description("Suspenso")] suspenso,
         //    [Description("Cancelado")] cancelado
         //}
-        public List<Orcamento> listaOrcamento { get; set; }
+
 
     }
 }

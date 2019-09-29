@@ -9,7 +9,7 @@ namespace SistemaGeradorOrcamento.DAL
 {
     class ServicoDao
     {
-        private static Context ctx = new Context();
+        private static Context ctx = SingletonContext.GetInstance();
 
         public static bool CadastrarServico(Servico s)
         {

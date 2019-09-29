@@ -9,7 +9,7 @@ namespace SistemaGeradorOrcamento.DAL
 {
     class ProjetoDao
     {
-        private static Context ctx = new Context();
+        private static Context ctx = SingletonContext.GetInstance();
 
         public static bool CadastrarProjeto(Projeto p)
         {
@@ -35,7 +35,7 @@ namespace SistemaGeradorOrcamento.DAL
                 (x => x.NumeroProjeto.Equals(p.NumeroProjeto));
         }
 
-        public static List<Projeto> ListarTodosProjetos() => ctx.Projetos.ToList();
+        public static List<Projeto> ListarTodosProjetos() => ctx.Projetos.Include("Cliente").ToList();
         
         public static string GerarNumeroProjeto(Projeto projeto)
         {

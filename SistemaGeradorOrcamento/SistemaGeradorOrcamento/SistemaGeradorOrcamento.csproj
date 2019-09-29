@@ -224,6 +224,14 @@
     <Compile Include="Migrations\201909281913574_inicial.designer.cs">
       <DependentUpon>201909281913574_inicial.cs</DependentUpon>
     </Compile>
+    <Compile Include="Migrations\201909292136349_atualização.cs" />
+    <Compile Include="Migrations\201909292136349_atualização.designer.cs">
+      <DependentUpon>201909292136349_atualização.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Migrations\201909292257513_ites.cs" />
+    <Compile Include="Migrations\201909292257513_ites.designer.cs">
+      <DependentUpon>201909292257513_ites.cs</DependentUpon>
+    </Compile>
     <Compile Include="Migrations\Configuration.cs" />
     <Compile Include="Models\Cliente.cs" />
     <Compile Include="Models\Context.cs" />
@@ -272,6 +280,12 @@
     </Compile>
     <EmbeddedResource Include="Migrations\201909281913574_inicial.resx">
       <DependentUpon>201909281913574_inicial.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Migrations\201909292136349_atualização.resx">
+      <DependentUpon>201909292136349_atualização.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Migrations\201909292257513_ites.resx">
+      <DependentUpon>201909292257513_ites.cs</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="Properties\Resources.resx">
       <Generator>ResXFileCodeGenerator</Generator>

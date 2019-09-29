@@ -74,7 +74,7 @@ namespace SistemaGeradorOrcamento.Views
                 {
                     txtProjeto.Text = p.NomeProjeto;
                     cboStatus.SelectedIndex = Convert.ToInt32(p.Status);
-                    cboCliente.SelectedIndex = Convert.ToInt32(p.Cliente);
+                    cboCliente.SelectedIndex = Convert.ToInt32(p.Cliente.ClienteId);
                 }
                 else
                 {
@@ -91,12 +91,15 @@ namespace SistemaGeradorOrcamento.Views
             if (txtNumero.Text != null && cboStatus.Text != null && txtProjeto.Text != "" && cboCliente.Text !=null)
             {
                 //ComboBoxItem ComboItem = (ComboBoxItem)cboStatus.SelectedItem;
+                int idCliente = Convert.ToInt32(cboCliente.SelectedValue);
+
                 Projeto projeto = new Projeto
+                
                 {
                     NumeroProjeto = txtNumero.Text,
                     NomeProjeto = txtProjeto.Text,
                     Status = cboStatus.SelectedIndex.ToString(),
-                    Cliente = cboCliente.SelectedValue.ToString()
+                    Cliente = ClienteDao.BuscarClientePorId(idCliente)
                 };
 
                 if (ProjetoDao.CadastrarProjeto(projeto))
