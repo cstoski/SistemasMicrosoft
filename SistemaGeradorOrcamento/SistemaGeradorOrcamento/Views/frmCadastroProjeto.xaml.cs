@@ -30,9 +30,19 @@ namespace SistemaGeradorOrcamento.Views
 
         private void BtnNovo_Click(object sender, RoutedEventArgs e)
         {
+            Projeto p = new Projeto
+            {
+                ProjetoId = 1
+            };
             //Adicionar Numeração Automática
-            //cboStatus.SelectedIndex = "1";
-            cboStatus.IsEnabled = true;
+            cboStatus.SelectedIndex = 0;
+            cboStatus.IsEnabled = false;
+            txtNumero.IsEnabled = false;
+            txtProjeto.IsEnabled = true;
+            cboCliente.IsEnabled = true;
+            btnSalvar.IsEnabled = true;
+            txtProjeto.Focus();
+            txtNumero.Text = ProjetoDao.GerarNumeroProjeto(p);
         }
 
         private void BtnBuscarOrcamento_Click(object sender, RoutedEventArgs e)
@@ -49,9 +59,7 @@ namespace SistemaGeradorOrcamento.Views
                 {
                     NumeroProjeto = txtNumero.Text,
                     NomeProjeto = txtProjeto.Text,
-
                     Status = ComboItem.Content.ToString(),
-
                     Cliente = cboCliente.SelectedValue.ToString()
                 };
 
