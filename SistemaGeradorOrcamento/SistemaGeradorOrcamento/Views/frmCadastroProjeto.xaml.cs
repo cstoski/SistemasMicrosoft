@@ -1,5 +1,6 @@
 ﻿using SistemaGeradorOrcamento.DAL;
 using SistemaGeradorOrcamento.Models;
+using System;
 using System.Collections.Generic;
 using System.Windows;
 using System.Windows.Controls;
@@ -54,12 +55,12 @@ namespace SistemaGeradorOrcamento.Views
         {
             //Se o valor da caixa de text for vazia lista todos os registros
             //Senão busca pelo Número Informado
-            
-
+           
             if (txtNumero.Text.Equals(""))
             {
                 List<Projeto> projetos = ProjetoDao.ListarTodosProjetos();
                 dtaProjetos.ItemsSource = projetos;
+                dtaProjetos.IsEnabled = true;
             }
             else
             {
@@ -72,8 +73,8 @@ namespace SistemaGeradorOrcamento.Views
                 if (p != null)
                 {
                     txtProjeto.Text = p.NomeProjeto;
-                    cboCliente.Text = p.Status;
-                    cboCliente.Text = p.Cliente;
+                    cboStatus.SelectedIndex = Convert.ToInt32(p.Status);
+                    cboCliente.SelectedIndex = Convert.ToInt32(p.Cliente);
                 }
                 else
                 {
@@ -89,12 +90,12 @@ namespace SistemaGeradorOrcamento.Views
         {
             if (txtNumero.Text != null && cboStatus.Text != null && txtProjeto.Text != "" && cboCliente.Text !=null)
             {
-                ComboBoxItem ComboItem = (ComboBoxItem)cboStatus.SelectedItem;
+                //ComboBoxItem ComboItem = (ComboBoxItem)cboStatus.SelectedItem;
                 Projeto projeto = new Projeto
                 {
                     NumeroProjeto = txtNumero.Text,
                     NomeProjeto = txtProjeto.Text,
-                    Status = ComboItem.Content.ToString(),
+                    Status = cboStatus.SelectedIndex.ToString(),
                     Cliente = cboCliente.SelectedValue.ToString()
                 };
 
@@ -117,7 +118,7 @@ namespace SistemaGeradorOrcamento.Views
                     cboStatus.IsEnabled = false;
                     cboCliente.SelectedIndex = -1;
                     cboCliente.IsEnabled = false;
-                    //LimparFormulario();
+                    
                 }
                 else
                 {
@@ -143,7 +144,8 @@ namespace SistemaGeradorOrcamento.Views
             cboStatus.IsEnabled = false;
             cboCliente.SelectedIndex = -1;
             cboCliente.IsEnabled = false;
-                        
+
+            
             btnSalvar.Visibility = Visibility.Hidden;
             btnCancelar.Visibility = Visibility.Hidden;
             btnBuscarOrcamento.IsEnabled = true;

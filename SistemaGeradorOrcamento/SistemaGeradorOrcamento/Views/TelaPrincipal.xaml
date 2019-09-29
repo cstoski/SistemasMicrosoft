@@ -5,7 +5,7 @@
         xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
         xmlns:local="clr-namespace:SistemaGeradorOrcamento.Views"
         mc:Ignorable="d"
-        Title="TelaPrincipal" Height="484.5" Width="800" WindowStartupLocation="CenterScreen" Background="#FFBEBEC1">
+        Title="TelaPrincipal" Height="484.5" Width="800" WindowStartupLocation="CenterScreen" Background="#FFBEBEC1" WindowState="Maximized">
     <Grid>
         <Menu HorizontalAlignment="Left" Height="399" Margin="10,10,0,0" VerticalAlignment="Top" Width="121" Background="{DynamicResource {x:Static SystemColors.MenuBarBrushKey}}" Foreground="#FF141EEC">
             <MenuItem Header="Clientes" Height="46" Width="121" HorizontalAlignment="Center" HorizontalContentAlignment="Center" UseLayoutRounding="False" VerticalContentAlignment="Center" VerticalAlignment="Center" Click="MenuItem_Click" Background="#FF7676FF" Foreground="#FF040404" FontSize="14" FontWeight="Bold"/>
