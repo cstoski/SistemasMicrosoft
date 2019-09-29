@@ -13,6 +13,7 @@ namespace SistemaGeradorOrcamento.Views
         public frmCadastroProjeto()
         {
             InitializeComponent();
+            txtNumero.Focus();
         }
 
         private void BtnEditarProjeto_Click(object sender, RoutedEventArgs e)
@@ -27,9 +28,21 @@ namespace SistemaGeradorOrcamento.Views
             cboCliente.SelectedValuePath = "ClienteId";
         }
 
-        private void BtnAdicionarProjeto_Click(object sender, RoutedEventArgs e)
+        private void BtnNovo_Click(object sender, RoutedEventArgs e)
         {
-            if(txtNumero != null && cboStatus != null && txtProjeto != null && cboCliente != null)
+            //Adicionar Numeração Automática
+            //cboStatus.SelectedIndex = "1";
+            cboStatus.IsEnabled = true;
+        }
+
+        private void BtnBuscarOrcamento_Click(object sender, RoutedEventArgs e)
+        {
+
+        }
+
+        private void BtnSalvar_Click(object sender, RoutedEventArgs e)
+        {
+            if (txtNumero != null && cboStatus != null && txtProjeto != null && cboCliente != null)
             {
                 ComboBoxItem ComboItem = (ComboBoxItem)cboStatus.SelectedItem;
                 Projeto projeto = new Projeto
@@ -61,11 +74,6 @@ namespace SistemaGeradorOrcamento.Views
             {
                 MessageBox.Show("Por favor Preencha todos os campos!");
             }
-        }
-
-        private void BtnBuscarOrcamento_Click(object sender, RoutedEventArgs e)
-        {
-
         }
     }
 }

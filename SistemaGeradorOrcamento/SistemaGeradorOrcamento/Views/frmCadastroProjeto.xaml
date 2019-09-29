@@ -13,20 +13,21 @@
         <Label Content="Cliente:" HorizontalAlignment="Left" Margin="26,84,0,0" VerticalAlignment="Top" RenderTransformOrigin="0.366,0.236" Width="104"/>
         <Label Content="Status:" HorizontalAlignment="Left" Margin="341,22,0,0" VerticalAlignment="Top" RenderTransformOrigin="0.161,0.692"/>
         <TextBox x:Name="txtNumero" HorizontalAlignment="Left" Height="24" Margin="135,22,0,0" TextWrapping="Wrap" Text="" VerticalAlignment="Top" Width="120" TabIndex="0"/>
-        <TextBox x:Name="txtProjeto" HorizontalAlignment="Left" Height="24" Margin="135,56,0,0" TextWrapping="Wrap" Text="" VerticalAlignment="Top" Width="483" TabIndex="2"/>
-        <ComboBox x:Name="cboStatus" HorizontalAlignment="Left" Margin="391,22,0,0" VerticalAlignment="Top" Width="227" Height="24" TabIndex="1">
+        <TextBox x:Name="txtProjeto" HorizontalAlignment="Left" Height="24" Margin="135,56,0,0" TextWrapping="Wrap" Text="" VerticalAlignment="Top" Width="483" TabIndex="2" IsEnabled="False"/>
+        <ComboBox x:Name="cboStatus" HorizontalAlignment="Left" Margin="391,22,0,0" VerticalAlignment="Top" Width="227" Height="24" TabIndex="1" IsEnabled="False">
             <ComboBoxItem Content="Emissão Inicial" HorizontalAlignment="Left" Width="225"/>
             <ComboBoxItem Content="Aguardando Aprovação Cliente" HorizontalAlignment="Left" Width="225"/>
             <ComboBoxItem Content="Cancelado" HorizontalAlignment="Left" Width="225"/>
             <ComboBoxItem Content="Fechado" HorizontalAlignment="Left" Width="225"/>
 
         </ComboBox>
-        <ComboBox x:Name="cboCliente" HorizontalAlignment="Left" Height="24" Margin="136,85,0,0" VerticalAlignment="Top" Width="483" TabIndex="3"/>
-        <Button x:Name="btnAdicionarProjeto" Content="Adicionar" HorizontalAlignment="Left" Margin="543,115,0,0" VerticalAlignment="Top" Width="75" Height="24" TabIndex="4" Click="BtnAdicionarProjeto_Click"/>
-        <Button x:Name="btnEditarProjeto" Content="Editar" HorizontalAlignment="Left" Margin="361,115,0,0" VerticalAlignment="Top" Width="75" Height="24" TabIndex="6"/>
-        <DataGrid x:Name="dgListaOrcamento" HorizontalAlignment="Left" Height="146" Margin="38,173,0,0" VerticalAlignment="Top" Width="568" TabIndex="7"/>
-        <Button x:Name="btnAdicionarOrcamento" Content="Adicionar" HorizontalAlignment="Left" Margin="531,324,0,0" VerticalAlignment="Top" Width="75" Height="24" TabIndex="8"/>
+        <ComboBox x:Name="cboCliente" HorizontalAlignment="Left" Height="24" Margin="136,85,0,0" VerticalAlignment="Top" Width="483" TabIndex="3" IsEnabled="False"/>
+        <Button x:Name="btnNovo" Content="Novo" HorizontalAlignment="Left" Margin="543,115,0,0" VerticalAlignment="Top" Width="75" Height="24" TabIndex="4" Click="BtnNovo_Click"/>
+        <Button x:Name="btnEditarProjeto" Content="Editar" HorizontalAlignment="Left" Margin="361,115,0,0" VerticalAlignment="Top" Width="75" Height="24" TabIndex="6" IsEnabled="False"/>
+        <DataGrid x:Name="dgListaOrcamento" HorizontalAlignment="Left" Height="146" Margin="38,173,0,0" VerticalAlignment="Top" Width="568" TabIndex="7" IsEnabled="False"/>
+        <Button x:Name="btnAdicionarOrcamento" Content="Adicionar" HorizontalAlignment="Left" Margin="531,324,0,0" VerticalAlignment="Top" Width="75" Height="24" TabIndex="8" IsEnabled="False"/>
         <Button x:Name="btnBuscarOrcamento" Content="Buscar" HorizontalAlignment="Left" Margin="452,115,0,0" VerticalAlignment="Top" Width="75" Height="24" TabIndex="5" Click="BtnBuscarOrcamento_Click"/>
+        <Button x:Name="btnSalvar" Content="Salvar" HorizontalAlignment="Left" Margin="268,119,0,0" VerticalAlignment="Top" Width="74" IsEnabled="False" Click="BtnSalvar_Click"/>
 
     </Grid>
 </Window>
