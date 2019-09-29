@@ -23,6 +23,8 @@ namespace SistemaGeradorOrcamento.Views
     {
         private List<dynamic> servicosGrid = new List<dynamic>();
         dynamic objetoSelecionadoDataGrid;
+        bool clickBotao = false;
+
 
         public frmCadastroCliente()
         {
@@ -92,6 +94,8 @@ namespace SistemaGeradorOrcamento.Views
                     btnSalvar.Visibility = Visibility.Hidden;
                     btnBuscar.IsEnabled = true;
                     btnCadastrar.IsEnabled = true;
+                    btnEditar.Content = "Editar";
+                    clickBotao = false;
                 }
                 else
                 {
@@ -110,6 +114,8 @@ namespace SistemaGeradorOrcamento.Views
         private void BtnCancelar_Click(object sender, RoutedEventArgs e)
         {
             LimparFormulario();
+            btnEditar.Content = "Editar";
+            clickBotao = false;
             txtNome.IsEnabled = false;
             txtContato.IsEnabled = false;
             txtTelefone.IsEnabled = false;
@@ -125,46 +131,44 @@ namespace SistemaGeradorOrcamento.Views
             btnEditar.IsEnabled = true;
         }
 
-        bool clickBotao = false;
+        
         private void BtnEditar_Click(object sender, RoutedEventArgs e)
         {
             Cliente cliente = new Cliente
             {
                 NomeCliente = objetoSelecionadoDataGrid.NomeCliente
             };
-
+            
             cliente = ClienteDao.BuscarClientePorNome(cliente);
-            Cliente clienteCopia = cliente;
-
+            
 
             if (clickBotao == false)
             {
+                btnCancelar.Visibility = Visibility.Visible;
                 clickBotao = true;
                 btnEditar.Content = "Salvar";
                 btnEditar.IsEnabled = true;
+                btnBuscar.IsEnabled = false;
+                btnCadastrar.IsEnabled = false;
                 txtNome.Text = cliente.NomeCliente;
                 txtContato.Text = cliente.Contato;
                 txtTelefone.Text = cliente.Telefone;
                 txtNome.IsEnabled = false;
                 txtContato.IsEnabled = true;
                 txtTelefone.IsEnabled = true;
-                txtTelefone.Focus();
+                txtContato.Focus();
             }
             else
             {
-                clickBotao = false;
+                
                 if (txtNome != null || txtContato != null || txtTelefone != null)
                 {
-                    Cliente c = new Cliente
-                    {
-                        NomeCliente = txtNome.Text,
-                        Contato = txtContato.Text,
-                        Telefone = txtTelefone.Text
-                    };
+                    cliente.Contato = txtContato.Text;
+                    cliente.Telefone = txtTelefone.Text;
 
-                    if (ClienteDao.CadastrarCliente(c))
+                    if (ClienteDao.AlterarCliente(cliente))
                     {
-                        MessageBox.Show("Cliente Cadastrado!",
+                        MessageBox.Show("Cadastro Alterado!",
                             "Sistema de Orcamento", MessageBoxButton.OK, MessageBoxImage.Information);
 
                         LimparFormulario();
@@ -175,10 +179,15 @@ namespace SistemaGeradorOrcamento.Views
                         btnSalvar.Visibility = Visibility.Hidden;
                         btnBuscar.IsEnabled = true;
                         btnCadastrar.IsEnabled = true;
+                        btnEditar.Content = "Editar";
+                        btnEditar.IsEnabled = false;
+
+                        List<Cliente> c = ClienteDao.ListarClientes();
+                        dtaCliente.ItemsSource = c;
                     }
                     else
                     {
-                        MessageBox.Show("Já Exite um Cliente com Este Nome",
+                        MessageBox.Show("Este Cadastro não pode ser Alterado",
                             "Sistema de Orcamento", MessageBoxButton.OK, MessageBoxImage.Error);
                     }
                 }
@@ -190,9 +199,6 @@ namespace SistemaGeradorOrcamento.Views
 
             }
            
-
-
-
         }
     }
 }

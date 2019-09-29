@@ -1,5 +1,6 @@
 ﻿using SistemaGeradorOrcamento.Models;
 using System.Collections.Generic;
+using System.Data.Entity;
 using System.Linq;
 
 namespace SistemaGeradorOrcamento.DAL
@@ -20,7 +21,18 @@ namespace SistemaGeradorOrcamento.DAL
             return false;
         }
 
-        
+        public static bool AlterarCliente(Cliente c)
+        {
+            if (BuscarClientePorNome(c) != null)
+            {
+                ctx.Entry(c).State = EntityState.Modified;
+                ctx.SaveChanges();
+                return true;
+            }
+            return false;
+        }
+
+
         public static Cliente BuscarClientePorNome(Cliente c)
         {
             return ctx.Clientes.FirstOrDefault
