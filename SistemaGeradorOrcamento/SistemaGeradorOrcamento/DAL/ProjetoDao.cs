@@ -35,6 +35,12 @@ namespace SistemaGeradorOrcamento.DAL
                 (x => x.NumeroProjeto.Equals(p.NumeroProjeto));
         }
 
+        public static Projeto BuscarProjetoPorNumeroString(string p)
+        {
+            return ctx.Projetos.FirstOrDefault
+                (x => x.NumeroProjeto.Equals(p));
+        }
+
         public static List<Projeto> ListarTodosProjetos() => ctx.Projetos.Include("Cliente").ToList();
         
         public static string GerarNumeroProjeto(Projeto projeto)

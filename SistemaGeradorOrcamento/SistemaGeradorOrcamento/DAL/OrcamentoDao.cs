@@ -1,6 +1,7 @@
 ﻿using SistemaGeradorOrcamento.Models;
 using System;
 using System.Collections.Generic;
+using System.Data.Entity;
 using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
@@ -15,15 +16,15 @@ namespace SistemaGeradorOrcamento.DAL
 
         public static void CadastrarMaterial(List<Material> mat) {
 
-            
-           
         }
 
-        public static bool CadastrarOrcamento(Orcamento orcamento)
+        public static bool CadastrarOrcamento(Orcamento orcamento, Projeto projeto)
         {
-           ctx.Orcamentos.Add(orcamento);
-           ctx.SaveChanges();
-           return true;
+            projeto.listaOrcamento.Add(orcamento);
+            ctx.Entry(projeto).State = EntityState.Modified;
+            ctx.SaveChanges();
+                        
+            return true;
                      
         }
     }

@@ -75,6 +75,7 @@ namespace SistemaGeradorOrcamento.Views
                     txtProjeto.Text = p.NomeProjeto;
                     cboStatus.SelectedIndex = Convert.ToInt32(p.Status);
                     cboCliente.SelectedIndex = Convert.ToInt32(p.Cliente.ClienteId);
+                    btnOrcamento.Visibility = Visibility.Visible;
                 }
                 else
                 {
@@ -94,7 +95,6 @@ namespace SistemaGeradorOrcamento.Views
                 int idCliente = Convert.ToInt32(cboCliente.SelectedValue);
 
                 Projeto projeto = new Projeto
-                
                 {
                     NumeroProjeto = txtNumero.Text,
                     NomeProjeto = txtProjeto.Text,
@@ -147,13 +147,18 @@ namespace SistemaGeradorOrcamento.Views
             cboStatus.IsEnabled = false;
             cboCliente.SelectedIndex = -1;
             cboCliente.IsEnabled = false;
-
-            
+                        
             btnSalvar.Visibility = Visibility.Hidden;
             btnCancelar.Visibility = Visibility.Hidden;
             btnBuscarOrcamento.IsEnabled = true;
             btnNovo.IsEnabled = true;
             txtNumero.Focus();
+        }
+
+        private void BtnOrcamento_Click(object sender, RoutedEventArgs e)
+        {
+            var telaProjeto = new frmCadastroOrcamento(txtNumero.Text);
+            telaProjeto.ShowDialog();
         }
     }
 }

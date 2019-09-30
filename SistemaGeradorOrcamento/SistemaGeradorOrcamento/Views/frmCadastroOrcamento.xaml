@@ -49,7 +49,7 @@
         <TextBox x:Name="txtTotalGeralServico" HorizontalAlignment="Left" Height="23" Margin="766,289,0,0" TextWrapping="Wrap" Text="" VerticalAlignment="Top" Width="134" IsEnabled="False" FontWeight="Bold" FontSize="14" Foreground="Blue"/>
         <Button x:Name="btnExcluirServico" Content="Excluir" HorizontalAlignment="Left" Margin="905,138,0,0" VerticalAlignment="Top" Width="75" Click="BtnExcluirServico_Click" IsEnabled="False"/>
         <Button x:Name="btnEditarServico" Content="Editar" HorizontalAlignment="Left" Margin="905,163,0,0" VerticalAlignment="Top" Width="75" Click="BtnEditarServico_Click" IsEnabled="False"/>
-        <Button Content="Salvar" HorizontalAlignment="Left" Margin="939,385,0,0" VerticalAlignment="Top" Width="75" Click="Button_Click" />
+        <Button x:Name="btnSalvar" Content="Salvar" HorizontalAlignment="Left" Margin="939,385,0,0" VerticalAlignment="Top" Width="75" Click="BtnSalvar_Click" />
         <!--Itens da Lista de Materiais -->
 
 

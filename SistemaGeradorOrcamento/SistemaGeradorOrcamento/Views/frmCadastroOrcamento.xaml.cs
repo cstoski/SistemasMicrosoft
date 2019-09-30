@@ -13,13 +13,22 @@ namespace SistemaGeradorOrcamento.Views
     /// </summary>
     public partial class frmCadastroOrcamento : Window
     {
+        Projeto projetoAtivo = new Projeto();
         public frmCadastroOrcamento()
         {
             InitializeComponent();
         }
+        public frmCadastroOrcamento(string projeto)
+        {
+            projetoAtivo = ProjetoDao.BuscarProjetoPorNumeroString(projeto);
+            InitializeComponent();
+            txtNumero.Text = projetoAtivo.NumeroProjeto;
+            txtProjeto.Text = projetoAtivo.NomeProjeto;
+        }
 
-        private List<dynamic> servicosGrid = new List<dynamic>();
         
+        private List<dynamic> servicosGrid = new List<dynamic>();
+                
         double totalServico = 0;
         double totalGeralServico = 0;
         double totalImpostoServico = 0;
@@ -213,20 +222,20 @@ namespace SistemaGeradorOrcamento.Views
               
         }
 
-        private void BtnSalvarOrcamento_Click(object sender, RoutedEventArgs e)
-        {
-          
+        //private void BtnSalvarOrcamento_Click(object sender, RoutedEventArgs e)
+        //{
             
-        }
 
-        private void Button_Click(object sender, RoutedEventArgs e)
+        //}
+               
+        private void BtnSalvar_Click(object sender, RoutedEventArgs e)
         {
-            if (OrcamentoDao.CadastrarOrcamento(orcamento))
+            if (OrcamentoDao.CadastrarOrcamento(orcamento, projetoAtivo))
             {
                 MessageBox.Show("Orçamento Cadastrado!",
                     "SistemaOrcamento", MessageBoxButton.OK,
                     MessageBoxImage.Information);
-                
+
             };
         }
     }

@@ -40,6 +40,7 @@
         <Button x:Name="btnBuscarOrcamento" Content="Buscar" HorizontalAlignment="Left" Margin="549,114,0,0" VerticalAlignment="Top" Width="75" Height="24" TabIndex="5" Click="BtnBuscarOrcamento_Click"/>
         <Button x:Name="btnSalvar" Content="Salvar" HorizontalAlignment="Left" Margin="303,114,0,0" VerticalAlignment="Top" Width="75" Height="24" Click="BtnSalvar_Click" IsEnabled="False" Visibility="Hidden"/>
         <Button x:Name="btnCancelar" Content="Cancelar" HorizontalAlignment="Left" Margin="223,114,0,0" VerticalAlignment="Top" Width="75" Height="24" Click="BtnCancelar_Click" Visibility="Hidden" />
+        <Button x:Name="btnOrcamento" Content="Adicionar Orçamento" HorizontalAlignment="Left" Margin="427,114,0,0" VerticalAlignment="Top" Width="117" Height="24" Click="BtnOrcamento_Click" Visibility="Hidden"/>
 
     </Grid>
 </Window>
