@@ -12,9 +12,9 @@ namespace SistemaGeradorOrcamento.Models
     class ItensServico
     {
         public ItensServico(){
-             criadoEm = DateTime.Now;
-            
-             }
+                criadoEm = DateTime.Now;
+                servico = new Servico();
+        }
 
         [Key] //Define chave primária 
         public int ItensServicosId { get; set; }

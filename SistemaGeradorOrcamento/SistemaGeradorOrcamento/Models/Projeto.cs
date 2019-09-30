@@ -16,6 +16,7 @@ namespace SistemaGeradorOrcamento.Models
      public Projeto()
         {
             CriadoEm = DateTime.Now;
+            listaOrcamento = new List<Orcamento>();
         }
         [Key] //Define chave primária 
         public int ProjetoId { get; set; }

@@ -7,13 +7,13 @@ namespace SistemaGeradorOrcamento.Migrations
     using System.Resources;
     
     [GeneratedCode("EntityFramework.Migrations", "6.3.0-rc1-19458-04")]
-    public sealed partial class atualização : IMigrationMetadata
+    public sealed partial class ass : IMigrationMetadata
     {
-        private readonly ResourceManager Resources = new ResourceManager(typeof(atualização));
+        private readonly ResourceManager Resources = new ResourceManager(typeof(ass));
         
         string IMigrationMetadata.Id
         {
-            get { return "201909292136349_atualização"; }
+            get { return "201909300420087_ass"; }
         }
         
         string IMigrationMetadata.Source

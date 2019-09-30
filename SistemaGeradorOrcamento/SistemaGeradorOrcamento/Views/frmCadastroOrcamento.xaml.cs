@@ -35,6 +35,7 @@ namespace SistemaGeradorOrcamento.Views
         dynamic objetoSelecaoServico;
         Orcamento orcamento = new Orcamento();
         ItensServico itServ = new ItensServico();
+        List<ItensServico> listServico = new List<ItensServico>();
 
         private void LimparFormularioServico()
         {
@@ -86,28 +87,18 @@ namespace SistemaGeradorOrcamento.Views
                     Nome = txtNomeServico.Text
                 };
 
-                servico = ServicoDao.BuscarServicoPorNome(servico);
-
-                itServ.servico = servico;
+                itServ.servico = ServicoDao.BuscarServicoPorNome(servico);
+                                
                 itServ.preco = Convert.ToInt32(servico.Valor.ToString());
                 itServ.quantidade = Convert.ToInt32(txtQuantidadeServico.Text);
+                
+                listServico.Add(itServ);
 
-                orcamento.servico.Add(itServ);
-
-
-                //Calculo Valor Total
-                 totalServico += servico.Valor * Convert.ToInt32(txtQuantidadeServico.Text);
-                 txtTotalServico.Text = totalServico.ToString("C2");
-
-                //Calculo do Imposto
-                totalImpostoServico += (servico.Valor * Convert.ToInt32(txtQuantidadeServico.Text))*0.10;
-                txtTotalImpostoServico.Text = totalImpostoServico.ToString("C2");
-
-                //Calculo Valor Total
-                totalGeralServico = totalServico + totalImpostoServico;
-                txtTotalGeralServico.Text = totalGeralServico.ToString("C2");
+                //orcamento.servico.Add(itServ);
+                OrcamentoDao.CadastrarServico(itServ);
 
                 LimparFormularioServico();
+
             }
             else
             {
@@ -230,7 +221,9 @@ namespace SistemaGeradorOrcamento.Views
                
         private void BtnSalvar_Click(object sender, RoutedEventArgs e)
         {
-            if (OrcamentoDao.CadastrarOrcamento(orcamento, projetoAtivo))
+            
+            
+            if (OrcamentoDao.CadastrarOrcamento(projetoAtivo))
             {
                 MessageBox.Show("Orçamento Cadastrado!",
                     "SistemaOrcamento", MessageBoxButton.OK,

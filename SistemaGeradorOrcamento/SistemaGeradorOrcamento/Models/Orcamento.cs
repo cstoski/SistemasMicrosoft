@@ -18,12 +18,13 @@ namespace SistemaGeradorOrcamento.Models
             material = new List<ItensMaterial>();
             servico = new List<ItensServico>();
             usuario = new Usuario();
-            versao = 0;
+            //versao = 0;
+            
         }
         [Key] //Define chave primária 
         public int OrcamentoId { get; set; }
+        
         public int versao { get; set; }
-        public Cliente cliente { get; set;}
         public Usuario usuario { get; set;}
         public List<ItensMaterial> material { get; set;}
         public List<ItensServico> servico { get; set;}
