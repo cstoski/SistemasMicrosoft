@@ -254,5 +254,25 @@ namespace SistemaGeradorOrcamento.Views
         {
 
         }
+
+        private void BtnEditarMaterial_Click(object sender, RoutedEventArgs e)
+        {
+
+        }
+
+        private void BtnExcluirMaterial_Click(object sender, RoutedEventArgs e)
+        {
+
+        }
+
+        private void BtnAdicionarMaterial_Click(object sender, RoutedEventArgs e)
+        {
+
+        }
+
+        private void BtnBuscarMaterial_Click(object sender, RoutedEventArgs e)
+        {
+
+        }
     }
 }
