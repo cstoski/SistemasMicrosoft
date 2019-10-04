@@ -11,6 +11,9 @@ namespace SistemaGeradorOrcamento.DAL
     {
         private static Context ctx = SingletonContext.GetInstance();
 
+
+
+
         public static bool CadastrarServico(Servico s)
         {
             if (BuscarServicoPorNome(s) == null)
@@ -24,8 +27,10 @@ namespace SistemaGeradorOrcamento.DAL
 
         public static Servico BuscarServicoPorNome(Servico s)
         {
-            return ctx.Servicos.FirstOrDefault
-                (x => x.Nome.Equals(s.Nome));
+             return ctx.Servicos.FirstOrDefault
+             (x => x.Nome.Equals(s.Nome));
+          
+            
         }
 
         public static List<Servico> ListarServicos()

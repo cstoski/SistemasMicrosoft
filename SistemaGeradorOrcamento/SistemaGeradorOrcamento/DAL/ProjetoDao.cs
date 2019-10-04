@@ -13,6 +13,7 @@ namespace SistemaGeradorOrcamento.DAL
 
         public static bool CadastrarProjeto(Projeto p)
         {
+            
             if (BuscarProjetoPorNumero(p) == null)
             {
                 ctx.Projetos.Add(p);

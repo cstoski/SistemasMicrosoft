@@ -220,18 +220,15 @@
     <Compile Include="DAL\ServicoDao.cs" />
     <Compile Include="DAL\SingletonContext.cs" />
     <Compile Include="DAL\UsuarioDao.cs" />
-    <Compile Include="Migrations\201909300357250_adsd.cs" />
-    <Compile Include="Migrations\201909300357250_adsd.designer.cs">
-      <DependentUpon>201909300357250_adsd.cs</DependentUpon>
-    </Compile>
-    <Compile Include="Migrations\201909300420087_ass.cs" />
-    <Compile Include="Migrations\201909300420087_ass.designer.cs">
-      <DependentUpon>201909300420087_ass.cs</DependentUpon>
+    <Compile Include="Migrations\201910011548346_inicial.cs" />
+    <Compile Include="Migrations\201910011548346_inicial.designer.cs">
+      <DependentUpon>201910011548346_inicial.cs</DependentUpon>
     </Compile>
     <Compile Include="Migrations\Configuration.cs" />
     <Compile Include="Models\Cliente.cs" />
     <Compile Include="Models\Context.cs" />
     <Compile Include="Models\ItensMaterial.cs" />
+    <Compile Include="Models\itensOrcamento.cs" />
     <Compile Include="Models\ItensServico.cs" />
     <Compile Include="Models\Material.cs" />
     <Compile Include="Models\Orcamento.cs" />
@@ -274,11 +271,8 @@
       <DependentUpon>Settings.settings</DependentUpon>
       <DesignTimeSharedInput>True</DesignTimeSharedInput>
     </Compile>
-    <EmbeddedResource Include="Migrations\201909300357250_adsd.resx">
-      <DependentUpon>201909300357250_adsd.cs</DependentUpon>
-    </EmbeddedResource>
-    <EmbeddedResource Include="Migrations\201909300420087_ass.resx">
-      <DependentUpon>201909300420087_ass.cs</DependentUpon>
+    <EmbeddedResource Include="Migrations\201910011548346_inicial.resx">
+      <DependentUpon>201910011548346_inicial.cs</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="Properties\Resources.resx">
       <Generator>ResXFileCodeGenerator</Generator>

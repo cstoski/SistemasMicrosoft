@@ -23,7 +23,6 @@ namespace SistemaGeradorOrcamento.Models
         }
         [Key] //Define chave primária 
         public int OrcamentoId { get; set; }
-        
         public int versao { get; set; }
         public Usuario usuario { get; set;}
         public List<ItensMaterial> material { get; set;}

@@ -89,13 +89,11 @@ namespace SistemaGeradorOrcamento.Views
 
                 itServ.servico = ServicoDao.BuscarServicoPorNome(servico);
                                 
-                itServ.preco = Convert.ToInt32(servico.Valor.ToString());
                 itServ.quantidade = Convert.ToInt32(txtQuantidadeServico.Text);
                 
                 listServico.Add(itServ);
-
-                //orcamento.servico.Add(itServ);
-                OrcamentoDao.CadastrarServico(itServ);
+                                
+                
 
                 LimparFormularioServico();
 

@@ -12,29 +12,30 @@ namespace SistemaGeradorOrcamento.DAL
     {
         private static Context ctx = SingletonContext.GetInstance();
 
-        private static List<Orcamento> orcamentos = new List<Orcamento>();
+        private static Orcamento orcamento1 = new Orcamento();
 
-        private static Orcamento o = new Orcamento();
-
-        public static void CadastrarMaterial(List<Material> mat)
+        public static void CadastrarMaterial(ItensMaterial listamaterial)
         {
-
+            orcamento1.material.Add(listamaterial);
         }
 
-        public static void CadastrarServico(ItensServico servico)
+        public static void CadastrarServico(ItensServico listaServico)
         {
-            o.servico.Add(servico);
-            
+            orcamento1.servico.Add(listaServico);
         }
 
         public static bool CadastrarOrcamento(Projeto projeto)
         {
-           
-            projeto.listaOrcamento.Add(o);
-            ctx.Entry(projeto).State = EntityState.Modified;
-            ctx.SaveChanges();
+            itensOrcamento io = new itensOrcamento
+            {
+                orcamento = orcamento1
+            };
             
-                        
+            projeto.listaOrcamento.Add(io);
+            ctx.Projetos.Add(projeto);
+            //ctx.Entry(projeto).State = EntityState.Modified;
+            ctx.SaveChanges();
+                                    
             return true;
                      
         }

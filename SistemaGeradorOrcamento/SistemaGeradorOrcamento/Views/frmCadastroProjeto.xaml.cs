@@ -18,11 +18,25 @@ namespace SistemaGeradorOrcamento.Views
             txtNumero.Focus();
         }
 
-        private void BtnEditarProjeto_Click(object sender, RoutedEventArgs e)
+        double totalServico = 0;
+        double totalGeralServico = 0;
+        double totalImpostoServico = 0;
+        dynamic objetoSelecaoServico;
+
+        Projeto projetoNovo = new Projeto();
+        Orcamento orcamento = new Orcamento();
+        List<ItensMaterial> listaItensMateriais = new List<ItensMaterial>();
+        List<ItensServico> listaItensServicos = new List<ItensServico>();
+        List<itensOrcamento> listaItensOrcamentos = new List<itensOrcamento>();
+
+        private void LimparFormularioServico()
         {
-
+            txtNomeServico.Clear();
+            txtQuantidadeServico.Clear();
+            txtTipoServico.Clear();
+            txtPrecoServico.Clear();
         }
-
+        
         private void FrmCadatroProjeto_Loaded(object sender, RoutedEventArgs e)
         {
             cboCliente.ItemsSource = ClienteDao.ListarClientes();
@@ -32,10 +46,7 @@ namespace SistemaGeradorOrcamento.Views
 
         private void BtnNovo_Click(object sender, RoutedEventArgs e)
         {
-            Projeto p = new Projeto
-            {
-                ProjetoId = 1
-            };
+            
             //Adicionar Numeração Automática
             cboStatus.SelectedIndex = 0;
             cboStatus.IsEnabled = false;
@@ -45,64 +56,32 @@ namespace SistemaGeradorOrcamento.Views
             btnSalvar.IsEnabled = true;
             btnSalvar.Visibility = Visibility.Visible;
             btnCancelar.Visibility = Visibility.Visible;
-            btnBuscarOrcamento.IsEnabled = false;
             btnNovo.IsEnabled = false;
             txtProjeto.Focus();
-            txtNumero.Text = ProjetoDao.GerarNumeroProjeto(p);
-        }
-
-        private void BtnBuscarOrcamento_Click(object sender, RoutedEventArgs e)
-        {
-            //Se o valor da caixa de text for vazia lista todos os registros
-            //Senão busca pelo Número Informado
-           
-            if (txtNumero.Text.Equals(""))
-            {
-                List<Projeto> projetos = ProjetoDao.ListarTodosProjetos();
-                dtaProjetos.ItemsSource = projetos;
-                dtaProjetos.IsEnabled = true;
-            }
-            else
-            {
-                Projeto p = new Projeto
-                {
-                    NumeroProjeto = txtNumero.Text
-                };
-                p = ProjetoDao.BuscarProjetoPorNumero(p);
-
-                if (p != null)
-                {
-                    txtProjeto.Text = p.NomeProjeto;
-                    cboStatus.SelectedIndex = Convert.ToInt32(p.Status);
-                    cboCliente.SelectedIndex = Convert.ToInt32(p.Cliente.ClienteId);
-                    btnOrcamento.Visibility = Visibility.Visible;
-                }
-                else
-                {
-                    MessageBox.Show("Projeto Não Cadastrado",
-                        "Cadastro de Orçamento");
-                }
-
-            }
-
+            txtNumero.Text = ProjetoDao.GerarNumeroProjeto(projetoNovo);
         }
 
         private void BtnSalvar_Click(object sender, RoutedEventArgs e)
         {
             if (txtNumero.Text != null && cboStatus.Text != null && txtProjeto.Text != "" && cboCliente.Text !=null)
             {
-                //ComboBoxItem ComboItem = (ComboBoxItem)cboStatus.SelectedItem;
-                int idCliente = Convert.ToInt32(cboCliente.SelectedValue);
-
-                Projeto projeto = new Projeto
+                orcamento.servico = listaItensServicos;
+                orcamento.material = listaItensMateriais;
+                itensOrcamento io = new itensOrcamento
                 {
-                    NumeroProjeto = txtNumero.Text,
-                    NomeProjeto = txtProjeto.Text,
-                    Status = cboStatus.SelectedIndex.ToString(),
-                    Cliente = ClienteDao.BuscarClientePorId(idCliente)
+                    orcamento = orcamento
                 };
+                listaItensOrcamentos.Add(io);
 
-                if (ProjetoDao.CadastrarProjeto(projeto))
+                int idCliente = Convert.ToInt32(cboCliente.SelectedValue);
+                projetoNovo.NumeroProjeto = txtNumero.Text;
+                projetoNovo.NomeProjeto = txtProjeto.Text;
+                projetoNovo.Status = cboStatus.SelectedIndex.ToString();
+                projetoNovo.Cliente = ClienteDao.BuscarClientePorId(idCliente);
+                projetoNovo.listaOrcamento = listaItensOrcamentos;
+                
+
+                if (ProjetoDao.CadastrarProjeto(projetoNovo))
                 {
                     MessageBox.Show("Projeto Cadastrado!",
                         "Sistema Orcamento", MessageBoxButton.OK,
@@ -110,7 +89,6 @@ namespace SistemaGeradorOrcamento.Views
 
                     btnSalvar.Visibility = Visibility.Hidden;
                     btnCancelar.Visibility = Visibility.Hidden;
-                    btnBuscarOrcamento.IsEnabled = true;
                     btnNovo.IsEnabled = true;
                     txtNumero.Text = "";
                     txtNumero.IsEnabled = true;
@@ -120,8 +98,7 @@ namespace SistemaGeradorOrcamento.Views
                     cboStatus.SelectedIndex = -1;
                     cboStatus.IsEnabled = false;
                     cboCliente.SelectedIndex = -1;
-                    cboCliente.IsEnabled = false;
-                    
+                    cboCliente.IsEnabled = false;                    
                 }
                 else
                 {
@@ -150,15 +127,97 @@ namespace SistemaGeradorOrcamento.Views
                         
             btnSalvar.Visibility = Visibility.Hidden;
             btnCancelar.Visibility = Visibility.Hidden;
-            btnBuscarOrcamento.IsEnabled = true;
             btnNovo.IsEnabled = true;
             txtNumero.Focus();
         }
 
-        private void BtnOrcamento_Click(object sender, RoutedEventArgs e)
+
+        private void BtnBuscarServico_Click(object sender, RoutedEventArgs e)
         {
-            var telaProjeto = new frmCadastroOrcamento(txtNumero.Text);
-            telaProjeto.ShowDialog();
+            if (!txtNomeServico.Text.Equals(""))
+            {
+                Servico servico = new Servico
+                {
+                    Nome = txtNomeServico.Text
+                };
+
+                servico = ServicoDao.BuscarServicoPorNome(servico);
+
+                if (servico != null)
+                {
+                    txtNomeServico.Text = servico.Nome;
+                    txtTipoServico.Text = servico.Tipo;
+                    txtPrecoServico.Text = servico.Valor.ToString("C2");
+                }
+                else
+                {
+                    MessageBox.Show("Esse Serviço não está cadastrado!",
+                        "Busca de Serviço");
+                }
+
+            }
+            else
+            {
+                MessageBox.Show("Por Favor Preencha o campo Nome do Serviço!",
+                        "Busca de Serviço");
+            }
+        }
+
+        private void BtnAdicionarServico_Click(object sender, RoutedEventArgs e)
+        {
+            if (!txtNomeServico.Text.Equals("") && !txtPrecoServico.Text.Equals("")
+                && !txtPrecoServico.Text.Equals("") && !txtQuantidadeServico.Text.Equals(""))
+            {
+                Servico servico = new Servico
+                {
+                    Nome = txtNomeServico.Text
+                };
+
+                ItensServico listaServico = new ItensServico
+                {
+                    servico = ServicoDao.BuscarServicoPorNome(servico),
+                    quantidade = Convert.ToInt32(txtQuantidadeServico.Text),
+                };
+
+                listaItensServicos.Add(listaServico);
+
+                dtaListaServicos.ItemsSource = listaItensServicos;
+
+                //Calculo Valor Total
+                totalServico += servico.Valor * Convert.ToInt32(txtQuantidadeServico.Text);
+                txtTotalServico.Text = totalServico.ToString("C2");
+
+                //Calculo do Imposto
+                totalImpostoServico += (servico.Valor * Convert.ToInt32(txtQuantidadeServico.Text)) * 0.10;
+                txtTotalImpostoServico.Text = totalImpostoServico.ToString("C2");
+
+                //Calculo Valor Total
+                totalGeralServico = totalServico + totalImpostoServico;
+                txtTotalGeralServico.Text = totalGeralServico.ToString("C2");
+
+                LimparFormularioServico();
+
+            }
+            else
+            {
+                MessageBox.Show("Por Favor Preencha todos os campos!",
+                        "Cadastro de Serviço");
+            }
+        }
+
+        private void BtnExcluirServico_Click(object sender, RoutedEventArgs e)
+        {
+
+        }
+
+        private void BtnEditarServico_Click(object sender, RoutedEventArgs e)
+        {
+
+        }
+
+        private void DtaListaServicos_SelectedCellsChanged(object sender, SelectedCellsChangedEventArgs e)
+        {
+
         }
     }
 }

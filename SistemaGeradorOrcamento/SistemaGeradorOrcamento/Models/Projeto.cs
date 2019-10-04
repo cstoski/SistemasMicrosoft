@@ -16,27 +16,17 @@ namespace SistemaGeradorOrcamento.Models
      public Projeto()
         {
             CriadoEm = DateTime.Now;
-            listaOrcamento = new List<Orcamento>();
+            listaOrcamento = new List<itensOrcamento>();
         }
         [Key] //Define chave primária 
         public int ProjetoId { get; set; }
         public DateTime CriadoEm { get; set; }
-
         public String NumeroProjeto { get; set; }
         public String NomeProjeto { get; set; }
         public Cliente Cliente { get; set; }
         public String Status { get; set; }
-        public List<Orcamento> listaOrcamento { get; set; }
-        //public enum status
-        //{
-        //    [Description("Em Execução")] emExecucao,
-        //    [Description("Aguardando Documentação")] aguardadoDocumentacao,
-        //    [Description("Enviado ao Cliente")] enviadoAoCliente,
-        //    [Description("Fechado")] fechado,
-        //    [Description("Suspenso")] suspenso,
-        //    [Description("Cancelado")] cancelado
-        //}
-
+        public List<itensOrcamento> listaOrcamento { get; set; }
+        
 
     }
 }

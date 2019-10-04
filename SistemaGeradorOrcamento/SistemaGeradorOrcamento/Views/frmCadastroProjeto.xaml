@@ -5,42 +5,59 @@
         xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
         xmlns:local="clr-namespace:SistemaGeradorOrcamento.Views"
         mc:Ignorable="d"
-        Title="Cadastro de Projetos" Height="412" Width="839" WindowStartupLocation="CenterScreen" Loaded="FrmCadatroProjeto_Loaded">
+        Title="Cadastro de Projetos" Height="455.5" Width="1026.5" WindowStartupLocation="CenterScreen" Loaded="FrmCadatroProjeto_Loaded">
     <Grid>
         <Grid.RowDefinitions>
             <RowDefinition/>
         </Grid.RowDefinitions>
-        <GroupBox Header="Projetos" HorizontalAlignment="Left" Height="218" Margin="22,146,0,0" VerticalAlignment="Top" Width="786"/>
-        <Label Content="Número:" HorizontalAlignment="Left" Margin="112,22,0,0" VerticalAlignment="Top" Width="104"/>
-        <Label Content="Nome do Projeto:" HorizontalAlignment="Left" Margin="112,56,0,0" VerticalAlignment="Top"/>
-        <Label Content="Cliente:" HorizontalAlignment="Left" Margin="112,84,0,0" VerticalAlignment="Top" RenderTransformOrigin="0.366,0.236" Width="104"/>
-        <Label Content="Status:" HorizontalAlignment="Left" Margin="427,22,0,0" VerticalAlignment="Top" RenderTransformOrigin="0.161,0.692"/>
-        <TextBox x:Name="txtNumero" HorizontalAlignment="Left" Height="24" Margin="221,22,0,0" TextWrapping="Wrap" Text="" VerticalAlignment="Top" Width="120" TabIndex="0"/>
-        <TextBox x:Name="txtProjeto" HorizontalAlignment="Left" Height="24" Margin="221,56,0,0" TextWrapping="Wrap" Text="" VerticalAlignment="Top" Width="483" TabIndex="2" IsEnabled="False"/>
-        <ComboBox x:Name="cboStatus" HorizontalAlignment="Left" Margin="477,22,0,0" VerticalAlignment="Top" Width="227" Height="24" TabIndex="1" IsEnabled="False">
+        <Label Content="Número:" HorizontalAlignment="Left" Margin="28,22,0,0" VerticalAlignment="Top" Width="104"/>
+        <Label Content="Nome do Projeto:" HorizontalAlignment="Left" Margin="28,56,0,0" VerticalAlignment="Top"/>
+        <Label Content="Cliente:" HorizontalAlignment="Left" Margin="28,84,0,0" VerticalAlignment="Top" RenderTransformOrigin="0.366,0.236" Width="104"/>
+        <Label Content="Status:" HorizontalAlignment="Left" Margin="343,22,0,0" VerticalAlignment="Top" RenderTransformOrigin="0.161,0.692"/>
+        <TextBox x:Name="txtNumero" HorizontalAlignment="Left" Height="24" Margin="137,22,0,0" TextWrapping="Wrap" Text="" VerticalAlignment="Top" Width="120" TabIndex="0"/>
+        <TextBox x:Name="txtProjeto" HorizontalAlignment="Left" Height="24" Margin="137,56,0,0" TextWrapping="Wrap" Text="" VerticalAlignment="Top" Width="483" TabIndex="2" IsEnabled="False"/>
+        <ComboBox x:Name="cboStatus" HorizontalAlignment="Left" Margin="393,22,0,0" VerticalAlignment="Top" Width="227" Height="24" TabIndex="1" IsEnabled="False">
             <ComboBoxItem Content="Emissão Inicial" HorizontalAlignment="Left" Width="225"/>
             <ComboBoxItem Content="Aguardando Aprovação Cliente" HorizontalAlignment="Left" Width="225"/>
             <ComboBoxItem Content="Cancelado" HorizontalAlignment="Left" Width="225"/>
             <ComboBoxItem Content="Fechado" HorizontalAlignment="Left" Width="225"/>
 
         </ComboBox>
-        <ComboBox x:Name="cboCliente" HorizontalAlignment="Left" Height="24" Margin="222,85,0,0" VerticalAlignment="Top" Width="483" TabIndex="3" IsEnabled="False"/>
-        <Button x:Name="btnNovo" Content="Novo" HorizontalAlignment="Left" Margin="629,114,0,0" VerticalAlignment="Top" Width="75" Height="24" TabIndex="4" Click="BtnNovo_Click"/>
+        <ComboBox x:Name="cboCliente" HorizontalAlignment="Left" Height="24" Margin="138,85,0,0" VerticalAlignment="Top" Width="483" TabIndex="3" IsEnabled="False"/>
+        <Button x:Name="btnNovo" Content="Novo" HorizontalAlignment="Left" Margin="646,22,0,0" VerticalAlignment="Top" Width="75" Height="24" TabIndex="4" Click="BtnNovo_Click"/>
         <Button x:Name="btnEditarProjeto" Content="Editar" HorizontalAlignment="Left" Margin="383,115,0,0" VerticalAlignment="Top" Width="75" Height="24" TabIndex="6" Visibility="Hidden"/>
-        <DataGrid x:Name="dtaProjetos" AutoGenerateColumns="False" HorizontalAlignment="Left" Height="146" Margin="40,173,0,0" VerticalAlignment="Top" Width="750" TabIndex="7" IsEnabled="False" RenderTransformOrigin="0.5,0.5">
+        <Button x:Name="btnSalvar" Content="Salvar" HorizontalAlignment="Left" Margin="646,84,0,0" VerticalAlignment="Top" Width="75" Height="24" Click="BtnSalvar_Click" IsEnabled="False" RenderTransformOrigin="4.893,0.958"/>
+        <Button x:Name="btnCancelar" Content="Cancelar" HorizontalAlignment="Left" Margin="726,84,0,0" VerticalAlignment="Top" Width="75" Height="24" Click="BtnCancelar_Click" />
+
+        <GroupBox Header="Lista de Serviços" HorizontalAlignment="Left" Height="270" Margin="22,123,0,0" VerticalAlignment="Top" Width="966"/>
+        <Label Content="Nome:" HorizontalAlignment="Left" Margin="40,145,0,0" VerticalAlignment="Top" Width="118"/>
+        <Label Content="Tipo de Serviço:" HorizontalAlignment="Left" Margin="162,145,0,0" VerticalAlignment="Top" Width="254"/>
+        <Label Content="Preço:" HorizontalAlignment="Left" Margin="422,145,0,0" VerticalAlignment="Top" Width="104"/>
+        <Label Content="Quantidade:" HorizontalAlignment="Left" Margin="626,170,0,0" VerticalAlignment="Top" Width="76" Height="27"/>
+        <DataGrid x:Name="dtaListaServicos" AutoGenerateColumns="False" HorizontalAlignment="Left" Height="142" Margin="36,200,0,0" VerticalAlignment="Top" Width="854" TabIndex="7" SelectedCellsChanged="DtaListaServicos_SelectedCellsChanged">
             <DataGrid.Columns>
-                <DataGridTextColumn Binding="{Binding NumeroProjeto}" Header="Número" Width="100"/>
-                <DataGridTextColumn Binding="{Binding NomeProjeto}" Header="Nome" Width="200"/>
-                <DataGridTextColumn Binding="{Binding CriadoEm}" Header="Data Orçamento" Width="140"/>
-                <DataGridTextColumn Binding="{Binding Cliente}" Header="Empresa" Width="180"/>
-                <DataGridTextColumn Binding="{Binding Status}" Header="Status" Width="90"/>
+                <DataGridTextColumn Binding="{Binding servico.Nome}" Header="Nome" Width="200"/>
+                <DataGridTextColumn Binding="{Binding servico.Tipo}"  Header="Tipo" Width="200"/>
+                <DataGridTextColumn Binding="{Binding servico.Valor}"  Header="Preço" Width="150"/>
+                <DataGridTextColumn Binding="{Binding quantidade}"  Header="Quantidade" Width="100"/>
+                <DataGridTemplateColumn/>
+
             </DataGrid.Columns>
         </DataGrid>
-        <Button x:Name="btnAdicionarOrcamento" Content="Adicionar" HorizontalAlignment="Left" Margin="716,324,0,0" VerticalAlignment="Top" Width="74" Height="24" TabIndex="8" IsEnabled="False"/>
-        <Button x:Name="btnBuscarOrcamento" Content="Buscar" HorizontalAlignment="Left" Margin="549,114,0,0" VerticalAlignment="Top" Width="75" Height="24" TabIndex="5" Click="BtnBuscarOrcamento_Click"/>
-        <Button x:Name="btnSalvar" Content="Salvar" HorizontalAlignment="Left" Margin="303,114,0,0" VerticalAlignment="Top" Width="75" Height="24" Click="BtnSalvar_Click" IsEnabled="False" Visibility="Hidden"/>
-        <Button x:Name="btnCancelar" Content="Cancelar" HorizontalAlignment="Left" Margin="223,114,0,0" VerticalAlignment="Top" Width="75" Height="24" Click="BtnCancelar_Click" Visibility="Hidden" />
-        <Button x:Name="btnOrcamento" Content="Adicionar Orçamento" HorizontalAlignment="Left" Margin="427,114,0,0" VerticalAlignment="Top" Width="117" Height="24" Click="BtnOrcamento_Click" Visibility="Hidden"/>
+        <Button x:Name="btnBuscarServico" Content="Buscar Item" HorizontalAlignment="Left" Margin="532,171,0,0" VerticalAlignment="Top" Width="74" Height="24" TabIndex="8" Click="BtnBuscarServico_Click"/>
+        <Button x:Name="btnAdicionarServico" Content="Adicionar" HorizontalAlignment="Left" Margin="816,170,0,0" VerticalAlignment="Top" Width="74" Height="24" TabIndex="9" Click="BtnAdicionarServico_Click"/>
+        <TextBox x:Name="txtNomeServico" HorizontalAlignment="Left" Height="23" Margin="38,171,0,0" TextWrapping="Wrap" Text="" VerticalAlignment="Top" Width="120" TabIndex="4"/>
+        <TextBox x:Name="txtTipoServico" HorizontalAlignment="Left" Height="23" Margin="162,171,0,0" TextWrapping="Wrap" Text="" VerticalAlignment="Top" Width="254" TabIndex="5" IsEnabled="False"/>
+        <TextBox x:Name="txtPrecoServico" HorizontalAlignment="Left" Height="23" Margin="422,171,0,0" TextWrapping="Wrap" Text="" VerticalAlignment="Top" Width="104" TabIndex="6" IsEnabled="False"/>
+        <TextBox x:Name="txtQuantidadeServico" HorizontalAlignment="Left" Height="23" Margin="706,170,0,0" TextWrapping="Wrap" Text="" VerticalAlignment="Top" Width="104" TabIndex="7"/>
+        <Label Content="Total Serviços:" HorizontalAlignment="Left" Margin="34,348,0,0" VerticalAlignment="Top" FontWeight="Bold"/>
+        <Label Content="Total Impostos:" HorizontalAlignment="Left" Margin="290,347,0,0" VerticalAlignment="Top" FontWeight="Bold"/>
+        <Label Content="Total Serviços com Impostos:" HorizontalAlignment="Left" Margin="576,348,0,0" VerticalAlignment="Top" RenderTransformOrigin="0.546,0.654" FontWeight="Bold"/>
+        <TextBox x:Name="txtTotalServico" HorizontalAlignment="Left" Height="23" Margin="136,351,0,0" TextWrapping="Wrap" Text="" VerticalAlignment="Top" Width="134" IsEnabled="False" FontWeight="Bold" FontSize="14" Foreground="Blue"/>
+        <TextBox x:Name="txtTotalImpostoServico" HorizontalAlignment="Left" Height="23" Margin="392,351,0,0" TextWrapping="Wrap" Text="" VerticalAlignment="Top" Width="134" IsEnabled="False" FontWeight="Bold" FontSize="14" Foreground="Blue"/>
+        <TextBox x:Name="txtTotalGeralServico" HorizontalAlignment="Left" Height="23" Margin="756,351,0,0" TextWrapping="Wrap" Text="" VerticalAlignment="Top" Width="134" IsEnabled="False" FontWeight="Bold" FontSize="14" Foreground="Blue"/>
+        <Button x:Name="btnExcluirServico" Content="Excluir" HorizontalAlignment="Left" Margin="895,200,0,0" VerticalAlignment="Top" Width="75" Click="BtnExcluirServico_Click" IsEnabled="False"/>
+        <Button x:Name="btnEditarServico" Content="Editar" HorizontalAlignment="Left" Margin="895,225,0,0" VerticalAlignment="Top" Width="75" Click="BtnEditarServico_Click" IsEnabled="False"/>
 
     </Grid>
 </Window>

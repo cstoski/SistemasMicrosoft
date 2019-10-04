@@ -11,8 +11,6 @@ namespace SistemaGeradorOrcamento.Models
         public DbSet<Material> Materiais { get; set; }
         public DbSet<Servico> Servicos { get; set; }
         public DbSet<Orcamento> Orcamentos {get; set;}
-        public DbSet<ItensMaterial> itensMateriais { get; set;}
-        public DbSet<ItensServico> itensServicos { get; set; }
-
+        
     }
 }
