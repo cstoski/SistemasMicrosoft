@@ -22,6 +22,15 @@ namespace SistemaGeradorOrcamento.Views
             btnBuscarServico.IsEnabled = false;
             txtQuantidadeServico.IsEnabled = false;
             btnAdicionarServico.IsEnabled = false;
+
+            txtNomeMaterial.IsEnabled = false;
+            txtCodigoMaterial.IsEnabled = false;
+            txtPrecoMaterial.IsEnabled = false;
+            txtQuantidadeMaterial.IsEnabled = false;
+            txtDescricao.IsEnabled = false;
+            txtfabricante.IsEnabled = false;
+            btnBuscarMaterial.IsEnabled = false;
+            btnAdicionarMaterial.IsEnabled = false;
         }
 
         double totalServico = 0;
@@ -68,6 +77,14 @@ namespace SistemaGeradorOrcamento.Views
             btnBuscarServico.IsEnabled = true;
             txtQuantidadeServico.IsEnabled = true;
             btnAdicionarServico.IsEnabled = true;
+
+            txtNomeMaterial.IsEnabled = true;
+            txtCodigoMaterial.IsEnabled = true;
+            txtQuantidadeMaterial.IsEnabled = true;
+            txtDescricao.IsEnabled = true;
+            txtfabricante.IsEnabled = true;
+            btnBuscarMaterial.IsEnabled = true;
+            btnAdicionarMaterial.IsEnabled = true;
 
             txtNumero.Text = ProjetoDao.GerarNumeroProjeto(projetoNovo);
         }
@@ -150,7 +167,16 @@ namespace SistemaGeradorOrcamento.Views
             txtQuantidadeServico.Text = "";
             txtQuantidadeServico.IsEnabled = false;
             btnAdicionarServico.IsEnabled = false;
-            
+
+            txtNomeMaterial.IsEnabled = false;
+            txtCodigoMaterial.IsEnabled = false;
+            txtPrecoMaterial.IsEnabled = false;
+            txtQuantidadeMaterial.IsEnabled = false;
+            txtDescricao.IsEnabled = false;
+            txtfabricante.IsEnabled = false;
+            btnBuscarMaterial.IsEnabled = false;
+            btnAdicionarMaterial.IsEnabled = false;
+
             txtNumero.Focus();
         }
 
