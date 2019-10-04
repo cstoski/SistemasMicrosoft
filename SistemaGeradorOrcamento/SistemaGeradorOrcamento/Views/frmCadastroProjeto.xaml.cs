@@ -16,6 +16,12 @@ namespace SistemaGeradorOrcamento.Views
         {
             InitializeComponent();
             txtNumero.Focus();
+            txtNomeServico.IsEnabled = false;
+            txtTipoServico.IsEnabled = false;
+            txtPrecoServico.IsEnabled = false;
+            btnBuscarServico.IsEnabled = false;
+            txtQuantidadeServico.IsEnabled = false;
+            btnAdicionarServico.IsEnabled = false;
         }
 
         double totalServico = 0;
@@ -46,7 +52,6 @@ namespace SistemaGeradorOrcamento.Views
 
         private void BtnNovo_Click(object sender, RoutedEventArgs e)
         {
-            
             //Adicionar Numeração Automática
             cboStatus.SelectedIndex = 0;
             cboStatus.IsEnabled = false;
@@ -58,6 +63,12 @@ namespace SistemaGeradorOrcamento.Views
             btnCancelar.Visibility = Visibility.Visible;
             btnNovo.IsEnabled = false;
             txtProjeto.Focus();
+
+            txtNomeServico.IsEnabled = true;
+            btnBuscarServico.IsEnabled = true;
+            txtQuantidadeServico.IsEnabled = true;
+            btnAdicionarServico.IsEnabled = true;
+
             txtNumero.Text = ProjetoDao.GerarNumeroProjeto(projetoNovo);
         }
 
@@ -128,10 +139,26 @@ namespace SistemaGeradorOrcamento.Views
             btnSalvar.Visibility = Visibility.Hidden;
             btnCancelar.Visibility = Visibility.Hidden;
             btnNovo.IsEnabled = true;
+
+            txtNomeServico.Text = "";
+            txtNomeServico.IsEnabled = false;
+            txtTipoServico.Text = "";
+            txtTipoServico.IsEnabled = false;
+            txtPrecoServico.Text = "";
+            txtPrecoServico.IsEnabled = false;
+            btnBuscarServico.IsEnabled = false;
+            txtQuantidadeServico.Text = "";
+            txtQuantidadeServico.IsEnabled = false;
+            btnAdicionarServico.IsEnabled = false;
+            
             txtNumero.Focus();
         }
 
-
+        /// <summary>
+        /// Função Para Buscar um serviço
+        /// </summary>
+        /// <param name="sender"></param>
+        /// <param name="e"></param>
         private void BtnBuscarServico_Click(object sender, RoutedEventArgs e)
         {
             if (!txtNomeServico.Text.Equals(""))
@@ -163,6 +190,11 @@ namespace SistemaGeradorOrcamento.Views
             }
         }
 
+        /// <summary>
+        /// Função para Adicionar um serviço
+        /// </summary>
+        /// <param name="sender"></param>
+        /// <param name="e"></param>
         private void BtnAdicionarServico_Click(object sender, RoutedEventArgs e)
         {
             if (!txtNomeServico.Text.Equals("") && !txtPrecoServico.Text.Equals("")
@@ -173,15 +205,18 @@ namespace SistemaGeradorOrcamento.Views
                     Nome = txtNomeServico.Text
                 };
 
+                servico = ServicoDao.BuscarServicoPorNome(servico);
+
                 ItensServico listaServico = new ItensServico
                 {
-                    servico = ServicoDao.BuscarServicoPorNome(servico),
+                    servico = servico,
                     quantidade = Convert.ToInt32(txtQuantidadeServico.Text),
                 };
 
                 listaItensServicos.Add(listaServico);
 
                 dtaListaServicos.ItemsSource = listaItensServicos;
+                dtaListaServicos.Items.Refresh();
 
                 //Calculo Valor Total
                 totalServico += servico.Valor * Convert.ToInt32(txtQuantidadeServico.Text);

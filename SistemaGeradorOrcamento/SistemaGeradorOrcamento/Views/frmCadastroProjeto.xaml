@@ -21,14 +21,14 @@
             <ComboBoxItem Content="Aguardando Aprovação Cliente" HorizontalAlignment="Left" Width="225"/>
             <ComboBoxItem Content="Cancelado" HorizontalAlignment="Left" Width="225"/>
             <ComboBoxItem Content="Fechado" HorizontalAlignment="Left" Width="225"/>
-
         </ComboBox>
         <ComboBox x:Name="cboCliente" HorizontalAlignment="Left" Height="24" Margin="138,85,0,0" VerticalAlignment="Top" Width="483" TabIndex="3" IsEnabled="False"/>
         <Button x:Name="btnNovo" Content="Novo" HorizontalAlignment="Left" Margin="646,22,0,0" VerticalAlignment="Top" Width="75" Height="24" TabIndex="4" Click="BtnNovo_Click"/>
         <Button x:Name="btnEditarProjeto" Content="Editar" HorizontalAlignment="Left" Margin="383,115,0,0" VerticalAlignment="Top" Width="75" Height="24" TabIndex="6" Visibility="Hidden"/>
         <Button x:Name="btnSalvar" Content="Salvar" HorizontalAlignment="Left" Margin="646,84,0,0" VerticalAlignment="Top" Width="75" Height="24" Click="BtnSalvar_Click" IsEnabled="False" RenderTransformOrigin="4.893,0.958"/>
         <Button x:Name="btnCancelar" Content="Cancelar" HorizontalAlignment="Left" Margin="726,84,0,0" VerticalAlignment="Top" Width="75" Height="24" Click="BtnCancelar_Click" />
-
+        
+        <!--Conteudo da Lista de Serviços-->
         <GroupBox Header="Lista de Serviços" HorizontalAlignment="Left" Height="270" Margin="22,123,0,0" VerticalAlignment="Top" Width="966"/>
         <Label Content="Nome:" HorizontalAlignment="Left" Margin="40,145,0,0" VerticalAlignment="Top" Width="118"/>
         <Label Content="Tipo de Serviço:" HorizontalAlignment="Left" Margin="162,145,0,0" VerticalAlignment="Top" Width="254"/>
@@ -41,7 +41,6 @@
                 <DataGridTextColumn Binding="{Binding servico.Valor}"  Header="Preço" Width="150"/>
                 <DataGridTextColumn Binding="{Binding quantidade}"  Header="Quantidade" Width="100"/>
                 <DataGridTemplateColumn/>
-
             </DataGrid.Columns>
         </DataGrid>
         <Button x:Name="btnBuscarServico" Content="Buscar Item" HorizontalAlignment="Left" Margin="532,171,0,0" VerticalAlignment="Top" Width="74" Height="24" TabIndex="8" Click="BtnBuscarServico_Click"/>
@@ -58,6 +57,8 @@
         <TextBox x:Name="txtTotalGeralServico" HorizontalAlignment="Left" Height="23" Margin="756,351,0,0" TextWrapping="Wrap" Text="" VerticalAlignment="Top" Width="134" IsEnabled="False" FontWeight="Bold" FontSize="14" Foreground="Blue"/>
         <Button x:Name="btnExcluirServico" Content="Excluir" HorizontalAlignment="Left" Margin="895,200,0,0" VerticalAlignment="Top" Width="75" Click="BtnExcluirServico_Click" IsEnabled="False"/>
         <Button x:Name="btnEditarServico" Content="Editar" HorizontalAlignment="Left" Margin="895,225,0,0" VerticalAlignment="Top" Width="75" Click="BtnEditarServico_Click" IsEnabled="False"/>
+
+        <!--Conteudo da Lista de Materiais-->
 
     </Grid>
 </Window>

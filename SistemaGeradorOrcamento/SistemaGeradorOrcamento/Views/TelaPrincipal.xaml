@@ -5,15 +5,30 @@
         xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
         xmlns:local="clr-namespace:SistemaGeradorOrcamento.Views"
         mc:Ignorable="d"
-        Title="TelaPrincipal" Height="484.5" Width="800" WindowStartupLocation="CenterScreen" Background="#FFBEBEC1" WindowState="Maximized">
+        Title="TelaPrincipal" Height="484.5" Width="800" WindowStartupLocation="CenterScreen" Background="#FFBEBEC1">
     <Grid>
-        <Menu HorizontalAlignment="Left" Height="399" Margin="10,10,0,0" VerticalAlignment="Top" Width="121" Background="{DynamicResource {x:Static SystemColors.MenuBarBrushKey}}" Foreground="#FF141EEC">
-            <MenuItem Header="Clientes" Height="46" Width="121" HorizontalAlignment="Center" HorizontalContentAlignment="Center" UseLayoutRounding="False" VerticalContentAlignment="Center" VerticalAlignment="Center" Click="MenuItem_Click" Background="#FF7676FF" Foreground="#FF040404" FontSize="14" FontWeight="Bold"/>
-            <MenuItem Header="Projetos" Height="46" Width="121" HorizontalAlignment="Center" HorizontalContentAlignment="Center" UseLayoutRounding="False" VerticalContentAlignment="Center" VerticalAlignment="Center" Click="MenuItem_Click_Projetos" Background="#FF7676FF" Foreground="#FF040404" FontSize="14" FontWeight="Bold"/>
-            <MenuItem Header="Material" Height="46" Width="121" HorizontalAlignment="Center" HorizontalContentAlignment="Center" UseLayoutRounding="False" VerticalContentAlignment="Center" VerticalAlignment="Center" Click="MenuItem_Click_Materiais" Background="#FF7676FF" Foreground="#FF040404" FontSize="14" FontWeight="Bold"/>
-            <MenuItem Header="Serviços" Height="46" Width="121" HorizontalAlignment="Center" HorizontalContentAlignment="Center" UseLayoutRounding="False" VerticalContentAlignment="Center" VerticalAlignment="Center" Click="MenuItem_Click_Servicos" Background="#FF7676FF" Foreground="#FF040404" FontSize="14" FontWeight="Bold"/>
-            <MenuItem Header="Usuários" Height="46" Width="121" HorizontalAlignment="Center" HorizontalContentAlignment="Center" UseLayoutRounding="False" VerticalContentAlignment="Center" VerticalAlignment="Center" Click="MenuItem_Click_Usuarios" Background="#FF7676FF" Foreground="#FF040404" FontSize="14" FontWeight="Bold"/>
-            <MenuItem Header="Orcamento" Height="37" Width="121" HorizontalAlignment="Center" HorizontalContentAlignment="Center" UseLayoutRounding="False" VerticalContentAlignment="Center" VerticalAlignment="Center" Click="MenuItem_Click_Orcamento" Background="#FF7676FF" Foreground="#FF040404" FontSize="14" FontWeight="Bold"/>
+
+        <Menu HorizontalAlignment="Left" Height="24" VerticalAlignment="Top" Width="800">
+            <MenuItem Header="Clientes" Height="24" Width="90">
+                <MenuItem Header="Cadastrar" HorizontalAlignment="Left" Height="31" Width="140" Click="MenuItem_Click" />
+            </MenuItem>
+            <MenuItem Header="Projetos" Height="24" Width="90">
+                <MenuItem Header="Cadastrar" HorizontalAlignment="Left" Height="31" Width="186" Margin="0,0,-46,0" Click="MenuItem_Click_Projetos"/>
+                <MenuItem Header="Listar" HorizontalAlignment="Left" Height="31" Width="186" Margin="0,0,-38,0"/>
+                <MenuItem Header="Adicionar Orçamento" HorizontalAlignment="Left" Height="31" Width="200" Margin="0,0,-26,0"/>
+            </MenuItem>
+            <MenuItem Header="Materiais" Height="24" Width="90">
+                <MenuItem Header="Cadastrar" HorizontalAlignment="Left" Height="31" Width="140" Click="MenuItem_Click_Materiais"/>
+            </MenuItem>
+            <MenuItem Header="Serviços" Height="24" Width="90">
+                <MenuItem Header="Cadastrar" HorizontalAlignment="Left" Height="31" Width="140" Click="MenuItem_Click_Servicos"/>
+            </MenuItem>
+            <MenuItem Header="Usuários" Height="24" Width="90">
+                <MenuItem Header="Cadastrar" HorizontalAlignment="Left" Height="31" Width="140" Click="MenuItem_Click_Usuarios"/>
+            </MenuItem>
+            <MenuItem Header="Help" Height="24" Width="90">
+                <MenuItem Header="About" HorizontalAlignment="Left" Height="31" Width="140"/>
+            </MenuItem>
         </Menu>
 
     </Grid>
