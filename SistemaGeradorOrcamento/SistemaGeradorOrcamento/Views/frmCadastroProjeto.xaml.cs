@@ -36,7 +36,10 @@ namespace SistemaGeradorOrcamento.Views
         double totalServico = 0;
         double totalGeralServico = 0;
         double totalImpostoServico = 0;
-        dynamic objetoSelecaoServico;
+        double totalMaterial = 0;
+        double totalGeralMaterial = 0;
+        double totalImpostoMaterial = 0;
+        
 
         Projeto projetoNovo = new Projeto();
         Orcamento orcamento = new Orcamento();
@@ -51,7 +54,17 @@ namespace SistemaGeradorOrcamento.Views
             txtTipoServico.Clear();
             txtPrecoServico.Clear();
         }
-        
+
+        private void LimparFormularioMaterial()
+        {
+            txtNomeMaterial.Clear();
+            txtCodigoMaterial.Clear();
+            txtPrecoMaterial.Clear();
+            txtQuantidadeMaterial.Clear();
+            txtDescricao.Clear();
+            txtfabricante.Clear();
+        }
+
         private void FrmCadatroProjeto_Loaded(object sender, RoutedEventArgs e)
         {
             cboCliente.ItemsSource = ClienteDao.ListarClientes();
@@ -293,12 +306,80 @@ namespace SistemaGeradorOrcamento.Views
 
         private void BtnAdicionarMaterial_Click(object sender, RoutedEventArgs e)
         {
+            if (!txtNomeMaterial.Text.Equals("") && !txtCodigoMaterial.Text.Equals("")
+               && !txtPrecoMaterial.Text.Equals("") && !txtQuantidadeMaterial.Text.Equals("") && !txtfabricante.Text.Equals(""))
+            {
+                Material material = new Material
+                {
+                    Codigo = txtCodigoMaterial.Text                    
+                };
 
+                material = MaterialDao.BuscarMaterialPorCodigo(material);
+
+                ItensMaterial listaMaterial = new ItensMaterial
+                {
+                    material = material,
+                    quantidade = Convert.ToInt32(txtQuantidadeMaterial.Text),
+                };
+
+                listaItensMateriais.Add(listaMaterial);
+
+                dtaListaMateriais.ItemsSource = listaItensMateriais;
+                dtaListaMateriais.Items.Refresh();
+
+                //Calculo Valor Total
+                totalMaterial += material.Valor * Convert.ToInt32(txtQuantidadeMaterial.Text);
+                txtTotalMaterial.Text = totalMaterial.ToString("C2");
+
+                //Calculo do Imposto
+                totalImpostoMaterial += (material.Valor * Convert.ToInt32(txtQuantidadeMaterial.Text)) * 0.10;
+                txtTotalImpostoMaterial.Text = totalImpostoMaterial.ToString("C2");
+
+                //Calculo Valor Total
+                totalGeralMaterial = totalMaterial + totalImpostoMaterial;
+                txtTotalGeralMaterial.Text = totalGeralMaterial.ToString("C2");
+
+                LimparFormularioMaterial();
+
+            }
+            else
+            {
+                MessageBox.Show("Por Favor Preencha todos os campos!",
+                        "Cadastro de Materiais");
+            }
         }
 
         private void BtnBuscarMaterial_Click(object sender, RoutedEventArgs e)
         {
+            if (!txtCodigoMaterial.Text.Equals(""))
+            {
+                Material material = new Material
+                {
+                    Codigo = txtCodigoMaterial.Text
+                };
 
+                material = MaterialDao.BuscarMaterialPorCodigo(material);
+
+                if (material != null)
+                {
+                    txtNomeMaterial.Text = material.Nome;
+                    txtDescricao.Text = material.Descricao;
+                    txtPrecoMaterial.Text = material.Valor.ToString("C2");
+                    txtfabricante.Text = material.Fabricante;
+                    
+                }
+                else
+                {
+                    MessageBox.Show("Esse Material não está cadastrado!",
+                        "Busca de Material");
+                }
+
+            }
+            else
+            {
+                MessageBox.Show("Por Favor Preencha o campo Código do Material!",
+                        "Busca de Material");
+            }
         }
     }
 }

@@ -67,11 +67,11 @@
         <Label Content="Quantidade:" HorizontalAlignment="Left" Margin="626,450,0,0" VerticalAlignment="Top" Width="76" Height="28"/>
         <DataGrid x:Name="dtaListaMateriais" AutoGenerateColumns="False" HorizontalAlignment="Left" Height="142" Margin="36,526,0,0" VerticalAlignment="Top" Width="854" TabIndex="7" SelectedCellsChanged="DtaListaServicos_SelectedCellsChanged">
             <DataGrid.Columns>
-                <DataGridTextColumn Binding="{Binding servico.Nome}" Header="Nome" Width="200"/>
-                <DataGridTextColumn Binding="{Binding servico.Tipo}"  Header="Código" Width="200"/>
-                <DataGridTextColumn Binding="{Binding servico.Valor}"  Header="Descrição" Width="150"/>
-                <DataGridTextColumn Binding="{Binding quantidade}"  Header="Fabricante" Width="100"/>
-                <DataGridTextColumn Binding="{Binding quantidade}"  Header="Preço" Width="100"/>
+                <DataGridTextColumn Binding="{Binding material.Nome}" Header="Nome" Width="200"/>
+                <DataGridTextColumn Binding="{Binding material.Codigo}"  Header="Código" Width="200"/>
+                <DataGridTextColumn Binding="{Binding material.Descricao}"  Header="Descrição" Width="150"/>
+                <DataGridTextColumn Binding="{Binding material.Fabricante}"  Header="Fabricante" Width="100"/>
+                <DataGridTextColumn Binding="{Binding material.Preco}"  Header="Preço" Width="100"/>
                 <DataGridTextColumn Binding="{Binding quantidade}"  Header="Quantidade" Width="100"/>
                 <DataGridTemplateColumn/>
             </DataGrid.Columns>
