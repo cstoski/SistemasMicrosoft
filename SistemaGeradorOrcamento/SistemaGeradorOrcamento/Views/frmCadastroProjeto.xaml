@@ -5,36 +5,36 @@
         xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
         xmlns:local="clr-namespace:SistemaGeradorOrcamento.Views"
         mc:Ignorable="d"
-        Title="Cadastro de Projetos" Height="765" Width="1026.5" WindowStartupLocation="CenterScreen" Loaded="FrmCadatroProjeto_Loaded">
+        Title="Cadastro de Projetos" Height="733.5" Width="1026.5" WindowStartupLocation="CenterScreen" Loaded="FrmCadatroProjeto_Loaded" ResizeMode="NoResize">
     <Grid Margin="0,0,2,0">
         <Grid.RowDefinitions>
             <RowDefinition/>
         </Grid.RowDefinitions>
-        <Label Content="Número:" HorizontalAlignment="Left" Margin="28,22,0,0" VerticalAlignment="Top" Width="104"/>
-        <Label Content="Nome do Projeto:" HorizontalAlignment="Left" Margin="28,56,0,0" VerticalAlignment="Top"/>
-        <Label Content="Cliente:" HorizontalAlignment="Left" Margin="28,84,0,0" VerticalAlignment="Top" RenderTransformOrigin="0.366,0.236" Width="104"/>
-        <Label Content="Status:" HorizontalAlignment="Left" Margin="343,22,0,0" VerticalAlignment="Top" RenderTransformOrigin="0.161,0.692"/>
-        <TextBox x:Name="txtNumero" HorizontalAlignment="Left" Height="24" Margin="137,22,0,0" TextWrapping="Wrap" Text="" VerticalAlignment="Top" Width="120" TabIndex="0"/>
-        <TextBox x:Name="txtProjeto" HorizontalAlignment="Left" Height="24" Margin="137,56,0,0" TextWrapping="Wrap" Text="" VerticalAlignment="Top" Width="483" TabIndex="2" IsEnabled="False"/>
-        <ComboBox x:Name="cboStatus" HorizontalAlignment="Left" Margin="393,22,0,0" VerticalAlignment="Top" Width="227" Height="24" TabIndex="1" IsEnabled="False">
+        <Label Content="Número:" HorizontalAlignment="Left" Margin="28,8,0,0" VerticalAlignment="Top" Width="104"/>
+        <Label Content="Nome do Projeto:" HorizontalAlignment="Left" Margin="28,42,0,0" VerticalAlignment="Top"/>
+        <Label Content="Cliente:" HorizontalAlignment="Left" Margin="28,70,0,0" VerticalAlignment="Top" RenderTransformOrigin="0.366,0.236" Width="104"/>
+        <Label Content="Status:" HorizontalAlignment="Left" Margin="343,8,0,0" VerticalAlignment="Top" RenderTransformOrigin="0.161,0.692"/>
+        <TextBox x:Name="txtNumero" HorizontalAlignment="Left" Height="24" Margin="137,8,0,0" TextWrapping="Wrap" Text="" VerticalAlignment="Top" Width="120" TabIndex="0"/>
+        <TextBox x:Name="txtProjeto" HorizontalAlignment="Left" Height="24" Margin="137,42,0,0" TextWrapping="Wrap" Text="" VerticalAlignment="Top" Width="483" TabIndex="2" IsEnabled="False"/>
+        <ComboBox x:Name="cboStatus" HorizontalAlignment="Left" Margin="393,8,0,0" VerticalAlignment="Top" Width="227" Height="24" TabIndex="1" IsEnabled="False">
             <ComboBoxItem Content="Emissão Inicial" HorizontalAlignment="Left" Width="225"/>
             <ComboBoxItem Content="Aguardando Aprovação Cliente" HorizontalAlignment="Left" Width="225"/>
             <ComboBoxItem Content="Cancelado" HorizontalAlignment="Left" Width="225"/>
             <ComboBoxItem Content="Fechado" HorizontalAlignment="Left" Width="225"/>
         </ComboBox>
-        <ComboBox x:Name="cboCliente" HorizontalAlignment="Left" Height="24" Margin="138,85,0,0" VerticalAlignment="Top" Width="483" TabIndex="3" IsEnabled="False"/>
-        <Button x:Name="btnNovo" Content="Novo" HorizontalAlignment="Left" Margin="646,22,0,0" VerticalAlignment="Top" Width="75" Height="24" TabIndex="4" Click="BtnNovo_Click"/>
+        <ComboBox x:Name="cboCliente" HorizontalAlignment="Left" Height="24" Margin="138,72,0,0" VerticalAlignment="Top" Width="483" TabIndex="3" IsEnabled="False"/>
+        <Button x:Name="btnNovo" Content="Novo" HorizontalAlignment="Left" Margin="646,8,0,0" VerticalAlignment="Top" Width="75" Height="24" TabIndex="4" Click="BtnNovo_Click"/>
         <Button x:Name="btnEditarProjeto" Content="Editar" HorizontalAlignment="Left" Margin="383,115,0,0" VerticalAlignment="Top" Width="75" Height="24" TabIndex="6" Visibility="Hidden"/>
-        <Button x:Name="btnSalvar" Content="Salvar" HorizontalAlignment="Left" Margin="646,84,0,0" VerticalAlignment="Top" Width="75" Height="24" Click="BtnSalvar_Click" IsEnabled="False" RenderTransformOrigin="4.893,0.958"/>
-        <Button x:Name="btnCancelar" Content="Cancelar" HorizontalAlignment="Left" Margin="726,84,0,0" VerticalAlignment="Top" Width="75" Height="24" Click="BtnCancelar_Click" />
+        <Button x:Name="btnSalvar" Content="Salvar" HorizontalAlignment="Left" Margin="646,70,0,0" VerticalAlignment="Top" Width="75" Height="24" Click="BtnSalvar_Click" IsEnabled="False" RenderTransformOrigin="4.893,0.958"/>
+        <Button x:Name="btnCancelar" Content="Cancelar" HorizontalAlignment="Left" Margin="726,70,0,0" VerticalAlignment="Top" Width="75" Height="24" Click="BtnCancelar_Click" />
 
         <!--Conteudo da Lista de Serviços-->
-        <GroupBox Header="Lista de Serviços" HorizontalAlignment="Left" Height="270" Margin="22,123,0,0" VerticalAlignment="Top" Width="966"/>
-        <Label Content="Nome:" HorizontalAlignment="Left" Margin="40,145,0,0" VerticalAlignment="Top" Width="118"/>
-        <Label Content="Tipo de Serviço:" HorizontalAlignment="Left" Margin="162,145,0,0" VerticalAlignment="Top" Width="254"/>
-        <Label Content="Preço:" HorizontalAlignment="Left" Margin="422,145,0,0" VerticalAlignment="Top" Width="104"/>
-        <Label Content="Quantidade:" HorizontalAlignment="Left" Margin="626,170,0,0" VerticalAlignment="Top" Width="76" Height="27"/>
-        <DataGrid x:Name="dtaListaServicos" AutoGenerateColumns="False" HorizontalAlignment="Left" Height="142" Margin="36,200,0,0" VerticalAlignment="Top" Width="854" TabIndex="7" SelectedCellsChanged="DtaListaServicos_SelectedCellsChanged">
+        <GroupBox Header="Lista de Serviços" HorizontalAlignment="Left" Height="262" Margin="22,110,0,0" VerticalAlignment="Top" Width="966"/>
+        <Label Content="Nome:" HorizontalAlignment="Left" Margin="40,132,0,0" VerticalAlignment="Top" Width="118"/>
+        <Label Content="Tipo de Serviço:" HorizontalAlignment="Left" Margin="162,132,0,0" VerticalAlignment="Top" Width="254"/>
+        <Label Content="Preço:" HorizontalAlignment="Left" Margin="422,132,0,0" VerticalAlignment="Top" Width="104"/>
+        <Label Content="Quantidade:" HorizontalAlignment="Left" Margin="626,156,0,0" VerticalAlignment="Top" Width="76" Height="28"/>
+        <DataGrid x:Name="dtaListaServicos" AutoGenerateColumns="False" HorizontalAlignment="Left" Height="142" Margin="36,186,0,0" VerticalAlignment="Top" Width="854" TabIndex="7" SelectedCellsChanged="DtaListaServicos_SelectedCellsChanged">
             <DataGrid.Columns>
                 <DataGridTextColumn Binding="{Binding servico.Nome}" Header="Nome" Width="200"/>
                 <DataGridTextColumn Binding="{Binding servico.Tipo}"  Header="Tipo" Width="200"/>
@@ -43,29 +43,29 @@
                 <DataGridTemplateColumn/>
             </DataGrid.Columns>
         </DataGrid>
-        <Button x:Name="btnBuscarServico" Content="Buscar Item" HorizontalAlignment="Left" Margin="532,171,0,0" VerticalAlignment="Top" Width="74" Height="24" TabIndex="8" Click="BtnBuscarServico_Click"/>
-        <Button x:Name="btnAdicionarServico" Content="Adicionar" HorizontalAlignment="Left" Margin="816,170,0,0" VerticalAlignment="Top" Width="74" Height="24" TabIndex="9" Click="BtnAdicionarServico_Click"/>
-        <TextBox x:Name="txtNomeServico" HorizontalAlignment="Left" Height="23" Margin="38,171,0,0" TextWrapping="Wrap" Text="" VerticalAlignment="Top" Width="120" TabIndex="4"/>
-        <TextBox x:Name="txtTipoServico" HorizontalAlignment="Left" Height="23" Margin="162,171,0,0" TextWrapping="Wrap" Text="" VerticalAlignment="Top" Width="254" TabIndex="5" IsEnabled="False"/>
-        <TextBox x:Name="txtPrecoServico" HorizontalAlignment="Left" Height="23" Margin="422,171,0,0" TextWrapping="Wrap" Text="" VerticalAlignment="Top" Width="104" TabIndex="6" IsEnabled="False"/>
-        <TextBox x:Name="txtQuantidadeServico" HorizontalAlignment="Left" Height="23" Margin="706,170,0,0" TextWrapping="Wrap" Text="" VerticalAlignment="Top" Width="104" TabIndex="7"/>
-        <Label Content="Total Serviços:" HorizontalAlignment="Left" Margin="34,348,0,0" VerticalAlignment="Top" FontWeight="Bold"/>
-        <Label Content="Total Impostos:" HorizontalAlignment="Left" Margin="290,347,0,0" VerticalAlignment="Top" FontWeight="Bold"/>
-        <Label Content="Total Serviços com Impostos:" HorizontalAlignment="Left" Margin="576,348,0,0" VerticalAlignment="Top" RenderTransformOrigin="0.546,0.654" FontWeight="Bold"/>
-        <TextBox x:Name="txtTotalServico" HorizontalAlignment="Left" Height="23" Margin="136,351,0,0" TextWrapping="Wrap" Text="" VerticalAlignment="Top" Width="134" IsEnabled="False" FontWeight="Bold" FontSize="14" Foreground="Blue"/>
-        <TextBox x:Name="txtTotalImpostoServico" HorizontalAlignment="Left" Height="23" Margin="392,351,0,0" TextWrapping="Wrap" Text="" VerticalAlignment="Top" Width="134" IsEnabled="False" FontWeight="Bold" FontSize="14" Foreground="Blue"/>
-        <TextBox x:Name="txtTotalGeralServico" HorizontalAlignment="Left" Height="23" Margin="756,351,0,0" TextWrapping="Wrap" Text="" VerticalAlignment="Top" Width="134" IsEnabled="False" FontWeight="Bold" FontSize="14" Foreground="Blue"/>
-        <Button x:Name="btnExcluirServico" Content="Excluir" HorizontalAlignment="Left" Margin="895,200,0,0" VerticalAlignment="Top" Width="75" Click="BtnExcluirServico_Click" IsEnabled="False"/>
-        <Button x:Name="btnEditarServico" Content="Editar" HorizontalAlignment="Left" Margin="895,225,0,0" VerticalAlignment="Top" Width="75" Click="BtnEditarServico_Click" IsEnabled="False"/>
+        <Button x:Name="btnBuscarServico" Content="Buscar Item" HorizontalAlignment="Left" Margin="532,158,0,0" VerticalAlignment="Top" Width="74" Height="24" TabIndex="8" Click="BtnBuscarServico_Click"/>
+        <Button x:Name="btnAdicionarServico" Content="Adicionar" HorizontalAlignment="Left" Margin="816,156,0,0" VerticalAlignment="Top" Width="74" Height="24" TabIndex="9" Click="BtnAdicionarServico_Click"/>
+        <TextBox x:Name="txtNomeServico" HorizontalAlignment="Left" Height="22" Margin="38,158,0,0" TextWrapping="Wrap" Text="" VerticalAlignment="Top" Width="120" TabIndex="4"/>
+        <TextBox x:Name="txtTipoServico" HorizontalAlignment="Left" Height="22" Margin="162,158,0,0" TextWrapping="Wrap" Text="" VerticalAlignment="Top" Width="254" TabIndex="5" IsEnabled="False"/>
+        <TextBox x:Name="txtPrecoServico" HorizontalAlignment="Left" Height="22" Margin="422,158,0,0" TextWrapping="Wrap" Text="" VerticalAlignment="Top" Width="104" TabIndex="6" IsEnabled="False"/>
+        <TextBox x:Name="txtQuantidadeServico" HorizontalAlignment="Left" Height="24" Margin="706,156,0,0" TextWrapping="Wrap" Text="" VerticalAlignment="Top" Width="104" TabIndex="7"/>
+        <Label Content="Total Serviços:" HorizontalAlignment="Left" Margin="34,334,0,0" VerticalAlignment="Top" FontWeight="Bold"/>
+        <Label Content="Total Impostos:" HorizontalAlignment="Left" Margin="290,334,0,0" VerticalAlignment="Top" FontWeight="Bold"/>
+        <Label Content="Total Serviços com Impostos:" HorizontalAlignment="Left" Margin="576,334,0,0" VerticalAlignment="Top" RenderTransformOrigin="0.546,0.654" FontWeight="Bold"/>
+        <TextBox x:Name="txtTotalServico" HorizontalAlignment="Left" Height="22" Margin="136,338,0,0" TextWrapping="Wrap" Text="" VerticalAlignment="Top" Width="134" IsEnabled="False" FontWeight="Bold" FontSize="14" Foreground="Blue"/>
+        <TextBox x:Name="txtTotalImpostoServico" HorizontalAlignment="Left" Height="22" Margin="392,338,0,0" TextWrapping="Wrap" Text="" VerticalAlignment="Top" Width="134" IsEnabled="False" FontWeight="Bold" FontSize="14" Foreground="Blue"/>
+        <TextBox x:Name="txtTotalGeralServico" HorizontalAlignment="Left" Height="22" Margin="756,338,0,0" TextWrapping="Wrap" Text="" VerticalAlignment="Top" Width="134" IsEnabled="False" FontWeight="Bold" FontSize="14" Foreground="Blue"/>
+        <Button x:Name="btnExcluirServico" Content="Excluir" HorizontalAlignment="Left" Margin="895,186,0,0" VerticalAlignment="Top" Width="75" Click="BtnExcluirServico_Click" IsEnabled="False"/>
+        <Button x:Name="btnEditarServico" Content="Editar" HorizontalAlignment="Left" Margin="895,212,0,0" VerticalAlignment="Top" Width="75" Click="BtnEditarServico_Click" IsEnabled="False"/>
 
         <!--Conteudo da Lista de Materiais-->
 
-        <GroupBox Header="Lista de Materiais" HorizontalAlignment="Left" Height="318" Margin="22,404,0,0" VerticalAlignment="Top" Width="966"/>
-        <Label Content="Nome:" HorizontalAlignment="Left" Margin="40,426,0,0" VerticalAlignment="Top" Width="118"/>
-        <Label Content="Código:" HorizontalAlignment="Left" Margin="162,426,0,0" VerticalAlignment="Top" Width="254"/>
-        <Label Content="Preço:" HorizontalAlignment="Left" Margin="422,426,0,0" VerticalAlignment="Top" Width="104"/>
-        <Label Content="Quantidade:" HorizontalAlignment="Left" Margin="626,450,0,0" VerticalAlignment="Top" Width="76" Height="28"/>
-        <DataGrid x:Name="dtaListaMateriais" AutoGenerateColumns="False" HorizontalAlignment="Left" Height="142" Margin="36,526,0,0" VerticalAlignment="Top" Width="854" TabIndex="7" SelectedCellsChanged="DtaListaServicos_SelectedCellsChanged">
+        <GroupBox Header="Lista de Materiais" HorizontalAlignment="Left" Height="318" Margin="22,377,0,0" VerticalAlignment="Top" Width="966"/>
+        <Label Content="Nome:" HorizontalAlignment="Left" Margin="40,399,0,0" VerticalAlignment="Top" Width="118"/>
+        <Label Content="Código:" HorizontalAlignment="Left" Margin="162,399,0,0" VerticalAlignment="Top" Width="254"/>
+        <Label Content="Preço:" HorizontalAlignment="Left" Margin="422,399,0,0" VerticalAlignment="Top" Width="104"/>
+        <Label Content="Quantidade:" HorizontalAlignment="Left" Margin="626,423,0,0" VerticalAlignment="Top" Width="76" Height="28"/>
+        <DataGrid x:Name="dtaListaMateriais" AutoGenerateColumns="False" HorizontalAlignment="Left" Height="142" Margin="36,499,0,0" VerticalAlignment="Top" Width="854" TabIndex="7" SelectedCellsChanged="DtaListaServicos_SelectedCellsChanged">
             <DataGrid.Columns>
                 <DataGridTextColumn Binding="{Binding material.Nome}" Header="Nome" Width="200"/>
                 <DataGridTextColumn Binding="{Binding material.Codigo}"  Header="Código" Width="200"/>
@@ -76,24 +76,24 @@
                 <DataGridTemplateColumn/>
             </DataGrid.Columns>
         </DataGrid>
-        <Button x:Name="btnBuscarMaterial" Content="Buscar Item" HorizontalAlignment="Left" Margin="532,452,0,0" VerticalAlignment="Top" Width="74" Height="24" TabIndex="8" Click="BtnBuscarMaterial_Click"/>
-        <Button x:Name="btnAdicionarMaterial" Content="Adicionar" HorizontalAlignment="Left" Margin="816,450,0,0" VerticalAlignment="Top" Width="74" Height="24" TabIndex="9" Click="BtnAdicionarMaterial_Click"/>
-        <TextBox x:Name="txtNomeMaterial" HorizontalAlignment="Left" Height="22" Margin="38,452,0,0" TextWrapping="Wrap" Text="" VerticalAlignment="Top" Width="120" TabIndex="4"/>
-        <TextBox x:Name="txtCodigoMaterial" HorizontalAlignment="Left" Height="22" Margin="162,452,0,0" TextWrapping="Wrap" Text="" VerticalAlignment="Top" Width="254" TabIndex="5" IsEnabled="False"/>
-        <TextBox x:Name="txtPrecoMaterial" HorizontalAlignment="Left" Height="22" Margin="422,452,0,0" TextWrapping="Wrap" Text="" VerticalAlignment="Top" Width="104" TabIndex="6" IsEnabled="False"/>
-        <TextBox x:Name="txtQuantidadeMaterial" HorizontalAlignment="Left" Height="24" Margin="706,450,0,0" TextWrapping="Wrap" Text="" VerticalAlignment="Top" Width="104" TabIndex="7"/>
-        <Label Content="Total Materiais:" HorizontalAlignment="Left" Margin="34,674,0,0" VerticalAlignment="Top" FontWeight="Bold"/>
-        <Label Content="Total Impostos:" HorizontalAlignment="Left" Margin="290,672,0,0" VerticalAlignment="Top" FontWeight="Bold"/>
-        <Label Content="Total Materiais com Impostos:" HorizontalAlignment="Left" Margin="576,674,0,0" VerticalAlignment="Top" RenderTransformOrigin="0.546,0.654" FontWeight="Bold"/>
-        <TextBox x:Name="txtTotalMaterial" HorizontalAlignment="Left" Height="24" Margin="136,676,0,0" TextWrapping="Wrap" Text="" VerticalAlignment="Top" Width="134" IsEnabled="False" FontWeight="Bold" FontSize="14" Foreground="Blue"/>
-        <TextBox x:Name="txtTotalImpostoMaterial" HorizontalAlignment="Left" Height="24" Margin="392,676,0,0" TextWrapping="Wrap" Text="" VerticalAlignment="Top" Width="134" IsEnabled="False" FontWeight="Bold" FontSize="14" Foreground="Blue"/>
-        <TextBox x:Name="txtTotalGeralMaterial" HorizontalAlignment="Left" Height="24" Margin="756,676,0,0" TextWrapping="Wrap" Text="" VerticalAlignment="Top" Width="134" IsEnabled="False" FontWeight="Bold" FontSize="14" Foreground="Blue"/>
-        <Button x:Name="btnExcluirMaterial" Content="Excluir" HorizontalAlignment="Left" Margin="895,480,0,0" VerticalAlignment="Top" Width="75" Click="BtnExcluirMaterial_Click" IsEnabled="False"/>
-        <Button x:Name="btnEditarMaterial" Content="Editar" HorizontalAlignment="Left" Margin="895,506,0,0" VerticalAlignment="Top" Width="75" Click="BtnEditarMaterial_Click" IsEnabled="False"/>
-        <TextBox x:Name="txtDescricao" HorizontalAlignment="Left" Height="22" Margin="38,498,0,0" TextWrapping="Wrap" Text="" VerticalAlignment="Top" Width="219" TabIndex="4"/>
-        <TextBox x:Name="txtfabricante" HorizontalAlignment="Left" Height="22" Margin="272,498,0,0" TextWrapping="Wrap" Text="" VerticalAlignment="Top" Width="254" TabIndex="5" IsEnabled="False"/>
-        <Label Content="Descrição:" HorizontalAlignment="Left" Margin="40,472,0,0" VerticalAlignment="Top" Width="217"/>
-        <Label Content="Fabricante:" HorizontalAlignment="Left" Margin="272,474,0,0" VerticalAlignment="Top" Width="254"/>
+        <Button x:Name="btnBuscarMaterial" Content="Buscar Item" HorizontalAlignment="Left" Margin="532,425,0,0" VerticalAlignment="Top" Width="74" Height="24" TabIndex="8" Click="BtnBuscarMaterial_Click"/>
+        <Button x:Name="btnAdicionarMaterial" Content="Adicionar" HorizontalAlignment="Left" Margin="816,423,0,0" VerticalAlignment="Top" Width="74" Height="24" TabIndex="9" Click="BtnAdicionarMaterial_Click"/>
+        <TextBox x:Name="txtNomeMaterial" HorizontalAlignment="Left" Height="22" Margin="38,425,0,0" TextWrapping="Wrap" Text="" VerticalAlignment="Top" Width="120" TabIndex="4"/>
+        <TextBox x:Name="txtCodigoMaterial" HorizontalAlignment="Left" Height="22" Margin="162,425,0,0" TextWrapping="Wrap" Text="" VerticalAlignment="Top" Width="254" TabIndex="5" IsEnabled="False"/>
+        <TextBox x:Name="txtPrecoMaterial" HorizontalAlignment="Left" Height="22" Margin="422,425,0,0" TextWrapping="Wrap" Text="" VerticalAlignment="Top" Width="104" TabIndex="6" IsEnabled="False"/>
+        <TextBox x:Name="txtQuantidadeMaterial" HorizontalAlignment="Left" Height="24" Margin="706,423,0,0" TextWrapping="Wrap" Text="" VerticalAlignment="Top" Width="104" TabIndex="7"/>
+        <Label Content="Total Materiais:" HorizontalAlignment="Left" Margin="34,647,0,0" VerticalAlignment="Top" FontWeight="Bold"/>
+        <Label Content="Total Impostos:" HorizontalAlignment="Left" Margin="290,645,0,0" VerticalAlignment="Top" FontWeight="Bold"/>
+        <Label Content="Total Materiais com Impostos:" HorizontalAlignment="Left" Margin="576,647,0,0" VerticalAlignment="Top" RenderTransformOrigin="0.546,0.654" FontWeight="Bold"/>
+        <TextBox x:Name="txtTotalMaterial" HorizontalAlignment="Left" Height="24" Margin="136,649,0,0" TextWrapping="Wrap" Text="" VerticalAlignment="Top" Width="134" IsEnabled="False" FontWeight="Bold" FontSize="14" Foreground="Blue"/>
+        <TextBox x:Name="txtTotalImpostoMaterial" HorizontalAlignment="Left" Height="24" Margin="392,649,0,0" TextWrapping="Wrap" Text="" VerticalAlignment="Top" Width="134" IsEnabled="False" FontWeight="Bold" FontSize="14" Foreground="Blue"/>
+        <TextBox x:Name="txtTotalGeralMaterial" HorizontalAlignment="Left" Height="24" Margin="756,649,0,0" TextWrapping="Wrap" Text="" VerticalAlignment="Top" Width="134" IsEnabled="False" FontWeight="Bold" FontSize="14" Foreground="Blue"/>
+        <Button x:Name="btnExcluirMaterial" Content="Excluir" HorizontalAlignment="Left" Margin="895,453,0,0" VerticalAlignment="Top" Width="75" Click="BtnExcluirMaterial_Click" IsEnabled="False"/>
+        <Button x:Name="btnEditarMaterial" Content="Editar" HorizontalAlignment="Left" Margin="895,479,0,0" VerticalAlignment="Top" Width="75" Click="BtnEditarMaterial_Click" IsEnabled="False"/>
+        <TextBox x:Name="txtDescricao" HorizontalAlignment="Left" Height="22" Margin="38,471,0,0" TextWrapping="Wrap" Text="" VerticalAlignment="Top" Width="219" TabIndex="4"/>
+        <TextBox x:Name="txtfabricante" HorizontalAlignment="Left" Height="22" Margin="272,471,0,0" TextWrapping="Wrap" Text="" VerticalAlignment="Top" Width="254" TabIndex="5" IsEnabled="False"/>
+        <Label Content="Descrição:" HorizontalAlignment="Left" Margin="40,445,0,0" VerticalAlignment="Top" Width="217"/>
+        <Label Content="Fabricante:" HorizontalAlignment="Left" Margin="272,447,0,0" VerticalAlignment="Top" Width="254"/>
 
 
     </Grid>

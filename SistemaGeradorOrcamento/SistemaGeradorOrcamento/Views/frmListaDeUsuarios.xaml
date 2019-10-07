@@ -5,7 +5,7 @@
         xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
         xmlns:local="clr-namespace:SistemaGeradorOrcamento.Views"
         mc:Ignorable="d"
-        Title="Lista de Usuários Cadastrados" Height="450" Width="800" Loaded="FrmListaDeUsuario1_Loaded" WindowStartupLocation="CenterScreen">
+        Title="Lista de Usuários Cadastrados" Height="450" Width="800" Loaded="FrmListaDeUsuario1_Loaded" WindowStartupLocation="CenterScreen" ResizeMode="NoResize">
     <Grid>
         <DataGrid x:Name="dtaListaUsusarios" AutoGenerateColumns="False" HorizontalAlignment="Left" Height="351" Margin="26,40,0,0" VerticalAlignment="Top" Width="739">
             <DataGrid.Columns>

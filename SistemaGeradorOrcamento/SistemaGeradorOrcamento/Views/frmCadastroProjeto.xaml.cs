@@ -91,8 +91,10 @@ namespace SistemaGeradorOrcamento.Views
             txtQuantidadeServico.IsEnabled = true;
             btnAdicionarServico.IsEnabled = true;
 
-            txtNomeMaterial.IsEnabled = true;
+            txtNomeMaterial.IsEnabled = false;
             txtCodigoMaterial.IsEnabled = true;
+            
+            txtCodigoMaterial.Focus();
             txtQuantidadeMaterial.IsEnabled = true;
             txtDescricao.IsEnabled = true;
             txtfabricante.IsEnabled = true;
@@ -116,7 +118,7 @@ namespace SistemaGeradorOrcamento.Views
 
                 int idCliente = Convert.ToInt32(cboCliente.SelectedValue);
                 projetoNovo.NumeroProjeto = txtNumero.Text;
-                projetoNovo.NomeProjeto = txtProjeto.Text;
+                projetoNovo.NomeProjeto = txtProjeto.Text.ToUpper();
                 projetoNovo.Status = cboStatus.SelectedIndex.ToString();
                 projetoNovo.Cliente = ClienteDao.BuscarClientePorId(idCliente);
                 projetoNovo.listaOrcamento = listaItensOrcamentos;

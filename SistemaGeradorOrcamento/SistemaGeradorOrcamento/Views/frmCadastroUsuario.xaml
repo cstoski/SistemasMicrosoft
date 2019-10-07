@@ -5,7 +5,7 @@
         xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
         xmlns:local="clr-namespace:SistemaGeradorOrcamento.Views"
         mc:Ignorable="d"
-        Title="Cadastro de Usuários" Height="251.809" Width="740.957" WindowStartupLocation="CenterScreen">
+        Title="Cadastro de Usuários" Height="251.809" Width="740.957" WindowStartupLocation="CenterScreen" ResizeMode="NoResize">
     <Grid>
         <Label Content="Nome: " HorizontalAlignment="Left" Margin="10,19,0,0" VerticalAlignment="Top" Width="89"/>
         <Label Content="Matrícula: " HorizontalAlignment="Left" Margin="405,19,0,0" VerticalAlignment="Top"/>

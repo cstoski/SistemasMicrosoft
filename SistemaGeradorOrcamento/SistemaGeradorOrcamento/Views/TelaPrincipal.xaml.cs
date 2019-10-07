@@ -67,5 +67,11 @@ namespace SistemaGeradorOrcamento.Views
             frmListaDeUsuarios frmListaUser = new frmListaDeUsuarios();
             frmListaUser.ShowDialog();
         }
+
+        private void MenuItem_ListaProjetos(object sender, RoutedEventArgs e)
+        {
+            frmListaProjetos frmListaProjetos = new frmListaProjetos();
+            frmListaProjetos.ShowDialog();
+        }
     }
 }

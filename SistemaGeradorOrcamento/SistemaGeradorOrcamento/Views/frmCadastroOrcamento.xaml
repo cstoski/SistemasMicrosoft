@@ -5,7 +5,7 @@
         xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
         xmlns:local="clr-namespace:SistemaGeradorOrcamento.Views"
         mc:Ignorable="d"
-        Title="Cadastro de Orçamentos" Height="468.145" Width="1056" WindowStartupLocation="CenterScreen">
+        Title="Cadastro de Orçamentos" Height="468.145" Width="1056" WindowStartupLocation="CenterScreen" ResizeMode="NoResize">
     <Grid Margin="0,0,0,2">
 
         <Label Content="Número:" HorizontalAlignment="Left" Margin="26,27,0,0" VerticalAlignment="Top" Width="104" Height="24"/>

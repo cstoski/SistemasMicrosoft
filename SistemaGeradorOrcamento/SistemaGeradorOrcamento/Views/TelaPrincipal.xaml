@@ -5,7 +5,7 @@
         xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
         xmlns:local="clr-namespace:SistemaGeradorOrcamento.Views"
         mc:Ignorable="d"
-        Title="TelaPrincipal" Height="484.5" Width="800" WindowStartupLocation="CenterScreen" Background="#FFBEBEC1">
+        Title="TelaPrincipal" Height="605.5" Width="1241" WindowStartupLocation="CenterScreen" Background="#FFBEBEC1">
     <Grid>
 
         <Menu HorizontalAlignment="Left" Height="24" VerticalAlignment="Top" Width="800">
@@ -14,7 +14,7 @@
             </MenuItem>
             <MenuItem Header="Projetos" Height="24" Width="90">
                 <MenuItem Header="Cadastrar" HorizontalAlignment="Left" Height="31" Width="186" Margin="0,0,-46,0" Click="MenuItem_Click_Projetos"/>
-                <MenuItem Header="Listar" HorizontalAlignment="Left" Height="31" Width="186" Margin="0,0,-38,0"/>
+                <MenuItem Header="Listar" HorizontalAlignment="Left" Height="31" Width="186" Margin="0,0,-38,0" Click="MenuItem_ListaProjetos"/>
                 <MenuItem Header="Adicionar Orçamento" HorizontalAlignment="Left" Height="31" Width="200" Margin="0,0,-26,0"/>
             </MenuItem>
             <MenuItem Header="Materiais" Height="24" Width="90">

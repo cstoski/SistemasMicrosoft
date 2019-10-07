@@ -255,6 +255,9 @@
     <Compile Include="Views\frmListaDeUsuarios.xaml.cs">
       <DependentUpon>frmListaDeUsuarios.xaml</DependentUpon>
     </Compile>
+    <Compile Include="Views\frmListaProjetos.xaml.cs">
+      <DependentUpon>frmListaProjetos.xaml</DependentUpon>
+    </Compile>
     <Compile Include="Views\frmLogin.xaml.cs">
       <DependentUpon>frmLogin.xaml</DependentUpon>
     </Compile>
@@ -323,6 +326,10 @@
       <Generator>MSBuild:Compile</Generator>
     </Page>
     <Page Include="Views\frmListaDeUsuarios.xaml">
+      <SubType>Designer</SubType>
+      <Generator>MSBuild:Compile</Generator>
+    </Page>
+    <Page Include="Views\frmListaProjetos.xaml">
       <SubType>Designer</SubType>
       <Generator>MSBuild:Compile</Generator>
     </Page>

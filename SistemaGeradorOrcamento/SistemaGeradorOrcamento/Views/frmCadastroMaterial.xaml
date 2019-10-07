@@ -5,7 +5,7 @@
         xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
         xmlns:local="clr-namespace:SistemaGeradorOrcamento.Views"
         mc:Ignorable="d"
-        Title="Cadastro de Materiais" Height="397.266" Width="681.494" WindowStartupLocation="CenterScreen">
+        Title="Cadastro de Materiais" Height="397.266" Width="681.494" WindowStartupLocation="CenterScreen" ResizeMode="NoResize">
     <Window.Resources>
         <JournalEntryListConverter x:Key="JournalEntryListConverter"/>
     </Window.Resources>
