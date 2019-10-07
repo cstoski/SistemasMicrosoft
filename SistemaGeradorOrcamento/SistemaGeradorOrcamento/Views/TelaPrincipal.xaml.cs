@@ -73,5 +73,17 @@ namespace SistemaGeradorOrcamento.Views
             frmListaProjetos frmListaProjetos = new frmListaProjetos();
             frmListaProjetos.ShowDialog();
         }
+
+        private void MenuItem_AlterarProjeto(object sender, RoutedEventArgs e)
+        {
+            frmAlterarProjeto frmAlterarProjeto = new frmAlterarProjeto();
+            frmAlterarProjeto.ShowDialog();
+        }
+
+        private void MenuItem_VisualizarOrcamento (object sender, RoutedEventArgs e)
+        {
+            frmVisualizarOrcamento frmVisualizarOrcamento = new frmVisualizarOrcamento();
+            frmVisualizarOrcamento.ShowDialog();
+        }
     }
 }

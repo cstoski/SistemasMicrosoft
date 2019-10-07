@@ -44,6 +44,7 @@ namespace SistemaGeradorOrcamento.DAL
             return ctx.Clientes.Find(id);
         }
 
+       
         public static List<Cliente> ListarClientes()
         {
             return ctx.Clientes.ToList();

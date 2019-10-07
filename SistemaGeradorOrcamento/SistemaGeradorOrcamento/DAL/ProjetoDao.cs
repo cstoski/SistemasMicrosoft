@@ -1,6 +1,7 @@
 ﻿using SistemaGeradorOrcamento.Models;
 using System;
 using System.Collections.Generic;
+using System.Data.Entity;
 using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
@@ -22,8 +23,7 @@ namespace SistemaGeradorOrcamento.DAL
             }
             return false;
         }
-
-       
+               
         public static Projeto BuscarProjetoPorNome(Projeto p)
         {
             return ctx.Projetos.FirstOrDefault
@@ -32,7 +32,7 @@ namespace SistemaGeradorOrcamento.DAL
 
         public static Projeto BuscarProjetoPorNumero(Projeto p)
         {
-            return ctx.Projetos.FirstOrDefault
+            return ctx.Projetos.Include("Cliente").Include("listaOrcamento").FirstOrDefault
                 (x => x.NumeroProjeto.Equals(p.NumeroProjeto));
         }
 
@@ -40,6 +40,29 @@ namespace SistemaGeradorOrcamento.DAL
         {
             return ctx.Projetos.FirstOrDefault
                 (x => x.NumeroProjeto.Equals(p));
+        }
+
+        public static bool AlterarProjeto(Projeto p)
+        {
+            if (BuscarProjetoPorNumero(p) != null)
+            {
+                ctx.Entry(p).State = EntityState.Modified;
+                ctx.SaveChanges();
+                return true;
+            }
+            return false;
+        }
+
+        public static Orcamento BuscaOrcamentoProjeto(Projeto p)
+        {
+            //Busca o Projeto
+            p = BuscarProjetoPorNumero(p);
+            
+            Orcamento orcamento = ctx.Orcamentos.Include("servico.Servico").Include("material.Material").FirstOrDefault
+                (x => x.OrcamentoId.Equals(p.ProjetoId));
+
+            return orcamento;
+
         }
 
         public static List<Projeto> ListarTodosProjetos() => ctx.Projetos.Include("Cliente").ToList();
@@ -55,7 +78,6 @@ namespace SistemaGeradorOrcamento.DAL
             string ano = (DateTime.Now.Year).ToString().Substring(2,2);
             string mes = (DateTime.Now.Month).ToString("D2");
             
-
             //Quantidade de Registros +1
             nSequencial = (ctx.Projetos.Count() + 1).ToString("D3");
 

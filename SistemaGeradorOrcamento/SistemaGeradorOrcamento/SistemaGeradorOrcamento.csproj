@@ -224,6 +224,10 @@
     <Compile Include="Migrations\201910011548346_inicial.designer.cs">
       <DependentUpon>201910011548346_inicial.cs</DependentUpon>
     </Compile>
+    <Compile Include="Migrations\201910072007314_AtuazçãoMatriai.cs" />
+    <Compile Include="Migrations\201910072007314_AtuazçãoMatriai.designer.cs">
+      <DependentUpon>201910072007314_AtuazçãoMatriai.cs</DependentUpon>
+    </Compile>
     <Compile Include="Migrations\Configuration.cs" />
     <Compile Include="Models\Cliente.cs" />
     <Compile Include="Models\Context.cs" />
@@ -234,6 +238,9 @@
     <Compile Include="Models\Orcamento.cs" />
     <Compile Include="Models\Servico.cs" />
     <Compile Include="Models\Usuario.cs" />
+    <Compile Include="Views\frmAlterarProjeto.xaml.cs">
+      <DependentUpon>frmAlterarProjeto.xaml</DependentUpon>
+    </Compile>
     <Compile Include="Views\frmCadastroCliente.xaml.cs">
       <DependentUpon>frmCadastroCliente.xaml</DependentUpon>
     </Compile>
@@ -261,6 +268,9 @@
     <Compile Include="Views\frmLogin.xaml.cs">
       <DependentUpon>frmLogin.xaml</DependentUpon>
     </Compile>
+    <Compile Include="Views\frmVisualizarOrcamento.xaml.cs">
+      <DependentUpon>frmVisualizarOrcamento.xaml</DependentUpon>
+    </Compile>
     <Compile Include="Views\TelaPrincipal.xaml.cs">
       <DependentUpon>TelaPrincipal.xaml</DependentUpon>
     </Compile>
@@ -283,6 +293,9 @@
     <EmbeddedResource Include="Migrations\201910011548346_inicial.resx">
       <DependentUpon>201910011548346_inicial.cs</DependentUpon>
     </EmbeddedResource>
+    <EmbeddedResource Include="Migrations\201910072007314_AtuazçãoMatriai.resx">
+      <DependentUpon>201910072007314_AtuazçãoMatriai.cs</DependentUpon>
+    </EmbeddedResource>
     <EmbeddedResource Include="Properties\Resources.resx">
       <Generator>ResXFileCodeGenerator</Generator>
       <LastGenOutput>Resources.Designer.cs</LastGenOutput>
@@ -301,6 +314,10 @@
     <Folder Include="Utils\" />
   </ItemGroup>
   <ItemGroup>
+    <Page Include="Views\frmAlterarProjeto.xaml">
+      <SubType>Designer</SubType>
+      <Generator>MSBuild:Compile</Generator>
+    </Page>
     <Page Include="Views\frmCadastroCliente.xaml">
       <SubType>Designer</SubType>
       <Generator>MSBuild:Compile</Generator>
@@ -334,6 +351,10 @@
       <Generator>MSBuild:Compile</Generator>
     </Page>
     <Page Include="Views\frmLogin.xaml">
+      <SubType>Designer</SubType>
+      <Generator>MSBuild:Compile</Generator>
+    </Page>
+    <Page Include="Views\frmVisualizarOrcamento.xaml">
       <SubType>Designer</SubType>
       <Generator>MSBuild:Compile</Generator>
     </Page>

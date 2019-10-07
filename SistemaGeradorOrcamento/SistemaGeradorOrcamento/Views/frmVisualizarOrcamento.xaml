@@ -1,0 +1,40 @@
+﻿<Window x:Name="frmVisualizarOrcamento1" x:Class="SistemaGeradorOrcamento.Views.frmVisualizarOrcamento"
+        xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+        xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+        xmlns:d="http://schemas.microsoft.com/expression/blend/2008"
+        xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
+        xmlns:local="clr-namespace:SistemaGeradorOrcamento.Views"
+        mc:Ignorable="d"
+        Title="Visualização de Orçamento" Height="517.073" Width="908.536">
+    <Grid>
+        <Label Content="Número:" HorizontalAlignment="Left" Margin="23,20,0,0" VerticalAlignment="Top" Width="104"/>
+        <Label Content="Nome do Projeto:" HorizontalAlignment="Left" Margin="23,54,0,0" VerticalAlignment="Top"/>
+        <TextBox x:Name="txtNumero" HorizontalAlignment="Left" Height="24" Margin="138,20,0,0" TextWrapping="Wrap" Text="" VerticalAlignment="Top" Width="120" TabIndex="0"/>
+        <TextBox x:Name="txtProjeto" HorizontalAlignment="Left" Height="24" Margin="138,54,0,0" TextWrapping="Wrap" Text="" VerticalAlignment="Top" Width="482" TabIndex="2" IsEnabled="False"/>
+        <Button x:Name="btnBuscar" Content="Buscar" HorizontalAlignment="Left" Margin="282,20,0,0" VerticalAlignment="Top" Width="74" Height="24" TabIndex="4" Click="BtnBuscar_Click"/>
+        <DataGrid x:Name="dtaListaServicos" AutoGenerateColumns="false" HorizontalAlignment="Left" Height="142" Margin="23,115,0,0" VerticalAlignment="Top" Width="854" TabIndex="7">
+            <DataGrid.Columns>
+                <DataGridTextColumn Binding="{Binding servico.Nome}" Header="Nome" Width="220"/>
+                <DataGridTextColumn Binding="{Binding servico.Descricao}" Header="Descricao" Width="220"/>
+                <DataGridTextColumn Binding="{Binding servico.Tipo}" Header="Tipo" Width="200"/>
+                <DataGridTextColumn Binding="{Binding servico.Valor,StringFormat=C2}" Header="Preço" Width="150"/>
+                <DataGridTextColumn Binding="{Binding quantidade}" Header="Qtde" Width="50"/>
+                <DataGridTemplateColumn/>
+            </DataGrid.Columns>
+        </DataGrid>
+        <DataGrid x:Name="dtaListaMateriais" AutoGenerateColumns="false" HorizontalAlignment="Left" Height="142" Margin="23,293,0,0" VerticalAlignment="Top" Width="854" TabIndex="7">
+            <DataGrid.Columns>
+                <DataGridTextColumn Binding="{Binding material.Nome}" Header="Nome" Width="200"/>
+                <DataGridTextColumn Binding="{Binding material.Codigo}"  Header="Código" Width="140"/>
+                <DataGridTextColumn Binding="{Binding material.Descricao}"  Header="Descrição" Width="200"/>
+                <DataGridTextColumn Binding="{Binding material.Fabricante}"  Header="Fabricante" Width="100"/>
+                <DataGridTextColumn Binding="{Binding material.Valor,StringFormat=C2}"  Header="Preço" Width="100"/>
+                <DataGridTextColumn Binding="{Binding quantidade}"  Header="Quantidade" Width="100"/>
+                <DataGridTemplateColumn/>
+            </DataGrid.Columns>
+        </DataGrid>
+        <Label Content="Serviços:" HorizontalAlignment="Left" Margin="23,83,0,0" VerticalAlignment="Top" Width="116"/>
+        <Label Content="Materiais:" HorizontalAlignment="Left" Margin="23,262,0,0" VerticalAlignment="Top" Width="116"/>
+
+    </Grid>
+</Window>

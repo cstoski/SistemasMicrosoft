@@ -14,8 +14,9 @@
             </MenuItem>
             <MenuItem Header="Projetos" Height="24" Width="90">
                 <MenuItem Header="Cadastrar" HorizontalAlignment="Left" Height="31" Width="186" Margin="0,0,-46,0" Click="MenuItem_Click_Projetos"/>
+                <MenuItem Header="Alterar Dados" HorizontalAlignment="Left" Height="31" Width="186" Margin="0,0,-46,0" Click="MenuItem_AlterarProjeto"/>
                 <MenuItem Header="Listar" HorizontalAlignment="Left" Height="31" Width="186" Margin="0,0,-38,0" Click="MenuItem_ListaProjetos"/>
-                <MenuItem Header="Adicionar Orçamento" HorizontalAlignment="Left" Height="31" Width="200" Margin="0,0,-26,0"/>
+                <MenuItem Header="Visualizar Orçamento" HorizontalAlignment="Left" Height="31" Width="215" Margin="0,0,-41,0" Click="MenuItem_VisualizarOrcamento" />
             </MenuItem>
             <MenuItem Header="Materiais" Height="24" Width="90">
                 <MenuItem Header="Cadastrar" HorizontalAlignment="Left" Height="31" Width="140" Click="MenuItem_Click_Materiais"/>
