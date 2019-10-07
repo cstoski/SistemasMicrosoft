@@ -31,7 +31,8 @@ namespace SistemaGeradorOrcamento.Views
         public frmCadastroMaterial()
         {
             InitializeComponent();
-         
+            txtCodigo.IsEnabled = true;
+            txtCodigo.Focus();
         }
 
         private void LimparFormulario()
@@ -58,9 +59,9 @@ namespace SistemaGeradorOrcamento.Views
             btnBuscar.IsEnabled = false;
 
             //ADICIONA OS DADOS CADASTRADOS NO DATAGRID
-            materiaisGrid.Add(material);
-            dtaMateriais.ItemsSource = materiaisGrid;
-            dtaMateriais.Items.Refresh();
+            //materiaisGrid.Add(material);
+            //dtaMateriais.ItemsSource = materiaisGrid;
+            //dtaMateriais.Items.Refresh();
 
         }
 
@@ -70,10 +71,10 @@ namespace SistemaGeradorOrcamento.Views
             {
                 Material material = new Material
                 {
-                    Codigo = txtCodigo.Text,
-                    Nome = txtNome.Text,
-                    Descricao = txtDescricao.Text,
-                    Fabricante = txtFabricante.Text,
+                    Codigo = txtCodigo.Text.ToUpper(),
+                    Nome = txtNome.Text.ToUpper(),
+                    Descricao = txtDescricao.Text.ToUpper(),
+                    Fabricante = txtFabricante.Text.ToUpper(),
                     Valor = Convert.ToDouble(txtValor.Text)
                 };
 
@@ -83,7 +84,8 @@ namespace SistemaGeradorOrcamento.Views
                         "SistemaOrcamento", MessageBoxButton.OK,
                         MessageBoxImage.Information);
                     LimparFormulario();
-                    materiaisGrid.Add(material);
+
+                    //materiaisGrid.Add(material);
                     dtaMateriais.ItemsSource = MaterialDao.ListarMaterial();
                     dtaMateriais.Items.Refresh();
                 }
@@ -112,69 +114,53 @@ namespace SistemaGeradorOrcamento.Views
 
         private void BtnBuscar_Click(object sender, RoutedEventArgs e)
         {
-            MessageBox.Show("Digite o nome ou o fabricante!",
-                          "Sistema de Orçamento", MessageBoxButton.OK,
-                          MessageBoxImage.Information);
-
             txtCodigo.IsEnabled = true;
-            txtNome.IsEnabled = true;
-            txtDescricao.IsEnabled = true;
-            txtFabricante.IsEnabled = true;
-            txtValor.IsEnabled = true;
+            txtNome.IsEnabled = false;
+            txtDescricao.IsEnabled = false;
+            txtFabricante.IsEnabled = false;
+            txtValor.IsEnabled = false;
+
             
-            if (!txtNome.Text.Equals("") || !txtFabricante.Text.Equals(""))
+            if (!txtCodigo.Text.Equals(""))
             {
-                Material matNome = new Material
+                Material material = new Material
                 {
-                    Nome = txtNome.Text,
+                    Codigo = txtCodigo.Text,
 
                 };
-                Material matFabricante = new Material
+                
+
+                material = MaterialDao.BuscarMaterialPorCodigo(material);
+                
+                if (material != null )
                 {
-                    Fabricante = txtFabricante.Text
-                };
-
-                matNome = MaterialDao.BuscarMaterialPorNome(matNome);
-                matFabricante = MaterialDao.buscarMaterialPorFabricante(matFabricante);
-
-                if (matNome != null )
-                {
-                    MessageBox.Show("Material localizado!",
-                    "SistemaOrçamento", MessageBoxButton.OK, MessageBoxImage.Information);
-
-                    txtNome.Text = matNome.Nome;
-                    txtFabricante.Text = matNome.Fabricante;
-                    txtCodigo.Text = matNome.Codigo;
-                    txtDescricao.Text = matNome.Descricao;
-                    txtValor.Text = matNome.Valor.ToString("C2");
+                    btnCadastrar.IsEnabled = false;
+                    txtNome.Text = material.Nome;
+                    txtFabricante.Text = material.Fabricante;
+                    txtCodigo.Text = material.Codigo;
+                    txtDescricao.Text = material.Descricao;
+                    txtValor.Text = material.Valor.ToString("C2");
                     btnEditar.IsEnabled = true;
                     btnExcluir.IsEnabled = true;
                 }
                 else
                 {
-                    if (matFabricante != null)
-                    {
-                        MessageBox.Show("Material localizado!",
-                    "SistemaOrçamento", MessageBoxButton.OK, MessageBoxImage.Information);
-
-                        txtNome.Text = matFabricante.Nome;
-                        txtFabricante.Text = matFabricante.Fabricante;
-                        txtCodigo.Text = matFabricante.Codigo;
-                        btnEditar.IsEnabled = true;
-                        btnExcluir.IsEnabled = true;
-                    }
-                    else
-                    {
-                        MessageBox.Show("Material não localizado!",
+                    MessageBox.Show("Material não localizado!",
                             "Sistema de Orçamento", MessageBoxButton.OK, MessageBoxImage.Error);
-                    }
                 }
+
             }
+            else
+            {
+                MessageBox.Show("Por favor Preencher o Código!",
+                            "Sistema de Orçamento", MessageBoxButton.OK, MessageBoxImage.Error);
+            }
+            
         }
 
         private void Grid_Loaded(object sender, RoutedEventArgs e)
         {
-            dtaMateriais.ItemsSource = MaterialDao.ListarMaterial();
+           // dtaMateriais.ItemsSource = MaterialDao.ListarMaterial();
         }
 
         private void BtnExcluir_Click(object sender, RoutedEventArgs e)
@@ -195,6 +181,73 @@ namespace SistemaGeradorOrcamento.Views
                         "SistemaOrçamento", MessageBoxButton.OK, MessageBoxImage.Error);
                 LimparFormulario();
             }
+        }
+
+        bool clickEditar = false;
+        private void BtnEditar_Click(object sender, RoutedEventArgs e)
+        {
+            Material material = new Material
+            {
+                Codigo = txtCodigo.Text,
+
+            };
+
+            material = MaterialDao.BuscarMaterialPorCodigo(material);
+
+            if (clickEditar == false)
+            {
+                txtCodigo.IsEnabled = false;
+                txtNome.IsEnabled = true;
+                txtDescricao.IsEnabled = true;
+                txtFabricante.IsEnabled = true;
+                txtValor.IsEnabled = true;
+
+                btnCadastrar.IsEnabled = false;
+                btnEditar.IsEnabled = true;
+                btnExcluir.IsEnabled = false;
+                btnBuscar.IsEnabled = false;
+
+                btnEditar.Content = "Salvar";
+                clickEditar = true;
+            }
+            else
+            {
+                if ((!txtCodigo.Text.Equals("")) && (!txtNome.Text.Equals("")) && (!txtFabricante.Text.Equals("")) && (!txtValor.Text.Equals("")))
+                {
+
+                    material.Nome = txtNome.Text.ToUpper();
+                    material.Descricao = txtDescricao.Text.ToUpper();
+                    material.Fabricante = txtFabricante.Text.ToUpper();
+                    material.Valor = Convert.ToDouble(txtValor.Text.Replace("R$", ""));
+                    
+                    MaterialDao.EditarMaterial(material);
+                    
+                        MessageBox.Show("Material Alterado com sucesso!",
+                            "SistemaOrcamento", MessageBoxButton.OK,
+                            MessageBoxImage.Information);
+                        LimparFormulario();
+
+                        //materiaisGrid.Add(material);
+                        dtaMateriais.ItemsSource = MaterialDao.ListarMaterial();
+                        dtaMateriais.Items.Refresh();
+                    
+                    txtCodigo.IsEnabled = false;
+                    txtNome.IsEnabled = false;
+                    txtDescricao.IsEnabled = false;
+                    txtFabricante.IsEnabled = false;
+                    txtValor.IsEnabled = false;
+                    btnSalvar.Visibility = Visibility.Collapsed;
+                    btnCadastrar.IsEnabled = true;
+                    btnBuscar.IsEnabled = true;
+                }
+                else
+                {
+                    MessageBox.Show("Por favor preencher todos os campos!",
+                            "Sistema de Orçamento", MessageBoxButton.OK,
+                            MessageBoxImage.Error);
+                }
+            }
+            
         }
     }
 }

@@ -14,9 +14,8 @@
         <TextBox x:Name="txtDescricao" HorizontalAlignment="Left" Height="23" Margin="118,49,0,0" TextWrapping="Wrap" Text="" VerticalAlignment="Top" Width="392" TabIndex="2" IsEnabled="False"/>
         <TextBox x:Name="txtValor" HorizontalAlignment="Left" Height="23" Margin="118,106,0,0" TextWrapping="Wrap" Text="" VerticalAlignment="Top" Width="392" TabIndex="4" IsEnabled="False"/>
         <Button x:Name="btnCadastrar" Content="Novo" HorizontalAlignment="Left" Margin="530,19,0,0" VerticalAlignment="Top" Width="129" Height="24" TabIndex="5" Click="BtnCadastrar_Click"/>
-        <Button x:Name="btnEditar" Content="Editar" HorizontalAlignment="Left" Margin="530,48,0,0" VerticalAlignment="Top" Width="129" Height="24" TabIndex="6" IsEnabled="False"/>
+        <Button x:Name="btnEditar" Content="Editar" HorizontalAlignment="Left" Margin="530,48,0,0" VerticalAlignment="Top" Width="129" Height="24" TabIndex="6" IsEnabled="False" Click="BtnEditar_Click" />
         <Button x:Name="btnBuscar" Content="Listar Todos" HorizontalAlignment="Left" Margin="530,77,0,0" VerticalAlignment="Top" Width="129" Height="24" TabIndex="7" Click="BtnBuscar_Click"/>
-        <Button x:Name="btnExcluir" Content="Excluir" HorizontalAlignment="Left" Margin="530,106,0,0" VerticalAlignment="Top" Width="129" Height="24" TabIndex="8" IsEnabled="False"/>
         <Label Content="Tipo do Serviço: " HorizontalAlignment="Left" Margin="10,77,0,0" VerticalAlignment="Top" Width="103"/>
         <ComboBox x:Name="cmbTipoServico" HorizontalAlignment="Left" Margin="118,77,0,0" VerticalAlignment="Top" Width="392" TabIndex="3" IsEnabled="False">
             <ComboBoxItem Content="Documentação" HorizontalAlignment="Left" Width="390"/>
@@ -27,7 +26,7 @@
             <ComboBoxItem Content="Software IHM" HorizontalAlignment="Left" Width="390"/>
             <ComboBoxItem Content="Software Supervisorio" HorizontalAlignment="Left" Width="390"/>
         </ComboBox>
-        <DataGrid x:Name="dtaServicos" AutoGenerateColumns="False" HorizontalAlignment="Left" Height="225" Margin="13,163,0,0" VerticalAlignment="Top" Width="646" HorizontalScrollBarVisibility="Disabled" CanUserResizeColumns="False">
+        <DataGrid x:Name="dtaServicos" AutoGenerateColumns="False" HorizontalAlignment="Left" Height="225" Margin="13,163,0,0" VerticalAlignment="Top" Width="646" HorizontalScrollBarVisibility="Disabled" CanUserResizeColumns="False" SelectedCellsChanged="DtaServicos_SelectedCellsChanged">
             <DataGrid.Columns>
                 <DataGridTextColumn Binding="{Binding Nome}" Header="Nome" Width="200"/>
                 <DataGridTextColumn Binding="{Binding Descricao}" Header="Descrição" Width="200"/>                

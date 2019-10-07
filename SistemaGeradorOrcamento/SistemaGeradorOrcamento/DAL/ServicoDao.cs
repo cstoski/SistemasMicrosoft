@@ -1,6 +1,7 @@
 ﻿using SistemaGeradorOrcamento.Models;
 using System;
 using System.Collections.Generic;
+using System.Data.Entity;
 using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
@@ -29,13 +30,22 @@ namespace SistemaGeradorOrcamento.DAL
         {
              return ctx.Servicos.FirstOrDefault
              (x => x.Nome.Equals(s.Nome));
-          
-            
         }
 
         public static List<Servico> ListarServicos()
         {
             return ctx.Servicos.ToList();
+        }
+
+        public static bool AlterarServico(Servico s)
+        {
+            if (BuscarServicoPorNome(s) != null)
+            {
+                ctx.Entry(s).State = EntityState.Modified;
+                ctx.SaveChanges();
+                return true;
+            }
+            return false;
         }
     }
 }

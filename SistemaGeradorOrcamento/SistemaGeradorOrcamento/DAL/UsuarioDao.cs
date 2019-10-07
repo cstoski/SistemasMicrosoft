@@ -38,10 +38,11 @@ namespace SistemaGeradorOrcamento.DAL
             ctx.SaveChanges();
         }
 
-        public static void ListarUsuarios(Usuario u)
+        public static List<Usuario> ListarUsuarios()
         {
-           
+            return ctx.Usuarios.ToList();
         }
+
         public static void DeletarUsuarios(Usuario u)
         {         
             ctx.Usuarios.Remove(u);

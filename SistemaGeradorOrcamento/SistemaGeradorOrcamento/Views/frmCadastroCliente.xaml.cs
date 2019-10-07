@@ -76,8 +76,8 @@ namespace SistemaGeradorOrcamento.Views
             {
                 Cliente c = new Cliente
                 {
-                    NomeCliente = txtNome.Text,
-                    Contato = txtContato.Text,
+                    NomeCliente = txtNome.Text.ToUpper(),
+                    Contato = txtContato.Text.ToUpper(),
                     Telefone = txtTelefone.Text
                 };
 
@@ -150,8 +150,8 @@ namespace SistemaGeradorOrcamento.Views
                 btnEditar.IsEnabled = true;
                 btnBuscar.IsEnabled = false;
                 btnCadastrar.IsEnabled = false;
-                txtNome.Text = cliente.NomeCliente;
-                txtContato.Text = cliente.Contato;
+                txtNome.Text = cliente.NomeCliente.ToUpper();
+                txtContato.Text = cliente.Contato.ToUpper();
                 txtTelefone.Text = cliente.Telefone;
                 txtNome.IsEnabled = false;
                 txtContato.IsEnabled = true;
@@ -163,7 +163,7 @@ namespace SistemaGeradorOrcamento.Views
                 
                 if (txtNome != null || txtContato != null || txtTelefone != null)
                 {
-                    cliente.Contato = txtContato.Text;
+                    cliente.Contato = txtContato.Text.ToUpper();
                     cliente.Telefone = txtTelefone.Text;
 
                     if (ClienteDao.AlterarCliente(cliente))

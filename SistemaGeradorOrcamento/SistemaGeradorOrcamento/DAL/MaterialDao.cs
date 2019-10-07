@@ -57,8 +57,8 @@ namespace SistemaGeradorOrcamento.DAL
         }
         public static void DeletarMaterial(Material m)
         {
-            ctx.Materiais.Remove(m);
-            ctx.SaveChanges();
+            //ctx.Materiais.Remove(m);
+            //ctx.SaveChanges();
 
         }
     }

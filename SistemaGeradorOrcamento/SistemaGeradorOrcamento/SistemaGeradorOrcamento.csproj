@@ -252,6 +252,12 @@
     <Compile Include="Views\frmCadastroUsuario.xaml.cs">
       <DependentUpon>frmCadastroUsuario.xaml</DependentUpon>
     </Compile>
+    <Compile Include="Views\frmListaDeUsuarios.xaml.cs">
+      <DependentUpon>frmListaDeUsuarios.xaml</DependentUpon>
+    </Compile>
+    <Compile Include="Views\frmLogin.xaml.cs">
+      <DependentUpon>frmLogin.xaml</DependentUpon>
+    </Compile>
     <Compile Include="Views\TelaPrincipal.xaml.cs">
       <DependentUpon>TelaPrincipal.xaml</DependentUpon>
     </Compile>
@@ -313,6 +319,14 @@
       <Generator>MSBuild:Compile</Generator>
     </Page>
     <Page Include="Views\frmCadastroUsuario.xaml">
+      <SubType>Designer</SubType>
+      <Generator>MSBuild:Compile</Generator>
+    </Page>
+    <Page Include="Views\frmListaDeUsuarios.xaml">
+      <SubType>Designer</SubType>
+      <Generator>MSBuild:Compile</Generator>
+    </Page>
+    <Page Include="Views\frmLogin.xaml">
       <SubType>Designer</SubType>
       <Generator>MSBuild:Compile</Generator>
     </Page>

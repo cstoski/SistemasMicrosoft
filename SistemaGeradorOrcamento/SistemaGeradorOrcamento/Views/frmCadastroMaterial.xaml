@@ -21,11 +21,11 @@
         <TextBox x:Name="txtFabricante" HorizontalAlignment="Left" Height="23" Margin="99,106,0,0" TextWrapping="Wrap" Text="" VerticalAlignment="Top" Width="392" TabIndex="3" IsEnabled="False"/>
         <TextBox x:Name="txtValor" HorizontalAlignment="Left" Height="23" Margin="99,134,0,0" TextWrapping="Wrap" Text="" VerticalAlignment="Top" Width="392" TabIndex="4" IsEnabled="False"/>
         <Button x:Name="btnCadastrar" Content="Novo" HorizontalAlignment="Left" Margin="521,14,0,0" VerticalAlignment="Top" Width="129" Height="24" TabIndex="5" Click="BtnCadastrar_Click"/>
-        <Button x:Name="btnEditar" Content="Editar" HorizontalAlignment="Left" Margin="521,72,0,0" VerticalAlignment="Top" Width="129" Height="24" TabIndex="6" IsEnabled="False"/>
+        <Button x:Name="btnEditar" Content="Editar" HorizontalAlignment="Left" Margin="521,72,0,0" VerticalAlignment="Top" Width="129" Height="24" TabIndex="6" IsEnabled="False" Click="BtnEditar_Click"/>
         <Button x:Name="btnBuscar" Content="Buscar" HorizontalAlignment="Left" Margin="521,43,0,0" VerticalAlignment="Top" Width="129" Height="24" TabIndex="7" Click="BtnBuscar_Click"/>
         <Button x:Name="btnExcluir" Content="Excluir" HorizontalAlignment="Left" Margin="521,101,0,0" VerticalAlignment="Top" Width="129" Height="24" TabIndex="8" IsEnabled="False" Click="BtnExcluir_Click"/>
         <Button x:Name="btnSalvar" Content="Cadastrar" HorizontalAlignment="Left" Margin="521,130,0,0" VerticalAlignment="Top" Width="129" Height="24" TabIndex="5" Click="BtnSalvar_Click" Visibility="Collapsed"/>
-        <DataGrid x:Name="dtaMateriais" HorizontalAlignment="Left" Height="120" Margin="99,190,0,0" VerticalAlignment="Top" Width="392">
+        <DataGrid x:Name="dtaMateriais" HorizontalAlignment="Left" Height="147" Margin="27,190,0,0" VerticalAlignment="Top" Width="623">
         </DataGrid>
     </Grid>
 </Window>

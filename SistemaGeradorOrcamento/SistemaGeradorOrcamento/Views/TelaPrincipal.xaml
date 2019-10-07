@@ -25,6 +25,7 @@
             </MenuItem>
             <MenuItem Header="Usuários" Height="24" Width="90">
                 <MenuItem Header="Cadastrar" HorizontalAlignment="Left" Height="31" Width="140" Click="MenuItem_Click_Usuarios"/>
+                <MenuItem Header="Listar" HorizontalAlignment="Left" Height="31" Width="152" Margin="0,0,-4,0" Click="MenuItem_UsuarioListar"/>
             </MenuItem>
             <MenuItem Header="Help" Height="24" Width="90">
                 <MenuItem Header="About" HorizontalAlignment="Left" Height="31" Width="140"/>

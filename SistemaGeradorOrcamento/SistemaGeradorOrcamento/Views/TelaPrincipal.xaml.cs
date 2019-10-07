@@ -61,5 +61,11 @@ namespace SistemaGeradorOrcamento.Views
             frmCadastroOrcamento frmOrcamento = new frmCadastroOrcamento();
             frmOrcamento.ShowDialog();
         }
+
+        private void MenuItem_UsuarioListar(object sender, RoutedEventArgs e)
+        {
+            frmListaDeUsuarios frmListaUser = new frmListaDeUsuarios();
+            frmListaUser.ShowDialog();
+        }
     }
 }
